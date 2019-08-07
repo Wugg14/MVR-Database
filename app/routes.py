@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, flash
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm
+from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from app.email import send_password_reset_email
@@ -90,3 +90,8 @@ def reset_password(token):
         flash('Your password has been reset.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+@app.route('/ultrasound', methods=['GET', 'POST'])
+def ultrasound():
+    form = UltrasoundForm()
+    return render_template('ultrasound.html', title='Ultrasound Report', form=form)

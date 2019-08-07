@@ -1,3 +1,4 @@
+﻿.idea
 config.py
 .flaskenv
 app.db

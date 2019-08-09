@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="new-doctor-form">
+    <h1>New Doctor</h1>
+    <hr />
+    <div class="form-section" id="clinic">
+         {{ form.clinic.label }}
+         {{ form.clinic(size=10) }}
+         {% for error in form.clinic.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <div class="form-section" id="first">
+         {{ form.first.label }}
+         {{ form.first(size=12) }}
+         {% for error in form.first.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <div class="form-section" id="middle">
+         {{ form.middle.label }}
+         {{ form.middle(size=2) }}
+         {% for error in form.middle.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <div class="form-section" id="last">
+         {{ form.last.label }}
+         {{ form.last(size=24) }}
+         {% for error in form.last.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <div class="form-section" id="phone">
+         {{ form.phone.label }}
+         {{ form.phone(size=24) }}
+         {% for error in form.phone.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <div class="form-section" id="email">
+         {{ form.email.label }}
+         {{ form.email(size=24) }}
+         {% for error in form.email.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <div class="form-section" id="note">
+         {{ form.note.label }}
+         {{ form.note(size=240) }}
+         {% for error in form.note.errors %}
+         <br />
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+     </div>
+    <br />
+    <p>{{ form.submit() }}</p>
+</div>
+{% endblock %}

@@ -112,5 +112,17 @@ class newClinicForm (FlaskForm):
     notes = StringField('Notes:')
     submit = SubmitField('Save')
 
+class newDoctor (FlaskForm):
+    clinic = StringField('Company:', validators=[DataRequired()])
+    first = StringField('First Name:', validators=[DataRequired()])
+    middle = StringField('Middle Initial:')
+    last = StringField('Last Name:', validators=[DataRequired()])
+    phone = IntegerField('Phone:', validators=[DataRequired()])
+    email = StringField('Email:', validators=[DataRequired()])
+    note = StringField('Notes:', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
+
+
 
 

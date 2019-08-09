@@ -100,6 +100,17 @@ class ctInterpretationForm (FlaskForm):
     CT_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
+class miscService (FlaskForm):
+    date = StringField('Date:', validators=[DataRequired()])
+    doctor = StringField('Doctor:', validators=[DataRequired()])
+    practice = StringField('Practice:', validators=[DataRequired()])
+    patient = StringField('Patient:', validators=[DataRequired()])
+    owner = StringField('Owner:', validators=[DataRequired()])
+    service = StringField('Service:', validators=[DataRequired()])
+    charge = StringField('Charge:', validators=[DataRequired()])
+    description = StringField('Service Description:', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
 class newClinicForm (FlaskForm):
     company = StringField('Company:', validators=[DataRequired()])
     nickname = StringField('Nickname:', validators=[DataRequired()])

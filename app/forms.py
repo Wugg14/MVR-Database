@@ -70,4 +70,20 @@ class UltrasoundForm (FlaskForm):
     findings = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
-    
+class radiographicInterpretationForm (FlaskForm):
+    date = StringField('Date:', validators=[DataRequired()])
+    patient = StringField('Patient:', validators=[DataRequired()])
+    species = StringField('Species:', validators=[DataRequired()])
+    owner = StringField('Owner:', validators=[DataRequired()])
+    doctor = StringField('Doctor:', validators=[DataRequired()])
+    Rad_Image_Date = StringField('Date:', validators=[DataRequired()])
+    practice = StringField('Practice:', validators=[DataRequired()])
+    Rad_NumImages = IntegerField('No. of Images:', validators=[DataRequired()])
+    phone = IntegerField('Phone:', validators=[DataRequired()])
+    views = StringField('Views:', validators=[DataRequired()])
+    Rad_Findings = TextAreaField('Findings:', validators=[DataRequired()])
+    Rad_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
+
+

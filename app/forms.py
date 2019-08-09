@@ -85,5 +85,32 @@ class radiographicInterpretationForm (FlaskForm):
     Rad_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
+class ctInterpretationForm (FlaskForm):
+    date = StringField('Date:', validators=[DataRequired()])
+    patient = StringField('Patient:', validators=[DataRequired()])
+    species = StringField('Species:', validators=[DataRequired()])
+    owner = StringField('Owner:', validators=[DataRequired()])
+    doctor = StringField('Doctor:', validators=[DataRequired()])
+    CT_Image_Date = StringField('Date:', validators=[DataRequired()])
+    practice = StringField('Practice:', validators=[DataRequired()])
+    CT_NumImages = IntegerField('No. of Images:', validators=[DataRequired()])
+    phone = IntegerField('Phone:', validators=[DataRequired()])
+    views = StringField('Views:', validators=[DataRequired()])
+    CT_Findings = TextAreaField('Findings:', validators=[DataRequired()])
+    CT_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
+class newClinicForm (FlaskForm):
+    company = StringField('Company:', validators=[DataRequired()])
+    nickname = StringField('Nickname:', validators=[DataRequired()])
+    street = StringField('Street:', validators=[DataRequired()])
+    city = StringField('City:', validators=[DataRequired()])
+    state = StringField('State:', validators=[DataRequired()])
+    zip = IntegerField('Zip Code:', validators=[DataRequired()])
+    phone = IntegerField('Phone:', validators=[DataRequired()])
+    email = StringField('Email:', validators=[DataRequired()])
+    notes = StringField('Notes:')
+    submit = SubmitField('Save')
+
 
 

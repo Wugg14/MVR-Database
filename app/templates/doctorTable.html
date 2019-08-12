@@ -8,13 +8,13 @@
     <table id="table-1">
         <thead>
             <tr>
-                <td>Serial Number</td><td>Name</td><td>Nickname</td><td>Street</td><td>City</td><td>State</td><td>Zip</td><td>Phone</td><td>Email</td><td>Note</td><td>Delete?</td>
+                <td>Serial Number</td><td>First</td><td>Middle Initial</td><td>Last</td><td>Phone</td><td>Email</td><td>Note</td><td>Salutation</td><td>Clinic</td>
             </tr>
         </thead>
         <tbody>
-        {% for c in clinics %}
+        {% for d in doctors %}
         <tr>
-            <td>{{ c.clinicSerialNum }}</td><td>{{ c.company }}</td><td>{{ c.nickname }}</td><td>{{ c.street }}</td><td>{{ c.city }}</td><td>{{ c.state }}</td><td>{{ c.zip }}</td><td>{{ c.phone }}</td><td>{{ c.email }}</td><td>{{ c.note }}</td><td>Delete?</td>
+            <td>{{ d.doctorSerialNum }}</td><td>{{ d.first }}</td><td>{{ d.middle }}</td><td>{{ d.last }}</td><td>{{ d.cell }}</td><td>{{ d.phone }}</td><td>{{ d.email }}</td><td>{{ d.note }}</td><td>{{ d.salutation }}</td><td>{{ d.clinic }}</td>
         </tr>
         {% endfor %}
         </tbody>

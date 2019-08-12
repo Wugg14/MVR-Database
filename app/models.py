@@ -110,6 +110,7 @@ class Doctor(db.Model):
     email = db.Column(db.String(64))
     note = db.Column(db.String(140))
     salutation = db.Column(db.String(4))
+    clinicName = db.Column(db.String(20))
     clinicSerialNum = db.Column(db.String(64), db.ForeignKey('clinic.clinicSerialNum'))
 
     def __repr__(self):

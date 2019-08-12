@@ -117,7 +117,6 @@ def misc():
 def newClinic():
     form = newClinicForm()
     if form.validate_on_submit():
-        print('submited')
         clinic = Clinic(company=form.company.data, nickname=form.nickname.data, street=form.street.data, city=form.city.data, state=form.state.data, zip=form.zip.data, phone=form.phone.data, email=form.email.data, note=form.notes.data, clinicSerialNum=randomStringDigits(8))
         db.session.add(clinic)
         db.session.commit()
@@ -128,10 +127,33 @@ def newClinic():
 @app.route('/newdoc', methods=['GET', 'POST'])
 def newDoc():
     form = newDoctor()
-    return render_template('doctorForm.html', title='New Doctor', form=form)
+    #get a list of clinics to display on new doc form
+    clinics = Clinic.query.all()
+    clinicData = []
+    for c in clinics:
+        z = [c.company, c.clinicSerialNum]
+        clinicData += z
+
+
+    if form.validate_on_submit():
+        clinic = form.clinic.data
+
+
+        doctor = Doctor(clinic=form.clinic.data, first=form.first.data, middle=form.middle.data, last=form.last.data, phone=form.phone.data, email=form.email.data, note=form.note.data, doctorSerialNum=randomStringDigits(8))
+        db.session.add(doctor)
+        db.session.commit()
+        flash('Added doctor to database')
+        return redirect(url_for('newDoc'))
+
+    return render_template('doctorForm.html', title='New Doctor', form=form, clinicData = clinicData)
 
 
 @app.route('/clinictable', methods=['GET', 'POST'])
 def clinicTable():
     clinics = Clinic.query.all()
     return render_template('clinicTable.html',  title='All Clinics', clinics=clinics)
+
+@app.route('/doctortable', methods=['GET', 'POST'])
+def doctorTable():
+    doctors = Doctor.query.all()
+    return render_template('doctorTable.html',  title='All Doctors', doctors=doctors)

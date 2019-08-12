@@ -3,7 +3,9 @@
 <div class="new-doctor-form">
     <h1>New Doctor</h1>
     <hr />
-    <div class="form-section" id="clinic">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-section" id="clinic">
          {{ form.clinic.label }}
          {{ form.clinic(size=10) }}
          {% for error in form.clinic.errors %}
@@ -11,7 +13,7 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <div class="form-section" id="first">
+        <div class="form-section" id="first">
          {{ form.first.label }}
          {{ form.first(size=24) }}
          {% for error in form.first.errors %}
@@ -19,7 +21,7 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <div class="form-section" id="middle">
+         <div class="form-section" id="middle">
          {{ form.middle.label }}
          {{ form.middle(size=2) }}
          {% for error in form.middle.errors %}
@@ -27,7 +29,7 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <div class="form-section" id="last">
+        <div class="form-section" id="last">
          {{ form.last.label }}
          {{ form.last(size=24) }}
          {% for error in form.last.errors %}
@@ -35,7 +37,7 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <div class="form-section" id="phone">
+         <div class="form-section" id="phone">
          {{ form.phone.label }}
          {{ form.phone(size=24) }}
          {% for error in form.phone.errors %}
@@ -43,7 +45,7 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <div class="form-section" id="email">
+        <div class="form-section" id="email">
          {{ form.email.label }}
          {{ form.email(size=24) }}
          {% for error in form.email.errors %}
@@ -51,7 +53,7 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <div class="form-section" id="note">
+        <div class="form-section" id="note">
          {{ form.note.label }}
          {{ form.note(size=240) }}
          {% for error in form.note.errors %}
@@ -59,7 +61,8 @@
          <span style="color: red;">[{{ error }}]</span>
          {% endfor %}
      </div>
-    <br />
-    <p>{{ form.submit() }}</p>
+        <br />
+        <p>{{ form.submit() }}</p>
+    </form>
 </div>
 {% endblock %}

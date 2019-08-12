@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+ <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<h1>All Clinics</h1>
+<hr />
+    <table id="table-1">
+        <thead>
+            <tr>
+                <td>Serial Number</td><td>Name</td><td>Nickname</td><td>Street</td><td>City</td><td>State</td><td>Zip</td><td>Phone</td><td>Email</td><td>Note</td><td>Delete?</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for c in clinics %}
+        <tr>
+            <td>{{ c.clinicSerialNum }}</td><td>{{ c.company }}</td><td>{{ c.nickname }}</td><td>{{ c.street }}</td><td>{{ c.city }}</td><td>{{ c.state }}</td><td>{{ c.zip }}</td><td>{{ c.phone }}</td><td>{{ c.email }}</td><td>{{ c.note }}</td><td>Delete?</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<script>
+    $(document).ready( function () {
+        $('#table-1').DataTable();
+    } );
+</script>
+{% endblock %}

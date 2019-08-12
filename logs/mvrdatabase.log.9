@@ -1,12 +1,4 @@
-2019-07-10 10:15:42,203 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-07-26 10:17:19,351 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-07-26 10:28:24,687 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:11:24,589 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:34:06,307 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:36:38,795 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:38:24,950 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:40:02,274 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:40:09,220 ERROR: Exception on /ultrasound [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2019-08-09 09:42:28,844 ERROR: Exception on /radiograph [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -20,51 +12,48 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 98, in ultrasound
-    return reder_template('ultrasound.html', title='Ultrasound Report', form=form)
-NameError: name 'reder_template' is not defined
-2019-08-05 15:40:28,176 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:40:29,559 ERROR: Exception on /ultrasound [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 98, in ultrasound
-    return render_template('ultrasound.html', title='Ultrasound Report', form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 102, in radiograph
+    return render_template('radiograph.html', title='Ultrasound Report', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\ultrasound.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 29, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\ultrasound.html", line 9, in block "content"
-    {{ form.username(size=10) }}
-jinja2.exceptions.UndefinedError: 'app.forms.UltrasoundForm object' has no attribute 'username'
-2019-08-05 15:43:29,296 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-05 15:43:36,916 ERROR: Exception on /ultrasound [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\radiograph.html", line 90, in template
+    {% endfor %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2019-08-09 09:43:04,586 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-09 10:57:53,198 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-09 10:58:05,334 ERROR: Exception on /radiograph [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -78,38 +67,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 98, in ultrasound
-    return render_template('ultrasound.html', title='Ultrasound Report', form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\ultrasound.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 29, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\ultrasound.html", line 9, in block "content"
-    {{ form.username(size=10) }}
-jinja2.exceptions.UndefinedError: 'app.forms.UltrasoundForm object' has no attribute 'username'
-2019-08-05 15:44:03,117 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 12:39:03,949 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 12:39:07,995 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 12:41:26,151 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 12:51:19,023 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:00:49,065 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:00:52,797 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:01:33,961 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:02:14,707 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:02:21,479 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:08:13,919 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-07 13:22:14,729 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 102, in radiograph
+    return render_template('radiograph.html', title='Ultrasound Report', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: radiograph.html

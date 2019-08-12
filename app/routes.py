@@ -129,3 +129,9 @@ def newClinic():
 def newDoc():
     form = newDoctor()
     return render_template('doctorForm.html', title='New Doctor', form=form)
+
+
+@app.route('/clinictable', methods=['GET', 'POST'])
+def clinicTable():
+    clinics = Clinic.query.all()
+    return render_template('clinicTable.html',  title='All Clinics', clinics=clinics)

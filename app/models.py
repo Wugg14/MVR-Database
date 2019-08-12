@@ -84,6 +84,39 @@ class Report_US (db.Model):
     def __repr__(self):
         return '<Ultrasound {}>'.format(self.id)
 
+class Clinic(db.Model):
+    clinicSerialNum = db.Column(db.String(64), primary_key=True)
+    company = db.Column(db.String(64), unique=True)
+    nickname = db.Column(db.String(64), unique=True)
+    street = db.Column(db.String(64))
+    city = db.Column(db.String(64))
+    state = db.Column(db.String(10))
+    zip = db.Column(db.Integer)
+    phone = db.Column(db.String(20))
+    email = db.Column(db.String(64))
+    note = db.Column(db.String(140))
+    doctors = db.relationship('Doctor', backref='clinic', lazy='dynamic')
+
+    def __repr__(self):
+        return '<Clinic {}>'.format(self.company)
+
+class Doctor(db.Model):
+    doctorSerialNum = db.Column(db.String(64), primary_key=True)
+    first = db.Column(db.String(24))
+    middle = db.Column(db.String(3))
+    last = db.Column(db.String(24))
+    cell = db.Column(db.String(20))
+    phone = db.Column(db.String(20))
+    email = db.Column(db.String(64))
+    note = db.Column(db.String(140))
+    salutation = db.Column(db.String(4))
+    clinicSerialNum = db.Column(db.String(64), db.ForeignKey('clinic.clinicSerialNum'))
+
+    def __repr__(self):
+        return '<Doctor {}>'.format(self.last)
+
+
+
 
 
 

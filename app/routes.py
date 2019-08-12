@@ -3,8 +3,9 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Clinic
 from app.email import send_password_reset_email
+from app.randomStrings import randomStringDigits
 
 @app.route('/')
 @app.route('/index')
@@ -115,6 +116,13 @@ def misc():
 @app.route('/newclinic', methods=['GET', 'POST'])
 def newClinic():
     form = newClinicForm()
+    if form.validate_on_submit():
+        print('submited')
+        clinic = Clinic(company=form.company.data, nickname=form.nickname.data, street=form.street.data, city=form.city.data, state=form.state.data, zip=form.zip.data, phone=form.phone.data, email=form.email.data, note=form.notes.data, clinicSerialNum=randomStringDigits(8))
+        db.session.add(clinic)
+        db.session.commit()
+        flash('Added clinic to database')
+        return redirect(url_for('newClinic'))
     return render_template('clinicForm.html', title='New Clinic', form=form)
 
 @app.route('/newdoc', methods=['GET', 'POST'])

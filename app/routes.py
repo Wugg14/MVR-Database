@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Clinic
+from app.models import User, Clinic, Doctor
 from app.email import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -127,25 +127,17 @@ def newClinic():
 @app.route('/newdoc', methods=['GET', 'POST'])
 def newDoc():
     form = newDoctor()
-    #get a list of clinics to display on new doc form
-    clinics = Clinic.query.all()
-    clinicData = []
-    for c in clinics:
-        z = [c.company, c.clinicSerialNum]
-        clinicData += z
-
-
     if form.validate_on_submit():
-        clinic = form.clinic.data
-
-
-        doctor = Doctor(clinic=form.clinic.data, first=form.first.data, middle=form.middle.data, last=form.last.data, phone=form.phone.data, email=form.email.data, note=form.note.data, doctorSerialNum=randomStringDigits(8))
+        clinicData = form.clinic.data
+        #split serial from name by underscore seperator
+        clinicData = clinicData.split('__')
+        doctor = Doctor(clinicName=clinicData[0], clinicSerialNum=clinicData[1], first=form.first.data, middle=form.middle.data, last=form.last.data, phone=form.phone.data, email=form.email.data, note=form.note.data, doctorSerialNum=randomStringDigits(8))
         db.session.add(doctor)
         db.session.commit()
         flash('Added doctor to database')
         return redirect(url_for('newDoc'))
 
-    return render_template('doctorForm.html', title='New Doctor', form=form, clinicData = clinicData)
+    return render_template('doctorForm.html', title='New Doctor', form=form)
 
 
 @app.route('/clinictable', methods=['GET', 'POST'])

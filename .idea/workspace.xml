@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52f5fe33-c625-4b1c-a985-8ea922275c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/templates/doctorTable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MVR Flask Database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MVR Flask Database.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/getCurrentClinics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/clinicTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/clinicTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/doctorForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/doctorForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/doctorTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/doctorTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.10" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.2" afterDir="false" />
@@ -21,13 +18,6 @@
       <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/33d717f28276_doctors_and_clinics_tables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/75ce8ffe7042_users_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/c02106a8ec4b_ultrasound_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/cc3919b6246e_posts_table.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -120,7 +110,8 @@
       <workItem from="1565356057612" duration="5983000" />
       <workItem from="1565365882036" duration="7080000" />
       <workItem from="1565618493919" duration="16559000" />
-      <workItem from="1565646995880" duration="6080000" />
+      <workItem from="1565646995880" duration="6143000" />
+      <workItem from="1565711551305" duration="7009000" />
     </task>
     <servers />
   </component>
@@ -132,7 +123,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

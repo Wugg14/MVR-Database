@@ -7,7 +7,7 @@
         {{ form.hidden_tag() }}
         <div class="form-section" id="clinic">
          {{ form.clinic.label }}
-         {{ form.clinic(size=10) }}
+         {{ form.clinic(size=5) }}
          {% for error in form.clinic.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>

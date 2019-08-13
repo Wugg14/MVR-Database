@@ -3,18 +3,18 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<h1>All Clinics</h1>
+<h1>All Doctors</h1>
 <hr />
     <table id="table-1">
         <thead>
             <tr>
-                <td>Serial Number</td><td>First</td><td>Middle Initial</td><td>Last</td><td>Phone</td><td>Email</td><td>Note</td><td>Salutation</td><td>Clinic</td>
+                <td>Serial Number</td><td>First</td><td>Middle Initial</td><td>Last</td><td>Phone</td><td>Email</td><td>Note</td><td>Salutation</td><td>Clinic</td><td>Clinic Serial Num</td><td>Delete?</td>
             </tr>
         </thead>
         <tbody>
         {% for d in doctors %}
         <tr>
-            <td>{{ d.doctorSerialNum }}</td><td>{{ d.first }}</td><td>{{ d.middle }}</td><td>{{ d.last }}</td><td>{{ d.cell }}</td><td>{{ d.phone }}</td><td>{{ d.email }}</td><td>{{ d.note }}</td><td>{{ d.salutation }}</td><td>{{ d.clinic }}</td>
+            <td>{{ d.doctorSerialNum }}</td><td>{{ d.first }}</td><td>{{ d.middle }}</td><td>{{ d.last }}</td><td>{{ d.phone }}</td><td>{{ d.email }}</td><td>{{ d.note }}</td><td>{{ d.salutation }}</td><td>{{ d.clinicName }}</td><td>{{ d.clinicSerialNum }}</td><td>Delete?</td>
         </tr>
         {% endfor %}
         </tbody>

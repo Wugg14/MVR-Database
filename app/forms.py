@@ -2,6 +2,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
+from app.getCurrentClinics import get_current_clinics
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -112,7 +114,7 @@ class miscService (FlaskForm):
     submit = SubmitField('Save')
 
 class newClinicForm (FlaskForm):
-    company = StringField('Company:', validators=[DataRequired()])
+    company = SelectField('Company:', validators=[DataRequired()])
     nickname = StringField('Nickname:', validators=[DataRequired()])
     street = StringField('Street:', validators=[DataRequired()])
     city = StringField('City:', validators=[DataRequired()])
@@ -124,7 +126,7 @@ class newClinicForm (FlaskForm):
     submit = SubmitField('Save')
 
 class newDoctor (FlaskForm):
-    clinic = StringField('Company:', validators=[DataRequired()])
+    clinic = SelectField('Company:', validators=[DataRequired()], choices=get_current_clinics())
     first = StringField('First Name:', validators=[DataRequired()])
     middle = StringField('Middle Initial:')
     last = StringField('Last Name:', validators=[DataRequired()])
@@ -132,6 +134,15 @@ class newDoctor (FlaskForm):
     email = StringField('Email:', validators=[DataRequired()])
     note = StringField('Notes:', validators=[DataRequired()])
     submit = SubmitField('Save')
+
+
+
+
+
+
+
+
+
 
 
 

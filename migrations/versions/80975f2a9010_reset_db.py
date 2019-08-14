@@ -1,8 +1,8 @@
-"""reset migration and db
+"""reset db
 
-Revision ID: cd2319302275
+Revision ID: 80975f2a9010
 Revises: 
-Create Date: 2019-08-12 19:05:45.337276
+Create Date: 2019-08-14 15:20:23.085574
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'cd2319302275'
+revision = '80975f2a9010'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -35,7 +35,7 @@ def upgrade():
     )
     op.create_table('report_US',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('_KF_Doctor', sa.String(length=140), nullable=True),
+    sa.Column('docSerialNum', sa.String(length=20), nullable=True),
     sa.Column('patient', sa.String(length=24), nullable=True),
     sa.Column('owner', sa.String(length=24), nullable=True),
     sa.Column('species', sa.String(length=6), nullable=True),
@@ -57,14 +57,12 @@ def upgrade():
     sa.Column('SF_Uterus', sa.String(length=12), nullable=True),
     sa.Column('Conclusions_ALL', sa.String(length=360), nullable=True),
     sa.Column('FINDAS_ALL', sa.String(length=360), nullable=True),
-    sa.Column('MVI_SIG_Doctor', sa.String(length=12), nullable=True),
-    sa.Column('date', sa.DateTime(), nullable=True),
+    sa.Column('date', sa.String(length=12), nullable=True),
     sa.Column('clinicSerialNum', sa.Integer(), nullable=True),
     sa.Column('clinicName', sa.String(length=24), nullable=True),
     sa.Column('doctor', sa.String(length=24), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_index(op.f('ix_report_US_date'), 'report_US', ['date'], unique=False)
     op.create_table('user',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=64), nullable=True),
@@ -109,7 +107,6 @@ def downgrade():
     op.drop_index(op.f('ix_user_username'), table_name='user')
     op.drop_index(op.f('ix_user_email'), table_name='user')
     op.drop_table('user')
-    op.drop_index(op.f('ix_report_US_date'), table_name='report_US')
     op.drop_table('report_US')
     op.drop_table('clinic')
     # ### end Alembic commands ###

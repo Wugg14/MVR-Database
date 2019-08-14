@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Clinic, Doctor
+from app.models import User, Clinic, Doctor, Report_US
 from app.email import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -95,6 +95,14 @@ def reset_password(token):
 @app.route('/ultrasound', methods=['GET', 'POST'])
 def ultrasound():
     form = UltrasoundForm()
+    if form.validate_on_submit():
+        clinicData = form.practice.data
+        doctorData = form.doctor.data
+        ultrasound = Report_US(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], patient=form.patient.data, owner=form.owner.data, species=form.species.data, breed=form.breed.data, sexPatient=form.sex.data, agePetient=form.age.data, clinicalHistory=form.age.data, SF_Liver=form.liver.data, SF_Spleen=form.spleen.data, SF_Stomach=form.stomach.data, SF_Pancreas=form.pancreas.data, SF_Intestines=form.intestines.data, SF_Adrenals=form.adrenals.data, SF_LKidney=form.lKidney.data, SF_RKidney=form.rKidney.data, SF_Bladder=form.bladder.data, SF_Sublum=form.sublum.data, SF_Prostate=form.prostate.data, SF_Uterus=form.uterus.data, Conclusions_ALL=form.conclusions.data, FINDAS_ALL=form.findings.data, date=form.date.data)
+        db.session.add(ultrasound)
+        db.session.commit()
+        flash('Added Ultrasound Report to database')
+        return redirect(url_for('ultrasound'))
     return render_template('ultrasound.html', title='Ultrasound Report', form=form)
 
 @app.route('/radiograph', methods=['GET', 'POST'])
@@ -143,9 +151,14 @@ def newDoc():
 @app.route('/clinictable', methods=['GET', 'POST'])
 def clinicTable():
     clinics = Clinic.query.all()
-    return render_template('clinicTable.html',  title='All Clinics', clinics=clinics)
+    return render_template('/tables/clinicTable.html',  title='All Clinics', clinics=clinics)
 
 @app.route('/doctortable', methods=['GET', 'POST'])
 def doctorTable():
     doctors = Doctor.query.all()
-    return render_template('doctorTable.html',  title='All Doctors', doctors=doctors)
+    return render_template('/tables/doctorTable.html',  title='All Doctors', doctors=doctors)
+
+@app.route('/ultrasoundtable', methods=['GET'])
+def ultrasoundTable():
+    ultrasounds = Report_US.query.all()
+    return render_template('/tables/ultrasoundTable.html', title='All Ultrasounds', ultrasounds=ultrasounds)

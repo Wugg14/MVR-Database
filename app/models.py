@@ -53,7 +53,7 @@ class Post(db.Model):
 """Ultrasound Database Class"""
 class Report_US (db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    _KF_Doctor = db.Column(db.String(140))
+    docSerialNum = db.Column(db.String(20))
     patient = db.Column(db.String(24))
     owner = db.Column(db.String(24))
     species = db.Column(db.String(6))
@@ -75,14 +75,14 @@ class Report_US (db.Model):
     SF_Uterus = db.Column(db.String(12))
     Conclusions_ALL = db.Column(db.String(360))
     FINDAS_ALL = db.Column(db.String(360))
-    MVI_SIG_Doctor = db.Column(db.String(12))
-    date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    date = db.Column(db.String(12))
     clinicSerialNum = db.Column(db.Integer())
     clinicName = db.Column(db.String(24))
     doctor = db.Column(db.String(24))
 
     def __repr__(self):
         return '<Ultrasound {}>'.format(self.id)
+
 
 class Clinic(db.Model):
     clinicSerialNum = db.Column(db.String(64), primary_key=True)
@@ -99,6 +99,7 @@ class Clinic(db.Model):
 
     def __repr__(self):
         return '<Clinic {}>'.format(self.company)
+
 
 class Doctor(db.Model):
     doctorSerialNum = db.Column(db.String(64), primary_key=True)

@@ -3,6 +3,7 @@ from wtforms import StringField, IntegerField, PasswordField, BooleanField, Subm
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 from app.getCurrentClinics import get_current_clinics
+from app.getCurrentDoctors import get_current_doctors
 
 
 class LoginForm(FlaskForm):
@@ -45,14 +46,38 @@ class ResetPasswordForm(FlaskForm):
     submit = SubmitField('Request Password Reset')
 
 
+class newClinicForm (FlaskForm):
+    company = StringField('Company:', validators=[DataRequired()])
+    nickname = StringField('Nickname:', validators=[DataRequired()])
+    street = StringField('Street:', validators=[DataRequired()])
+    city = StringField('City:', validators=[DataRequired()])
+    state = StringField('State:', validators=[DataRequired()])
+    zip = IntegerField('Zip Code:', validators=[DataRequired()])
+    phone = IntegerField('Phone:', validators=[DataRequired()])
+    email = StringField('Email:', validators=[DataRequired()])
+    notes = StringField('Notes:')
+    submit = SubmitField('Save')
+
+class newDoctor (FlaskForm):
+    clinic = SelectField('Company:', validators=[DataRequired()], choices=get_current_clinics())
+    first = StringField('First Name:', validators=[DataRequired()])
+    middle = StringField('Middle Initial:')
+    last = StringField('Last Name:', validators=[DataRequired()])
+    phone = IntegerField('Phone:', validators=[DataRequired()])
+    email = StringField('Email:', validators=[DataRequired()])
+    note = StringField('Notes:', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
+
+
 class UltrasoundForm (FlaskForm):
     date = StringField('Date:', validators=[DataRequired()])
     patient = StringField('Patient:', validators=[DataRequired()])
     breed = StringField('Breed:', validators=[DataRequired()])
-    doctor = StringField('Doctor:', validators=[DataRequired()])
+    doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
     owner = StringField('Owner:', validators=[DataRequired()])
     sex = StringField('Sex:', validators=[DataRequired()])
-    practice = StringField('Practice:', validators=[DataRequired()])
+    practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     species = StringField('Species:', validators=[DataRequired()])
     age = IntegerField('Age:', validators=[DataRequired()])
     clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
@@ -113,27 +138,6 @@ class miscService (FlaskForm):
     description = StringField('Service Description:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
-class newClinicForm (FlaskForm):
-    company = SelectField('Company:', validators=[DataRequired()])
-    nickname = StringField('Nickname:', validators=[DataRequired()])
-    street = StringField('Street:', validators=[DataRequired()])
-    city = StringField('City:', validators=[DataRequired()])
-    state = StringField('State:', validators=[DataRequired()])
-    zip = IntegerField('Zip Code:', validators=[DataRequired()])
-    phone = IntegerField('Phone:', validators=[DataRequired()])
-    email = StringField('Email:', validators=[DataRequired()])
-    notes = StringField('Notes:')
-    submit = SubmitField('Save')
-
-class newDoctor (FlaskForm):
-    clinic = SelectField('Company:', validators=[DataRequired()], choices=get_current_clinics())
-    first = StringField('First Name:', validators=[DataRequired()])
-    middle = StringField('Middle Initial:')
-    last = StringField('Last Name:', validators=[DataRequired()])
-    phone = IntegerField('Phone:', validators=[DataRequired()])
-    email = StringField('Email:', validators=[DataRequired()])
-    note = StringField('Notes:', validators=[DataRequired()])
-    submit = SubmitField('Save')
 
 
 

@@ -22,7 +22,7 @@
          {% endfor %}
      </div>
          <div class="form-section" id="middle">
-         {{ form.middle.label }}
+         {{ form.middle.label +}}
          {{ form.middle(size=2) }}
          {% for error in form.middle.errors %}
          <br />

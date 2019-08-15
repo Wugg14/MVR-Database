@@ -79,6 +79,7 @@ class UltrasoundForm (FlaskForm):
     sex = StringField('Sex:', validators=[DataRequired()])
     practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     species = StringField('Species:', validators=[DataRequired()])
+    mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
     age = IntegerField('Age:', validators=[DataRequired()])
     clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
     liver = SelectField('Liver/Gall bl:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below')])

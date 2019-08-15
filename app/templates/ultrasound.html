@@ -57,6 +57,14 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </div>
+            <div class="form-section" id="mvr4seasons">
+                {{ form.mvr4seasons.label }}
+                {{ form.mvr4seasons(size=1) }}
+                {% for error in form.mvr4seasons.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
         </div>
             <div class="top-column">
             <div class="form-section" id="breed">

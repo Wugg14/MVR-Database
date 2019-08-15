@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52f5fe33-c625-4b1c-a985-8ea922275c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/clinicForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/clinicForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/doctorForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/doctorForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/tables/ultrasoundTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/tables/ultrasoundTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/ultrasound.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ultrasound.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +133,7 @@
       <workItem from="1565646995880" duration="6143000" />
       <workItem from="1565711551305" duration="7009000" />
       <workItem from="1565811430584" duration="1153000" />
-      <workItem from="1565886610989" duration="5175000" />
+      <workItem from="1565886610989" duration="8026000" />
     </task>
     <servers />
   </component>

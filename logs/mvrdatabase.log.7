@@ -1,61 +1,4 @@
-2019-08-09 12:58:49,131 ERROR: Exception on /newclinic [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 112, in newClinic
-    return render_template('clinicForm.html', title='CT Report', form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\clinicForm.html", line 100, in template
-    {% endfor %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 170, in parse_statements
-    self.fail_eof(end_tokens)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 104, in fail_eof
-    return self._fail_ut_eof(None, stack, lineno)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2019-08-09 13:03:15,592 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-09 13:04:59,390 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-09 13:05:37,736 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-09 13:07:45,106 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-09 13:07:46,815 ERROR: Exception on /newclinic [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2019-08-09 13:07:48,876 ERROR: Exception on /newclinic [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -90,3 +33,60 @@ Traceback (most recent call last):
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\clinicForm.html", line 79, in block "content"
     <p>{{ form.submit() }}</p>
 jinja2.exceptions.UndefinedError: 'app.forms.newClinicForm object' has no attribute 'submit'
+2019-08-09 13:08:04,706 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-09 15:16:35,015 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-09 15:16:54,114 ERROR: Exception on /newdoc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 117, in newDoc
+    return render_template('doctorForm.html', title='New Doctor', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 63, in template
+    <p>{{ form.submit() }}</p>
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2019-08-09 15:17:14,860 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-09 15:30:08,223 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]

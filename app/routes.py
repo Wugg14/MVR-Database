@@ -97,10 +97,12 @@ def ultrasound():
     form = UltrasoundForm()
     if form.validate_on_submit():
         clinicData = form.practice.data
+        clinicData = clinicData.split('__')
         print(clinicData)
         doctorData = form.doctor.data
+        doctorData = doctorData.split('__')
         print(clinicData)
-        ultrasound = Report_US(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], patient=form.patient.data, owner=form.owner.data, species=form.species.data, breed=form.breed.data, sexPatient=form.sex.data, agePatient=form.age.data, clinicalHistory=form.age.data, SF_Liver=form.liver.data, SF_Spleen=form.spleen.data, SF_Stomach=form.stomach.data, SF_Pancreas=form.pancreas.data, SF_Intestines=form.intestines.data, SF_Adrenals=form.adrenals.data, SF_LKidney=form.lKidney.data, SF_RKidney=form.rKidney.data, SF_Bladder=form.bladder.data, SF_Sublum=form.sublum.data, SF_Prostate=form.prostate.data, SF_Uterus=form.uterus.data, Conclusions_ALL=form.conclusions.data, FINDAS_ALL=form.findings.data, date=form.date.data)
+        ultrasound = Report_US(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], patient=form.patient.data, owner=form.owner.data, species=form.species.data, breed=form.breed.data, sexPatient=form.sex.data, agePatient=form.age.data, clinicalHistory=form.age.data, SF_Liver=form.liver.data, SF_Spleen=form.spleen.data, SF_Stomach=form.stomach.data, SF_Pancreas=form.pancreas.data, SF_Intestines=form.intestines.data, SF_Adrenals=form.adrenals.data, SF_LKidney=form.lKidney.data, SF_RKidney=form.rKidney.data, SF_Bladder=form.bladder.data, SF_Sublum=form.sublum.data, SF_Prostate=form.prostate.data, SF_Uterus=form.uterus.data, Conclusions_ALL=form.conclusions.data, FINDAS_ALL=form.findings.data, date=form.date.data, mvr4seasons=form.mvr4seasons.data)
         db.session.add(ultrasound)
         db.session.commit()
         print('ultrasound saved')

@@ -79,9 +79,12 @@ class Report_US (db.Model):
     clinicSerialNum = db.Column(db.Integer())
     clinicName = db.Column(db.String(24))
     doctor = db.Column(db.String(24))
+    mvr4seasons = db.Column(db.String(24))
 
     def __repr__(self):
-        return '<Ultrasound {}>'.format(self.id)
+        return '<Ultrasound {}>'.format(self.patient)
+
+
 
 
 class Clinic(db.Model):

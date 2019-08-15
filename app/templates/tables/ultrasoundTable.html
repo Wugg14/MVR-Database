@@ -12,7 +12,7 @@
     <tbody>
     {% for u in ultrasounds %}
     <tr>
-        <td>u.date</td><td>u.doctor</td><td>Practice</td><td>Patient</td><td>Owner</td><td>Species</td><td>Breed</td><td>Sex</td><td>Age</td><td>See Full Report</td>
+        <td>{{ u.date }}</td><td>{{ u.doctor }}</td><td>{{ u.clinicName }}</td><td>{{ u.patient }}</td><td>{{ u.owner }}</td><td>{{ u.species }}</td><td>{{ u.breed }}</td><td>{{ u.sexPatient }}</td><td>{{ u.agePatient }}</td><td>See Full Report</td>
     </tr>
     {% endfor %}
     </tbody>

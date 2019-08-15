@@ -4,6 +4,7 @@
     <h1>Ultrasound Report</h1>
     <hr/>
     <form action="" method="post">
+        {{ form.hidden_tag() }}
         <div class="top-row">
             <div class="top-column">
             <div class="form-section" id="date">
@@ -222,6 +223,4 @@
         <p>{{ form.submit() }}</p>
     </form>
 </div>
-
-
 {% endblock %}

@@ -5,7 +5,6 @@ from app.models import User
 from app.getCurrentClinics import get_current_clinics
 from app.getCurrentDoctors import get_current_doctors
 
-
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -100,12 +99,13 @@ class UltrasoundForm (FlaskForm):
 
 class radiographicInterpretationForm (FlaskForm):
     date = StringField('Date:', validators=[DataRequired()])
+    mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
     patient = StringField('Patient:', validators=[DataRequired()])
     species = StringField('Species:', validators=[DataRequired()])
     owner = StringField('Owner:', validators=[DataRequired()])
-    doctor = StringField('Doctor:', validators=[DataRequired()])
-    Rad_Image_Date = StringField('Date:', validators=[DataRequired()])
-    practice = StringField('Practice:', validators=[DataRequired()])
+    doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
+    Rad_Image_Date = StringField('Image Date:', validators=[DataRequired()])
+    practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     Rad_NumImages = IntegerField('No. of Images:', validators=[DataRequired()])
     phone = IntegerField('Phone:', validators=[DataRequired()])
     views = StringField('Views:', validators=[DataRequired()])

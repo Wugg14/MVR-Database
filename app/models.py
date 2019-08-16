@@ -50,6 +50,29 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post {}>'.format(self.body)
 
+
+class Report_Radiographic(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    doctor = db.Column(db.String(24))
+    docSerialNum = db.Column(db.String(20))
+    patient = db.Column(db.String(24))
+    species = db.Column(db.String(6))
+    owner = db.Column(db.String(24))
+    Rad_Image_Date = db.Column(db.String(12))
+    Rad_NumImages = db.Column(db.Integer)
+    RadView = db.Column(db.String(24))
+    Rad_Findings = db.Column(db.String(360))
+    Rad_Conclusions = db.Column(db.String(360))
+    Clinic_Phone = db.Column(db.String(20))
+    date = db.Column(db.String(12))
+    clinicSerialNum = db.Column(db.Integer())
+    clinic = db.Column(db.String(24))
+    mvr4seasons = db.Column(db.String(24))
+
+    def __repr__(self):
+        return '<Ultrasound {}>'.format(self.patient)
+
+
 """Ultrasound Database Class"""
 class Report_US (db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -83,8 +106,6 @@ class Report_US (db.Model):
 
     def __repr__(self):
         return '<Ultrasound {}>'.format(self.patient)
-
-
 
 
 class Clinic(db.Model):

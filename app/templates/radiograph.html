@@ -3,7 +3,9 @@
 <div class="radiograph-form">
     <h1>Radiographic Interpretation</h1>
     <hr />
-    <div class="top-row">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="top-row">
         <div class="top-column">
             <div class="form-section" id="date">
                 {{ form.date.label }}
@@ -13,9 +15,17 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </div>
+            <div class="form-section" id="mvr4seasons">
+                {{ form.mvr4seasons.label }}
+                {{ form.mvr4seasons(size=1) }}
+                {% for error in form.mvr4seasons.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
             <div class="form-section" id="doctor">
                 {{ form.doctor.label }}
-                {{ form.doctor(size=10) }}
+                {{ form.doctor(size=1) }}
                 {% for error in form.doctor.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -23,7 +33,7 @@
             </div>
             <div class="form-section" id="practice">
                 {{ form.practice.label }}
-                {{ form.practice(size=24) }}
+                {{ form.practice(size=1) }}
                 {% for error in form.practice.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -110,7 +120,8 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
-    <br />
-    <p>{{ form.submit() }}</p>
+        <br />
+        <p>{{ form.submit() }}</p>
+    </form>
 </div>
 {% endblock %}

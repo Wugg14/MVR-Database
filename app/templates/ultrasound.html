@@ -17,7 +17,7 @@
             </div>
             <div class="form-section" id="doctor">
                 {{ form.doctor.label }}
-                {{ form.doctor(size=10) }}
+                {{ form.doctor(size=1) }}
                 {% for error in form.doctor.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -25,7 +25,7 @@
             </div>
             <div class="form-section" id="practice">
                 {{ form.practice.label }}
-                {{ form.practice(size=24) }}
+                {{ form.practice(size=1) }}
                 {% for error in form.practice.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>

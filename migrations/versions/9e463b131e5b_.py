@@ -1,8 +1,8 @@
-"""reset db
+"""empty message
 
-Revision ID: 80975f2a9010
+Revision ID: 9e463b131e5b
 Revises: 
-Create Date: 2019-08-14 15:20:23.085574
+Create Date: 2019-08-16 12:45:30.883349
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '80975f2a9010'
+revision = '9e463b131e5b'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -61,6 +61,26 @@ def upgrade():
     sa.Column('clinicSerialNum', sa.Integer(), nullable=True),
     sa.Column('clinicName', sa.String(length=24), nullable=True),
     sa.Column('doctor', sa.String(length=24), nullable=True),
+    sa.Column('mvr4seasons', sa.String(length=24), nullable=True),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('report__radiographic',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('doctor', sa.String(length=24), nullable=True),
+    sa.Column('docSerialNum', sa.String(length=20), nullable=True),
+    sa.Column('patient', sa.String(length=24), nullable=True),
+    sa.Column('species', sa.String(length=6), nullable=True),
+    sa.Column('owner', sa.String(length=24), nullable=True),
+    sa.Column('Rad_Image_Date', sa.String(length=12), nullable=True),
+    sa.Column('Rad_NumImages', sa.Integer(), nullable=True),
+    sa.Column('RadView', sa.String(length=24), nullable=True),
+    sa.Column('Rad_Findings', sa.String(length=360), nullable=True),
+    sa.Column('Rad_Conclusions', sa.String(length=360), nullable=True),
+    sa.Column('Clinic_Phone', sa.String(length=20), nullable=True),
+    sa.Column('date', sa.String(length=12), nullable=True),
+    sa.Column('clinicSerialNum', sa.Integer(), nullable=True),
+    sa.Column('clinic', sa.String(length=24), nullable=True),
+    sa.Column('mvr4seasons', sa.String(length=24), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
@@ -107,6 +127,7 @@ def downgrade():
     op.drop_index(op.f('ix_user_username'), table_name='user')
     op.drop_index(op.f('ix_user_email'), table_name='user')
     op.drop_table('user')
+    op.drop_table('report__radiographic')
     op.drop_table('report_US')
     op.drop_table('clinic')
     # ### end Alembic commands ###

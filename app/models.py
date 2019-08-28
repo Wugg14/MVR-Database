@@ -163,6 +163,17 @@ class Doctor(db.Model):
     def __repr__(self):
         return '<Doctor {}>'.format(self.last)
 
+class MiscService(db.Model):
+    serviceID = db.Column(db.String(20), primary_key=True)
+    serviceType = db.Column(db.String(20))
+    serviceAbbr = db.Column(db.String(10))
+    reportType = db.Column(db.String(5))
+    description = db.Column(db.String(144))
+    price = db.Column(db.Numeric)
+
+    def __repr__(self):
+        return '<Service {}>'.format(self.serviceType)
+
 
 
 

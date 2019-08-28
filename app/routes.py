@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, flash
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService
+from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT
 from app.email import send_password_reset_email
@@ -172,6 +172,11 @@ def newDoc():
         return redirect(url_for('newDoc'))
 
     return render_template('doctorForm.html', title='New Doctor', form=form)
+
+@app.route('/newservice', methods=['GET', 'POST'])
+def newMiscService():
+    form = newService()
+    return render_template('newService.html', title='New Misc Service', form=form)
 
 
 @app.route('/clinictable', methods=['GET', 'POST'])

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
+from wtforms import StringField, IntegerField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField, FloatField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 from app.getCurrentClinics import get_current_clinics
@@ -140,6 +140,13 @@ class miscService (FlaskForm):
     description = StringField('Service Description:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
+class newService (FlaskForm):
+    serviceType = StringField('Service Type:', validators=[DataRequired()])
+    serviceAbbr = StringField('Service Abbreviation:', validators=[DataRequired()])
+    ReportType = SelectField('Report Type:', validators=[DataRequired()], choices=[('US', 'Ultrasound'), ('Misc', 'Misc'), ('Rad', 'Radiographic'), ('CT', 'CT'), ('Echo', 'Echocardiograph')])
+    description = StringField('Description:', validators=[DataRequired()])
+    price = FloatField('Price:', validators=[DataRequired()])
+    submit = SubmitField('Save')
 
 
 

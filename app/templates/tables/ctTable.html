@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<h1>All CT Reports</h1>
+<hr />
+<table id="table-1">
+    <thead>
+        <td>Date</td><td>4 Seasons or MVR?</td><td>Doctor</td><td>Practice</td><td>Patient</td><td>Owner</td><td>Species</td><td>Number of Images</td><td>Views</td><td>Full Report</td>
+    </thead>
+    <tbody>
+    {% for c in ct %}
+    <tr>
+        <td>{{ c.date }}</td><td>{{ c.mvr4seasons }}</td><td>{{ c.doctor }}</td><td>{{ c.clinic }}</td><td>{{ c.patient }}</td><td>{{ c.owner }}</td><td>{{ c.species }}</td><td>{{ c.CT_NumImages }}</td><td>{{ c.CTView }}</td><td>See Full Report</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<script>
+    $(document).ready( function () {
+        $('#table-1').DataTable();
+    } );
+</script>
+{% endblock %}

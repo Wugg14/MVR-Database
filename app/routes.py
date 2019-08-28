@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic
+from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT
 from app.email import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -104,7 +104,7 @@ def ultrasound():
         db.session.add(ultrasound)
         db.session.commit()
         flash('Added Ultrasound Report to database')
-        return redirect(url_for('ultrasoundTable'))
+        return redirect(url_for('ultrasound'))
     return render_template('ultrasound.html', title='Ultrasound Report', form=form)
 
 @app.route('/radiograph', methods=['GET', 'POST'])
@@ -117,7 +117,7 @@ def radiograph():
         doctorData = form.doctor.data
         doctorData = doctorData.split('__')
         print(clinicData)
-        radiographReport = Report_Radiographic(doctor=doctorData[0], docSerialNum=doctorData[1], clinic=clinicData[0], clinicSerialNum=clinicData[1], patient=form.patient.data, species=form.species.data, owner=form.owner.data, Rad_Image_Date=form.Rad_Image_Date.data, Rad_NumImages=form.Rad_NumImages.data, RadView=form.views.data, Rad_Findings=form.Rad_Findings.data,Rad_Conclusions=form.Rad_Conclusions.data, Clinic_Phone=form.phone.data,mvr4seasons=form.mvr4seasons.data)
+        radiographReport = Report_Radiographic(date=form.date.data, doctor=doctorData[0], docSerialNum=doctorData[1], clinic=clinicData[0], clinicSerialNum=clinicData[1], patient=form.patient.data, species=form.species.data, owner=form.owner.data, Rad_Image_Date=form.Rad_Image_Date.data, Rad_NumImages=form.Rad_NumImages.data, RadView=form.views.data, Rad_Findings=form.Rad_Findings.data, Rad_Conclusions=form.Rad_Conclusions.data, Clinic_Phone=form.phone.data, mvr4seasons=form.mvr4seasons.data)
         db.session.add(radiographReport)
         db.session.commit()
         flash('Added report to database')
@@ -127,6 +127,18 @@ def radiograph():
 @app.route('/ct', methods=['GET', 'POST'])
 def CT():
     form = ctInterpretationForm()
+    if form.validate_on_submit():
+        clinicData = form.practice.data
+        clinicData = clinicData.split('__')
+        print(clinicData)
+        doctorData = form.doctor.data
+        doctorData = doctorData.split('__')
+        print(clinicData)
+        ctReport = Report_CT(doctor=doctorData[0], docSerialNum=doctorData[1], clinic=clinicData[0], clinicSerialNum=clinicData[1], patient=form.patient.data, species=form.species.data, owner=form.owner.data, CT_Image_Date=form.CT_Image_Date.data, CT_NumImages=form.CT_NumImages.data, CTView=form.views.data, CT_Findings=form.CT_Findings.data, CT_Conclusions=form.CT_Conclusions.data, Clinic_Phone=form.phone.data, date=form.date.data, mvr4seasons=form.mvr4seasons.data)
+        db.session.add(ctReport)
+        db.session.commit()
+        flash('Added report to database')
+        return redirect(url_for('ct'))
     return render_template('ct.html', title='CT Report', form=form)
 
 @app.route('/misc', methods=['GET', 'POST'])
@@ -181,3 +193,8 @@ def ultrasoundTable():
 def radiographTable():
     radiographs = Report_Radiographic.query.all()
     return render_template('/tables/radiographTable.html', title='All Radiographic Reports', radiographs=radiographs)
+
+@app.route('/cttable', methods=['GET'])
+def ctTable():
+    ct = Report_CT.query.all()
+    return render_template('/tables/ctTable.html', title='All CT Reports', ct=ct)

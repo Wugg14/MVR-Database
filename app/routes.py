@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT
+from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService
 from app.email import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -176,9 +176,17 @@ def newDoc():
 @app.route('/newservice', methods=['GET', 'POST'])
 def newMiscService():
     form = newService()
+    if form.validate_on_submit():
+        print('validated')
+        service = MiscService(serviceID=randomStringDigits(8), serviceType=form.serviceType.data, serviceAbbr=form.serviceAbbr.data, reportType=form.ReportType.data, description=form.description.data, price=form.price.data)
+        db.session.add(service)
+        db.session.commit()
+        flash('Added Service to database')
+        return redirect(url_for('newMiscService'))
     return render_template('newService.html', title='New Misc Service', form=form)
 
 
+#Tables for displaying DB entries
 @app.route('/clinictable', methods=['GET', 'POST'])
 def clinicTable():
     clinics = Clinic.query.all()
@@ -203,3 +211,8 @@ def radiographTable():
 def ctTable():
     ct = Report_CT.query.all()
     return render_template('/tables/ctTable.html', title='All CT Reports', ct=ct)
+
+@app.route('/servicestable', methods=['GET'])
+def servicesTable():
+    services = MiscService.query.all()
+    return render_template('/tables/servicesTable.html', title='All Misc Services', services=services)

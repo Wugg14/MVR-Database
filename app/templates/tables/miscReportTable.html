@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<h1>All Misc Reports</h1>
+<hr />
+    <table id="table-1">
+        <thead>
+            <tr>
+                <td>id</td><td>4 Seasons or MVR?</td><td>Doctor</td><td>Clinic</td><td>Patient</td><td>Owner</td><td>Service</td><td>Total</td><td>See Full Report</td><td>Delete?</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in reports %}
+        <tr>
+            <td>{{ r.id }}</td><td>{{ r.mvr4seasons }}</td><td>{{ r.doctor }}</td><td>{{ r.clinicName }}</td><td>{{ r.patient }}</td><td>{{ r.owner }}</td><td>{{ r.service }}</td><td>{{ r.SvcTotal }}</td><td> See Full Report </td><td>Delete?</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<script>
+    $(document).ready( function () {
+        $('#table-1').DataTable();
+    } );
+</script>
+{% endblock %}

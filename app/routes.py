@@ -1,9 +1,9 @@
 from flask import render_template, request, redirect, url_for, flash
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService
+from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService
+from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc
 from app.email import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -144,7 +144,24 @@ def CT():
 @app.route('/misc', methods=['GET', 'POST'])
 def misc():
     form = miscService()
-    return render_template('miscService.html', title='Misc Service Report', form=form)
+    if form.validate_on_submit():
+        clinicData = form.practice.data
+        clinicData = clinicData.split('__')
+        print(clinicData)
+        doctorData = form.doctor.data
+        doctorData = doctorData.split('__')
+        print(clinicData)
+        miscReport = Report_Misc(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], mvr4seasons=form.mvr4seasons.data, patient=form.patient.data, owner=form.owner.data, service=form.service.data, SvcTotal=form.charge.data, Misc_Service_Description=form.description.data, date=form.date.data)
+        db.session.add(miscReport)
+        db.session.commit()
+        flash('Added report to database')
+        return redirect(url_for('misc'))
+    return render_template('miscService.html', title='Misc Service Report', form=form,)
+
+@app.route('/cardiograph', methods=['GET', 'POST'])
+def cardiographic():
+    form = EchocardiographForm()
+    return render_template('echocardiograph.html', title='Echocardiography Report', form=form)
 
 
 @app.route('/newclinic', methods=['GET', 'POST'])
@@ -211,6 +228,11 @@ def radiographTable():
 def ctTable():
     ct = Report_CT.query.all()
     return render_template('/tables/ctTable.html', title='All CT Reports', ct=ct)
+
+@app.route('/misctable', methods=['GET'])
+def miscTable():
+    reports = Report_Misc.query.all()
+    return render_template('/tables/miscReportTable.html', title='All Misc Reports', reports=reports)
 
 @app.route('/servicestable', methods=['GET'])
 def servicesTable():

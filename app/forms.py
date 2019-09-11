@@ -4,6 +4,7 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 from app.getCurrentClinics import get_current_clinics
 from app.getCurrentDoctors import get_current_doctors
+from app.getCurrentServices import get_current_services
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -65,6 +66,24 @@ class newDoctor (FlaskForm):
     phone = IntegerField('Phone:', validators=[DataRequired()])
     email = StringField('Email:', validators=[DataRequired()])
     note = StringField('Notes:', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
+
+class EchocardiographForm (FlaskForm):
+    date = StringField('Date:', validators=[DataRequired()])
+    mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
+    doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
+    practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
+    patient = StringField('Patient:', validators=[DataRequired()])
+    owner = StringField('Owner:', validators=[DataRequired()])
+    species = StringField('Species:', validators=[DataRequired()])
+    breed = StringField('Breed:', validators=[DataRequired()])
+    sex = StringField('Sex:', validators=[DataRequired()])
+    weight = StringField('Weight:', validators=[DataRequired()])
+    clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
+    LVFW_Distolic_Thickness = StringField('LVFW_Distolic_Thickness:', validators=[DataRequired()])
+    lower_range_LV_wall_D = StringField('lower_range_LV_wall_D:')
+    upper_range_LV_wall_D = StringField('upper_range_LV_wall_D:')
     submit = SubmitField('Save')
 
 
@@ -131,11 +150,12 @@ class ctInterpretationForm (FlaskForm):
 
 class miscService (FlaskForm):
     date = StringField('Date:', validators=[DataRequired()])
-    doctor = StringField('Doctor:', validators=[DataRequired()])
-    practice = StringField('Practice:', validators=[DataRequired()])
+    mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
+    doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
+    practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     patient = StringField('Patient:', validators=[DataRequired()])
     owner = StringField('Owner:', validators=[DataRequired()])
-    service = StringField('Service:', validators=[DataRequired()])
+    service = SelectField('Service:', validators=[DataRequired()], choices=get_current_services())
     charge = StringField('Charge:', validators=[DataRequired()])
     description = StringField('Service Description:', validators=[DataRequired()])
     submit = SubmitField('Save')

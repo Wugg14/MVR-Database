@@ -1,60 +1,113 @@
-2019-08-12 18:00:50,513 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:08:20,786 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:10:21,627 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:35:51,178 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:35:59,077 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:52:00,622 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:52:07,930 ERROR: Exception on /clinictable [GET] [in c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py:1780]
+2019-08-14 15:22:36,050 ERROR: Exception on /newclinic [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
     raise value
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\routes.py", line 151, in clinicTable
-    clinics = Clinic.query.all()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 517, in __get__
-    mapper = orm.class_mapper(type)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\base.py", line 441, in class_mapper
-    mapper = _inspect_mapped_class(class_, configure=configure)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\base.py", line 420, in _inspect_mapped_class
-    mapper._configure_all()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1337, in _configure_all
-    configure_mappers()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 3229, in configure_mappers
-    mapper._post_configure_properties()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1947, in _post_configure_properties
-    prop.init()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\interfaces.py", line 196, in init
-    self.do_init()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1864, in do_init
-    self._generate_backref()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2073, in _generate_backref
-    % (backref_key, self, m)
-sqlalchemy.exc.ArgumentError: Error creating backref 'clinic' on relationship 'Clinic.doctors': property of that name exists on mapper 'mapped class Doctor->doctor'
-2019-08-12 18:54:59,155 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:55:07,901 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:56:10,752 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:56:33,646 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:56:42,963 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:58:14,595 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:58:32,073 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:59:13,485 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:59:20,507 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:59:23,663 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:59:29,735 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 18:59:37,342 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:02:39,763 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:03:59,527 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:04:18,995 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:05:23,417 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:05:45,273 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:06:00,959 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-12 19:06:10,884 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 133, in newClinic
+    return render_template('clinicForm.html', title='New Clinic', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\clinicForm.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\clinicForm.html", line 10, in block "content"
+    {{ form.company(size=10) }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
+    for value, label in self.choices:
+TypeError: 'NoneType' object is not iterable
+2019-08-14 15:26:25,412 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:26:26,949 ERROR: Exception on /newclinic [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 133, in newClinic
+    return render_template('clinicForm.html', title='New Clinic', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\clinicForm.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\clinicForm.html", line 10, in block "content"
+    {{ form.company(size=10) }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
+    for value, label in self.choices:
+TypeError: 'NoneType' object is not iterable
+2019-08-14 15:29:21,286 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:31:18,689 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:32:30,349 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:33:06,875 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:40:23,007 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:50:04,775 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:52:23,879 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:52:32,395 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:53:27,605 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-14 15:54:20,632 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:34:57,770 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:35:08,980 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:35:21,102 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:47:53,866 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:50:27,053 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:50:32,698 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:51:53,325 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:54:46,479 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:54:51,370 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 11:57:04,475 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 12:24:05,588 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 12:24:13,428 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 12:40:12,457 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 12:45:06,699 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 12:45:30,836 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-08-16 12:45:35,832 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]

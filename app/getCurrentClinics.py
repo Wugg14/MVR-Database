@@ -1,5 +1,5 @@
 from app.models import Clinic
-"""Queries all the clinics and the database and return the serial number and company name
+"""Queries all the clinics in the database and return the serial number and company name
 in a format that can be used as form options"""
 def get_current_clinics():
     choices = []

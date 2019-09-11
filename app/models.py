@@ -130,6 +130,23 @@ class Report_US (db.Model):
         return '<Ultrasound for {}>'.format(self.patient)
 
 
+class Report_Misc(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    doctor = db.Column(db.String(24))
+    docSerialNum = db.Column(db.String(20))
+    clinicSerialNum = db.Column(db.Integer())
+    clinicName = db.Column(db.String(24))
+    mvr4seasons = db.Column(db.String(24))
+    patient = db.Column(db.String(24))
+    owner = db.Column(db.String(24))
+    service = db.Column(db.String(24))
+    SvcTotal = db.Column(db.Numeric)
+    Misc_Service_Description = db.Column(db.String(300))
+    date = db.Column(db.String(12))
+
+    def __repr__(self):
+        return '<Misc Report for {}>'.format(self.patient)
+
 class Clinic(db.Model):
     clinicSerialNum = db.Column(db.String(64), primary_key=True)
     company = db.Column(db.String(64), unique=True)
@@ -173,11 +190,3 @@ class MiscService(db.Model):
 
     def __repr__(self):
         return '<Service {}>'.format(self.serviceType)
-
-
-
-
-
-
-
-

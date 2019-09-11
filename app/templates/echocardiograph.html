@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="radiograph-form">
+    <h1>Echocardiographic Interpretation</h1>
+    <hr />
+    <form action="" method="post">
+    {{ form.hidden_tag() }}
+        <div class="top-row">
+             <div class="top-column">
+                <div class="form-section" id="date">
+                {{ form.date.label }}
+                {{ form.date(size=10) }}
+                {% for error in form.date.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+                <div class="form-section" id="mvr4seasons">
+                    {{ form.mvr4seasons.label }}
+                    {{ form.mvr4seasons(size=1) }}
+                    {% for error in form.mvr4seasons.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                 </div>
+                <div class="form-section" id="doctor">
+                    {{ form.doctor.label }}
+                    {{ form.doctor(size=1) }}
+                    {% for error in form.doctor.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+                <div class="form-section" id="practice">
+                    {{ form.practice.label }}
+                    {{ form.practice(size=1) }}
+                    {% for error in form.practice.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+             </div>
+             <div class="top-column">
+                 <div class="form-section" id="patient">
+                {{ form.patient.label }}
+                {{ form.patient(size=12) }}
+                {% for error in form.patient.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+                 <div class="form-section" id="owner">
+                {{ form.owner.label }}
+                {{ form.owner(size=24) }}
+                {% for error in form.owner.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+                 <div class="form-section" id="species">
+                {{ form.species.label }}
+                {{ form.species(size=6) }}
+                {% for error in form.species.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            </div>
+             <div class="top-column">
+                 <div class="form-section" id="breed">
+                    {{ form.breed.label }}
+                    {{ form.breed(size=12) }}
+                    {% for error in form.breed.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                 </div>
+                 <div class="form-section" id="sex">
+                    {{ form.sex.label }}
+                    {{ form.sex(size=24) }}
+                    {% for error in form.sex.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                 </div>
+                 <div class="form-section" id="weight">
+                    {{ form.weight.label }}
+                    {{ form.weight(size=6) }}
+                    {% for error in form.weight.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+            </div>
+         </div>
+        <div id="clinicalHistory">
+            {{ form.clinicalHistory.label }}
+            {{ form.clinicalHistory(size=360) }}
+            {% for error in form.clinicalHistory.errors %}
+            <br />
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <br />
+        <div id="M-Mode Box">
+            <div id="M-Mode__Header">
+                <span>M-Mode</span><span>Value</span><span>Normal</span><span>Range</span><span>Result</span>
+            </div>
+            <div id="LV_Wall-d">
+                <span>LV Wall-d mm:</span> {{ form.LVFW_Distolic_Thickness(size=6) }} {{ form.lower_range_LV_wall_D(size=3) }} {{ form.upper_range_LV_wall_D(size=3) }} {{ form.LVFW_DT_result (size=4) }}
+            </div>
+            <div id="LV_Wall-s">
+                <span>LV Wall-s mm:</span> {{ form.LVFW_Systolic_Thickness(size=6) }} {{ form.lower_range_LV_wall_S(size=3) }} {{ form.upper_range_LV_wall_S(size=3) }} {{ form.LVFW_ST_result (size=4) }}
+            </div>
+            <div id="LV_Chamber-d">
+                <span>LV Chamber-d mm:</span> {{ form.Left_Vent_Diastolic(size=6) }} {{ form.lower_range_LV_Chamber_D(size=3) }} {{ form.upper_range_LV_Chamber_D(size=3) }} {{ form.LV_DD_result (size=4) }}
+            </div>
+            <div id="LV_Chamber-s">
+                <span>LV Chamber-s mm:</span> {{ form.Left_Vent_Systolic(size=6) }} {{ form.lower_range_LV_Chamber_S(size=3) }} {{ form.upper_range_LV_Chamber_S(size=3) }} {{ form.LV_SD_result (size=3) }} {{ form.LV_SD_result (size=4) }}
+            </div>
+            <div id="Fractional_Shortening">
+                <span>Fractional Shortening (%):</span> {{ form.Shortening_Fraction (size=6) }} {{ form.lower_range_fractional_shortening (size=3) }} {{ form.upper_range_fractional_shortening (size=3) }} {{ form.SF_result (size=4) }}
+            </div>
+            <div id="septum-d">
+                <span>Septum-d mm:</span> {{ form.IVS_Diastolic_Thickness (size=6) }} {{ form.lower_range_septum_d(size=3) }} {{ form.upper_range_septum_d(size=3) }} {{ form.IVS_DT_result (size=4) }}
+            </div>
+            <div id="septum-s">
+                <span>Septum-s mm:</span> {{ form.IVS_Systolic_Thickness (size=6) }} {{ form.lower_range_septum_s(size=3) }} {{ form.upper_range_septum_s(size=3) }} {{ form.IVS_ST_result (size=4) }}
+            </div>
+            <div id="aorta">
+                <span>Aorta, mm:</span> {{ form.Aortic_Root(size=6) }} {{ form.lower_range_aorta(size=3) }} {{ form.upper_range_aorta(size=3) }} {{ form.AR_result (size=4) }}
+            </div>
+            <div id="left-atrium">
+                <span>Left Atrium, mm:</span> {{ form.Left_Atrium(size=6) }} {{ form.lower_range_left_atrium(size=3) }} {{ form.upper_range_left_atrium(size=3) }} {{ form.LA_result (size=4) }}
+            </div>
+            <div id="la/ao">
+                <span>LA/AO:</span> {{ form.Left_Atrium_over_AO(size=6) }} {{ form.lower_range_la_over_ao(size=3) }} {{ form.upper_range_la_over_ao(size=3) }} {{ form.la_over_ao_result (size=4) }}
+            </div>
+            <div id="EPSS">
+                <span>EPSS, mm:</span> {{ form.EPSS(size=6) }} <span><</span> {{ form.upper_range_epss(size=3) }} {{ form.epss_result (size=4) }}
+            </div>
+        </div>
+        <br />
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+{% endblock %}

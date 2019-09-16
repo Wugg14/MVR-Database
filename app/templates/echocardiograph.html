@@ -58,13 +58,13 @@
                 {% endfor %}
             </div>
                  <div class="form-section" id="species">
-                {{ form.species.label }}
-                {{ form.species(size=6) }}
-                {% for error in form.species.errors %}
-                <br />
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </div>
+                    {{ form.species.label }}
+                    {{ form.species(size=6) }}
+                    {% for error in form.species.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
             </div>
              <div class="top-column">
                  <div class="form-section" id="breed">
@@ -102,7 +102,7 @@
             {% endfor %}
         </div>
         <br />
-        <div id="M-Mode Box">
+        <div id="M-Mode_Box">
             <div id="M-Mode__Header">
                 <span>M-Mode</span><span>Value</span><span>Normal</span><span>Range</span><span>Result</span>
             </div>
@@ -141,6 +141,41 @@
             </div>
         </div>
         <br />
+        <div id="M-Mode_Comments">
+            {{ form.m_mode_comments.label }}
+            {{ form.m_mode_comments(size=6) }}
+            {% for error in form.m_mode_comments.errors %}
+            <br />
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <hr />
+        <div id="echo_doppler_findings">
+            {{ form.echo_doppler_findings.label }}
+            {{ form.echo_doppler_findings(size=360) }}
+            {% for error in form.echo_doppler_findings.errors %}
+            <br />
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <hr />
+        <div id="Echo_B_mode_findings">
+            {{ form.Echo_B_mode_findings.label }}
+            {{ form.Echo_B_mode_findings(size=360) }}
+            {% for error in form.Echo_B_mode_findings.errors %}
+            <br />
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <hr />
+        <div id="Echo_Conclusions">
+            {{ form.Echo_Conclusions.label }}
+            {{ form.Echo_Conclusions(size=360) }}
+            {% for error in form.Echo_Conclusions.errors %}
+            <br />
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
         <p>{{ form.submit() }}</p>
     </form>
 </div>

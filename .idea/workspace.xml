@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52f5fe33-c625-4b1c-a985-8ea922275c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/echocardiograph.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/echocardiograph.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/21cbc671923f_.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/21cbc671923f_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/3ef6e3e24b8b_.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/3ef6e3e24b8b_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/9e463b131e5b_.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/9e463b131e5b_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/f92987044805_.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/f92987044805_.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +30,115 @@
     </expand>
     <select />
   </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.6030719">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/templates/echocardiograph.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="205">
+                  <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="30" />
+                  <folding>
+                    <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#2;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#div#2;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#style#0;n#span#0;n#div#5;n#form#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/templates/ultrasound.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3876">
+                  <caret line="228" column="14" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/templates/miscService.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret selection-end-line="1" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/templates/tables/doctorTable.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="21" selection-start-line="21" selection-end-line="26" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2686">
+                  <caret line="165" selection-start-line="165" selection-end-line="165" />
+                  <folding>
+                    <element signature="e#0#68#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/templates/echocardiograph.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="284">
+                  <caret line="142" column="14" lean-forward="true" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
+                  <folding>
+                    <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#2;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#div#3;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#4;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#div#5;n#form#0;n#div#0;n#!!top" />
+                    <element signature="n#style#0;n#span#0;n#div#5;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#div#6;n#form#0;n#div#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -61,14 +151,78 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/templates/echocardiograph.html" />
+        <option value="$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="345" />
+    <option name="y" value="159" />
+    <option name="width" value="1464" />
+    <option name="height" value="1092" />
+  </component>
   <component name="ProjectId" id="1PLIXeQlkHV0J8l0s3XsjphHd5I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MVR Flask Database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MVR Flask Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVR Flask Database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MVR Flask Database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVR Flask Database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MVR Flask Database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVR Flask Database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MVR Flask Database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVR Flask Database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MVR Flask Database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MVR Flask Database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MVR Flask Database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Authorize.net Get Batch IDs" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -138,6 +292,58 @@
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3422000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19159256" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294702" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3294702" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29801324" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3294702" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21341956" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294702" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3294702" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32781458" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3294702" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -147,6 +353,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -167,5 +379,38 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/echocardiograph.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="142" column="14" lean-forward="true" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#2;n#div#0;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#4;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#5;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#6;n#form#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

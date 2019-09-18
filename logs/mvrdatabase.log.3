@@ -1,4 +1,4 @@
-2019-09-06 11:57:31,109 ERROR: Exception on /misc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2019-09-10 12:37:19,448 ERROR: Exception on /misc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 147, in misc
-    return render_template('miscService.html', title='Misc Service Report', form=form)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 159, in misc
+    return render_template('miscService.html', title='Misc Service Report', form=form,)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -30,20 +30,13 @@ Traceback (most recent call last):
     {% extends "base.html" %}
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 30, in top-level template code
     {% block content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\miscService.html", line 56, in block "content"
-    {{ form.service(size=100) }}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
-    return self.meta.render_field(self, kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
-    return field.widget(field, **render_kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
-    for val, label, selected in field.iter_choices():
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
-    for value, label in self.choices:
-ValueError: too many values to unpack (expected 2)
-2019-09-06 12:01:23,844 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-06 12:07:36,329 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-06 12:07:40,832 ERROR: Exception on /misc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\miscService.html", line 35, in block "content"
+    {{ form.mvr4seasons.label }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.miscService object' has no attribute 'mvr4seasons'
+2019-09-10 12:38:39,051 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-10 12:38:40,950 ERROR: Exception on /misc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -57,8 +50,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 147, in misc
-    return render_template('miscService.html', title='Misc Service Report', form=form)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 159, in misc
+    return render_template('miscService.html', title='Misc Service Report', form=form,)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -75,21 +68,39 @@ Traceback (most recent call last):
     {% extends "base.html" %}
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 30, in top-level template code
     {% block content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\miscService.html", line 56, in block "content"
-    {{ form.service(size=100) }}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
-    return self.meta.render_field(self, kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
-    return field.widget(field, **render_kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
-    for val, label, selected in field.iter_choices():
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
-    for value, label in self.choices:
-ValueError: too many values to unpack (expected 2)
-2019-09-06 12:08:00,224 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-06 12:08:23,226 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-06 12:25:09,276 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-06 12:25:17,792 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-10 12:28:00,318 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-10 12:35:32,394 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-10 12:37:10,786 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\miscService.html", line 35, in block "content"
+    {{ form.mvr4seasons.label }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.miscService object' has no attribute 'mvr4seasons'
+2019-09-10 12:42:32,298 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-10 12:43:04,477 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-10 12:43:44,000 ERROR: Exception on /misc [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 154, in misc
+    miscReport = Report_Misc(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], mvr4seasons=form.mvr4seasons.data, patient= form.patient.data, owner=form.owner.data, service=form.service.data, svcTotal=form.charge.data, Misc_Service_Description=form.description.data, date=form.date.data)
+  File "<string>", line 4, in __init__
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\state.py", line 441, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 154, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\state.py", line 438, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 840, in _declarative_constructor
+    "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+TypeError: 'svcTotal' is an invalid keyword argument for Report_Misc
+2019-09-10 12:48:35,531 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]

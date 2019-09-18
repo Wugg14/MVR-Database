@@ -81,9 +81,65 @@ class EchocardiographForm (FlaskForm):
     sex = StringField('Sex:', validators=[DataRequired()])
     weight = StringField('Weight:', validators=[DataRequired()])
     clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
+    # LV Wall-d
     LVFW_Distolic_Thickness = StringField('LVFW_Distolic_Thickness:', validators=[DataRequired()])
     lower_range_LV_wall_D = StringField('lower_range_LV_wall_D:')
     upper_range_LV_wall_D = StringField('upper_range_LV_wall_D:')
+    LVFW_DT_result = StringField('LVFW_DT_result:')
+    # LV Wall-s
+    LVFW_Systolic_Thickness = StringField('LVFW_Systolic_Thickness:', validators=[DataRequired()])
+    lower_range_LV_wall_S = StringField('lower_range_LV_wall_S:')
+    upper_range_LV_wall_S = StringField('upper_range_LV_wall_S:')
+    LVFW_ST_result = StringField('LVFW_ST_result:')
+    # LV Chamber-d:
+    Left_Vent_Diastolic = StringField('Left_Vent_Diastolic:', validators=[DataRequired()])
+    lower_range_LV_Chamber_D = StringField('lower_range_LV_Chamber_D:')
+    upper_range_LV_Chamber_D = StringField('upper_range_LV_Chamber_D:')
+    LV_DD_result = StringField('LV_DD_result:')
+    # LV Chamber-s:
+    Left_Vent_Systolic = StringField('Left_Vent_Systolic:', validators=[DataRequired()])
+    lower_range_LV_Chamber_S = StringField('lower_range_LV_Chamber_S:')
+    upper_range_LV_Chamber_S = StringField('upper_range_LV_Chamber_S:')
+    LV_SD_result = StringField('LV_SD_result:')
+    # Fractional Shortening
+    Shortening_Fraction = StringField('Shortening_Fraction:', validators=[DataRequired()])
+    lower_range_fractional_shortening = StringField('lower_range_fractional_shortening:')
+    upper_range_fractional_shortening = StringField('upper_range_fractional_shortening:')
+    SF_result = StringField('SF_result:')
+    # Septum-d
+    IVS_Diastolic_Thickness = StringField('IVS_Diastolic_Thickness:', validators=[DataRequired()])
+    lower_range_septum_d = StringField('lower_range_septum_d:')
+    upper_range_septum_d = StringField('upper_range_septum_d:')
+    IVS_DT_result = StringField('IVS_DT_result:')
+    # Septum-s
+    IVS_Systolic_Thickness = StringField('IVS_Systolic_Thickness:', validators=[DataRequired()])
+    lower_range_septum_s = StringField('lower_range_septum_s:')
+    upper_range_septum_s = StringField('upper_range_septum_s:')
+    IVS_ST_result = StringField('IVS_ST_result:')
+    # Aorta
+    Aortic_Root = StringField('Aortic_Root:', validators=[DataRequired()])
+    lower_range_aorta = StringField('lower_range_aorta:')
+    upper_range_aorta = StringField('upper_range_aorta:')
+    AR_result = StringField('AR_result:')
+    # Left Atrium
+    Left_Atrium = StringField('Left_Atrium:', validators=[DataRequired()])
+    lower_range_left_atrium = StringField('lower_range_left_atrium:')
+    upper_range_left_atrium = StringField('upper_range_left_atrium:')
+    LA_result = StringField('LA_result:')
+    # LA/AO
+    Left_Atrium_over_AO = StringField('Left_Atrium_over_AO:', validators=[DataRequired()])
+    lower_range_la_over_ao = StringField('lower_range_la_over_ao:')
+    upper_range_la_over_ao = StringField('upper_range_la_over_ao:')
+    la_over_ao_result = StringField('la_over_ao_result:')
+    # EPSS has only 3 fields
+    EPSS = StringField('EPSS:', validators=[DataRequired()])
+    upper_range_epss = StringField('upper_range_epss:')
+    epss_result = StringField('epss_result:')
+    # Comments
+    m_mode_comments = StringField('M-Mode Comments:')
+    echo_doppler_findings = TextAreaField('Doppler:', validators=[DataRequired()])
+    Echo_B_mode_findings = TextAreaField('B-Mode:', validators=[DataRequired()])
+    Echo_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
 

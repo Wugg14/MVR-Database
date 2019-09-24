@@ -1,8 +1,6 @@
 class EchocardiographForm {
 
     constructor() {
-        // Work on this method after constructors
-        this.prepareForm();
         //LV Wall D
         this.LVFW_Distolic_Thickness = document.getElementById('LVFW_Distolic_Thickness');
         this.lower_range_LV_wall_D = document.getElementById('lower_range_LV_wall_D');
@@ -59,8 +57,32 @@ class EchocardiographForm {
         this.epss_result = document.getElementById('epss_result');
         //Submit Button
         this.save = document.getElementById('submit');
-
+        this.calcButton = document.getElementById('calculate');
+        this.hideSaveButton();
+        this.events();
     }
+
+    // Events
+    events() {
+        this.calcButton.addEventListener('click', this.calculateDispatcher)
+    }
+
+    //Methods
+    hideSaveButton(){
+        this.save.style.display = 'none';
+        return true;
+    }
+
+    testMethod(){
+        console.log('test Method')
+    }
+
+    calculateDispatcher(){
+        console.log('dispatcher')
+    }
+
+
 }
 
-var echoForm= new EchocardiographForm();
+
+let echoForm = new EchocardiographForm();

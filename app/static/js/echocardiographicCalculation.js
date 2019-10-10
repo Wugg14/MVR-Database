@@ -54,12 +54,12 @@ class EchocardiographForm {
         this.la_over_ao_result = document.getElementById('la_over_ao_result');
         //EPSS
         this.EPSS = document.getElementById('EPSS');
-        this.upper_range_epss = document.getElementById('upper_range_la_over_ao');
+        this.upper_range_epss = document.getElementById('upper_range_epss');
         this.epss_result = document.getElementById('epss_result');
         //Submit Button
         this.save = document.getElementById('submit');
         this.calcButton = document.getElementById('calculate');
-        //this.hideSaveButton();
+        this.hideSaveButton();
         this.events();
     }
 
@@ -86,11 +86,16 @@ class EchocardiographForm {
     calculateDispatcher(){
         this.septumDCalc();
         this.lvChamberD();
-        this.lvWallD()
-        this.septumS()
+        this.lvWallD();
+        this.septumS();
+        this.lvChamberS();
+        this.lvWallS();
+        this.fractionalShortening();
+        this.aorta();
+        this.leftAtrium();
+        this.laOverAo();
+        this.epss();
     }
-
-
 
 
     neededWeights(requestedVal){
@@ -143,22 +148,18 @@ class EchocardiographForm {
         this.upper_range_septum_d.value = upper;
         let enteredVal = this.IVS_Diastolic_Thickness.value;
         this.IVS_DT_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
-        return(true);
     }
 
     lvChamberD(){
         let KG =  this.neededWeights('kgs');
         let Y = 5.66 + 9.416 * Math.log(KG);
-        console.log('y = ' + Y)
         let SY = 2*(2.9*(Math.sqrt(0.015+(KG-27.4)**2/25947.2)));
-        console.log('sy = '+ SY)
         let lower = Y - SY;
         let upper = Y + SY;
         this.lower_range_LV_Chamber_D.value = lower;
         this.upper_range_LV_Chamber_D.value = upper;
         let enteredVal = this.Left_Vent_Diastolic.value;
         this.LV_DD_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
-        return(true);
     }
 
     lvWallD(){
@@ -171,7 +172,6 @@ class EchocardiographForm {
         this.upper_range_LV_wall_D.value = upper;
         let enteredVal = this.LVFW_Distolic_Thickness.value;
         this.LVFW_DT_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
-        return(true);
     }
 
     septumS(){
@@ -184,7 +184,84 @@ class EchocardiographForm {
         this.upper_range_septum_s.value = upper;
         let enteredVal = this.IVS_Systolic_Thickness.value;
         this.IVS_ST_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
-        return(true);
+    }
+
+    lvChamberS(){
+        let KG =  this.neededWeights('kgs');
+        let Y = 1.59 + 6.525 * Math.log(KG);
+        let SY = 2*(2.53*(Math.sqrt(0.015+(KG-27.4)**2/25947.2)));
+        let lower = Y - SY;
+        let upper = Y + SY;
+        this.lower_range_LV_Chamber_S.value = lower;
+        this.upper_range_LV_Chamber_S.value = upper;
+        let enteredVal = this.Left_Vent_Systolic.value;
+        this.LV_SD_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
+    }
+
+    lvWallS(){
+        let BSA = this.calculateBSA();
+        let Y = 6.92 + 7.07 * BSA;
+        let SY = (1.852) * ((0.016 + (((BSA - 0.74)**2) / 5.147))**0.5);
+        let lower = Y - (1.999 * SY);
+        let upper = Y + (1.999 * SY);
+        this.lower_range_LV_wall_S.value = lower;
+        this.upper_range_LV_wall_S.value = upper;
+        let enteredVal = this.LVFW_Systolic_Thickness.value;
+        this.LVFW_ST_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
+    }
+
+    fractionalShortening(){
+        this.lower_range_fractional_shortening.value = 33;
+        this.upper_range_fractional_shortening.value = 46;
+        let val1 = this.Left_Vent_Diastolic.value;
+        let val2 =  this.Left_Vent_Systolic.value;
+        this.Shortening_Fraction.value = ((val1-val2)/val1)*100;
+        let finalVal = this.Shortening_Fraction.value;
+        this.SF_result.value = this.increaseOrDecrease(finalVal, 46, 33);
+    }
+
+    aorta(){
+        let BSA = this.calculateBSA();
+        let Y =  8.96 + 17.44 * BSA;
+        let SY = (2.301) * ((0.017 + (((BSA - 0.72)**2) / 4.529))**0.5);
+        let lower = Y - (2.002 * SY);
+        let upper = Y + (2.002 * SY);
+        this.lower_range_aorta.value = lower;
+        this.upper_range_aorta.value = upper;
+        let enteredVal = this.Aortic_Root.value;
+        this.AR_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
+    }
+
+    leftAtrium(){
+        let BSA = this.calculateBSA();
+        let Y =  9.95 + 15.35 * BSA;
+        let SY = (2.889) * ((0.017 + (((BSA - 0.72)**2) / 4.522))**0.5);
+        let lower = Y - (2.003 * SY);
+        let upper = Y + (2.003 * SY);
+        this.lower_range_left_atrium.value = lower;
+        this.upper_range_left_atrium.value = upper;
+        let enteredVal = this.Left_Atrium.value;
+        this.LA_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
+    }
+
+    laOverAo(){
+        let AO = this.Aortic_Root.value;
+        let LA = this.Left_Atrium.value;
+        let result = LA/AO;
+        this.Left_Atrium_over_AO.value = result;
+        let lower = 0.8;
+        let upper = 1.1;
+        this.lower_range_la_over_ao.value = lower;
+        this.upper_range_la_over_ao.value = upper;
+        this.la_over_ao_result.value = this.increaseOrDecrease(result, upper, lower);
+    }
+
+    epss(){
+        this.upper_range_epss.value = 7.7;
+        let upper = 7.7;
+        let lower = 0;
+        let enteredVal = this.EPSS.value;
+        this.epss_result.value = this.increaseOrDecrease(enteredVal, upper, lower);
     }
 
 }

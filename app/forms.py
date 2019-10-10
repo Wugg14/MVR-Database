@@ -79,7 +79,7 @@ class EchocardiographForm (FlaskForm):
     species = StringField('Species:', validators=[DataRequired()])
     breed = StringField('Breed:', validators=[DataRequired()])
     sex = StringField('Sex:', validators=[DataRequired()])
-    weight = StringField('Weight:', validators=[DataRequired()])
+    weight = StringField('Weight (lbs):', validators=[DataRequired()])
     clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
     # LV Wall-d
     LVFW_Distolic_Thickness = StringField('LVFW_Distolic_Thickness:', validators=[DataRequired()])

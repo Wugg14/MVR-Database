@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52f5fe33-c625-4b1c-a985-8ea922275c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/echocardiographicCalculation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/echocardiograph.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/echocardiograph.html" afterDir="false" />
     </list>
@@ -42,12 +43,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="345" />
-    <option name="y" value="159" />
-    <option name="width" value="1464" />
-    <option name="height" value="1092" />
   </component>
   <component name="ProjectId" id="1PLIXeQlkHV0J8l0s3XsjphHd5I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -123,6 +118,8 @@
       <workItem from="1568402772326" duration="238000" />
       <workItem from="1568647667011" duration="2268000" />
       <workItem from="1568741275025" duration="4019000" />
+      <workItem from="1570549889116" duration="5016000" />
+      <workItem from="1570725509910" duration="6449000" />
     </task>
     <servers />
   </component>

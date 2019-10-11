@@ -1,3 +1,4 @@
+//Echocardiograph Calculator
 class EchocardiographForm {
 
     constructor() {
@@ -83,7 +84,7 @@ class EchocardiographForm {
         console.log('test Method')
     }
 
-    calculateDispatcher(){
+    calculateDispatcher() {
         this.septumDCalc();
         this.lvChamberD();
         this.lvWallD();
@@ -95,7 +96,9 @@ class EchocardiographForm {
         this.leftAtrium();
         this.laOverAo();
         this.epss();
+        this.showSaveButton();
     }
+
 
 
     neededWeights(requestedVal){

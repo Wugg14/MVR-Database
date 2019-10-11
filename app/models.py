@@ -147,6 +147,88 @@ class Report_Misc(db.Model):
     def __repr__(self):
         return '<Misc Report for {}>'.format(self.patient)
 
+
+class Report_Echo(db.Model):
+    """Basic Fields"""
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.String(12))
+    doctor = db.Column(db.String(24))
+    docSerialNum = db.Column(db.String(20))
+    clinicSerialNum = db.Column(db.Integer())
+    clinicName = db.Column(db.String(24))
+    patient = db.Column(db.String(24))
+    breed = db.Column(db.String(24))
+    owner = db.Column(db.String(24))
+    sexPatient = db.Column(db.String(2))
+    agePatient = db.Column(db.String(24))
+    weightPatient = db.Column(db.Float)
+    clinicalHistory = db.Column(db.String(360))
+    mvr4seasons = db.Column(db.String(24))
+    """M-Mode Special Fields"""
+    #LV Wall D
+    LVFW_Distolic_Thickness = db.Column(db.Float)
+    lower_range_LV_wall_D = db.Column(db.Float)
+    upper_range_LV_wall_D = db.Column(db.Float)
+    LVFW_DT_result = db.Column(db.String(5))
+    #LV Wall S
+    LVFW_Systolic_Thickness = db.Column(db.Float)
+    lower_range_LV_wall_S = db.Column(db.Float)
+    upper_range_LV_wall_S = db.Column(db.Float)
+    LVFW_ST_result = db.Column(db.String(5))
+    #LV Chamber D
+    Left_Vent_Diastolic = db.Column(db.Float)
+    lower_range_LV_Chamber_D = db.Column(db.Float)
+    upper_range_LV_Chamber_D = db.Column(db.Float)
+    LV_DD_result = db.Column(db.String(5))
+    #LV Chamber S
+    Left_Vent_Systolic = db.Column(db.Float)
+    lower_range_LV_Chamber_S = db.Column(db.Float)
+    upper_range_LV_Chamber_S = db.Column(db.Float)
+    LV_SD_result = db.Column(db.String(5))
+    #Fractional Shortening
+    Shortening_Fraction = db.Column(db.Float)
+    lower_range_fractional_shortening = db.Column(db.Float)
+    upper_range_fractional_shortening = db.Column(db.Float)
+    SF_result = db.Column(db.String(5))
+    #Septum D
+    IVS_Diastolic_Thickness = db.Column(db.Float)
+    lower_range_septum_d = db.Column(db.Float)
+    upper_range_septum_d = db.Column(db.Float)
+    IVS_DT_result = db.Column(db.String(5))
+    #Septum S
+    IVS_Systolic_Thickness = db.Column(db.Float)
+    lower_range_septum_s = db.Column(db.Float)
+    upper_range_septum_s = db.Column(db.Float)
+    IVS_ST_result = db.Column(db.String(5))
+    #Aorta
+    Aortic_Root = db.Column(db.Float)
+    lower_range_aorta = db.Column(db.Float)
+    upper_range_aorta = db.Column(db.Float)
+    AR_result = db.Column(db.String(5))
+    #Left Atrium
+    Left_Atrium = db.Column(db.Float)
+    lower_range_left_atrium = db.Column(db.Float)
+    upper_range_left_atrium = db.Column(db.Float)
+    LA_result = db.Column(db.String(5))
+    #LA / AO
+    Left_Atrium_over_AO = db.Column(db.Float)
+    lower_range_la_over_ao = db.Column(db.Float)
+    upper_range_la_over_ao = db.Column(db.Float)
+    la_over_ao_result = db.Column(db.String(5))
+    #EPSS
+    EPSS = db.Column(db.Float)
+    upper_range_epss = db.Column(db.Float)
+    epss_result = db.Column(db.String(5))
+    """Other Fields"""
+    mMode_comments = db.Column(db.String(360))
+    echo_doppler_findings = db.Column(db.String(450))
+    Echo_B_mode_findings = db.Column(db.String(450))
+    Echo_Conclusions = db.Column(db.String(450))
+
+    def __repr__(self):
+        return '<Echocardiographic Report for {}>'.format(self.patient)
+
+
 class Clinic(db.Model):
     clinicSerialNum = db.Column(db.String(64), primary_key=True)
     company = db.Column(db.String(64), unique=True)

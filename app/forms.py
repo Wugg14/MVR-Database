@@ -76,6 +76,7 @@ class EchocardiographForm (FlaskForm):
     practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     patient = StringField('Patient:', validators=[DataRequired()])
     owner = StringField('Owner:', validators=[DataRequired()])
+    age = StringField('Age:')
     species = StringField('Species:', validators=[DataRequired()])
     breed = StringField('Breed:', validators=[DataRequired()])
     sex = StringField('Sex:', validators=[DataRequired()])
@@ -223,9 +224,6 @@ class newService (FlaskForm):
     description = StringField('Description:', validators=[DataRequired()])
     price = FloatField('Price:', validators=[DataRequired()])
     submit = SubmitField('Save')
-
-
-
 
 
 

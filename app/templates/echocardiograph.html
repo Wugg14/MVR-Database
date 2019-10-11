@@ -83,6 +83,14 @@
                     <span style="color: red;">[{{ error }}]</span>
                     {% endfor %}
                  </div>
+                 <div class="form-section" id="ageDiv">
+                    {{ form.age.label }}
+                    {{ form.age(size=24) }}
+                    {% for error in form.age.errors %}
+                    <br />
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                 </div>
                  <div class="form-section" id="weightDiv">
                     {{ form.weight.label }}
                     {{ form.weight(size=6) }}

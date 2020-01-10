@@ -279,3 +279,22 @@ class MiscService(db.Model):
 
     def __repr__(self):
         return '<Service {}>'.format(self.serviceType)
+
+"""Invoice Database Class"""
+class Invoice(db.Model):
+    invoiceID = db.Column(db.String(20), primary_key=True)
+    date = db.Column(db.String(12))
+    mvr4seasons = db.Column(db.String(24))
+    clinic = db.Column(db.String(64))
+    clinicSerialNum = db.Column(db.String(20), db.ForeignKey("Clinic.clinicSerialNum"))
+    doctor = db.Column(db.String(24))
+    docSerialNum = db.Column(db.String(20), db.ForeignKey("Doctor.doctorSerialNum"))
+    svcTotal = db.Column(db.Numeric(6, 2))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+"""Invoice Item Database Class"""
+class Invoice_Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)  # Auto-increment should be default
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    invoiceID = db.Column(db.String(20), db.ForeignKey("Invoice.invoiceID"))
+    price = db.Column(db.Numeric(6, 2))

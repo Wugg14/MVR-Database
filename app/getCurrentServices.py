@@ -1,5 +1,5 @@
 from app.models import MiscService
-"""Queries all the clinics in the database and returns the service name
+"""Queries all the services in the database and returns the service name
 in a format that can be used as form options"""
 def get_current_services():
     choices = []

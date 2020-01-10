@@ -68,6 +68,7 @@ class Report_CT(db.Model):
     clinicSerialNum = db.Column(db.Integer())
     clinic = db.Column(db.String(24))
     mvr4seasons = db.Column(db.String(24))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
         return '<CT for {}>'.format(self.patient)
@@ -90,6 +91,7 @@ class Report_Radiographic(db.Model):
     clinicSerialNum = db.Column(db.Integer())
     clinic = db.Column(db.String(24))
     mvr4seasons = db.Column(db.String(24))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Radiograph for {}>'.format(self.patient)
@@ -125,6 +127,7 @@ class Report_US (db.Model):
     clinicName = db.Column(db.String(24))
     doctor = db.Column(db.String(24))
     mvr4seasons = db.Column(db.String(24))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Ultrasound for {}>'.format(self.patient)
@@ -143,6 +146,7 @@ class Report_Misc(db.Model):
     SvcTotal = db.Column(db.Numeric)
     Misc_Service_Description = db.Column(db.String(300))
     date = db.Column(db.String(12))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Misc Report for {}>'.format(self.patient)
@@ -164,6 +168,7 @@ class Report_Echo(db.Model):
     weightPatient = db.Column(db.Float)
     clinicalHistory = db.Column(db.String(360))
     mvr4seasons = db.Column(db.String(24))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     """M-Mode Special Fields"""
     #LV Wall D
     LVFW_Distolic_Thickness = db.Column(db.Float)
@@ -224,6 +229,7 @@ class Report_Echo(db.Model):
     echo_doppler_findings = db.Column(db.String(450))
     Echo_B_mode_findings = db.Column(db.String(450))
     Echo_Conclusions = db.Column(db.String(450))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Echocardiographic Report for {}>'.format(self.patient)
@@ -268,7 +274,7 @@ class MiscService(db.Model):
     serviceAbbr = db.Column(db.String(10))
     reportType = db.Column(db.String(5))
     description = db.Column(db.String(144))
-    price = db.Column(db.Numeric)
+    servicePrice = db.Column(db.Numeric(6, 2))
 
     def __repr__(self):
         return '<Service {}>'.format(self.serviceType)

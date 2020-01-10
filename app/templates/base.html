@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-    <head>
-     <link rel="stylesheet" href="{{ url_for('static',    filename='css/forms.css') }}">
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+
       {% if title %}
-      <title>{{ title }} - MVR Database</title>
+      {{ title }} - MVR Database
       {% else %}
-      <title>Welcome to the MVR Database</title>
+      Welcome to the MVR Database
       {% endif %}
-    </head>
-    <body>
-        <div>
+
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-default">
             MVR Database:
             <a href="{{ url_for('index') }}">Home</a>
             {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('login') }}">Login/Register</a>
             {% else %}
             <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
-        </div>
-        <hr>
+    </nav>
+{% endblock %}
+{% block content %}
+    <body>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
@@ -27,6 +30,8 @@
         </ul>
         {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+        <div>
+            {% block app_content %}{% endblock %}
+        </div>
     </body>
-</html>
+{% endblock %}

@@ -4,7 +4,7 @@ from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
-from app.email import send_password_reset_email
+from app.emails import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
 @app.route('/')
@@ -203,7 +203,7 @@ def newMiscService():
     form = newService()
     if form.validate_on_submit():
         print('validated')
-        service = MiscService(serviceID=randomStringDigits(8), serviceType=form.serviceType.data, serviceAbbr=form.serviceAbbr.data, reportType=form.ReportType.data, description=form.description.data, price=form.price.data)
+        service = MiscService(serviceID=randomStringDigits(8), serviceType=form.serviceType.data, serviceAbbr=form.serviceAbbr.data, reportType=form.ReportType.data, description=form.description.data, servicePrice=form.price.data)
         db.session.add(service)
         db.session.commit()
         flash('Added Service to database')

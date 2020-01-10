@@ -132,7 +132,7 @@ class Report_US (db.Model):
     def __repr__(self):
         return '<Ultrasound for {}>'.format(self.patient)
 
-
+"""Misc. Database Class"""
 class Report_Misc(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     doctor = db.Column(db.String(24))
@@ -151,7 +151,7 @@ class Report_Misc(db.Model):
     def __repr__(self):
         return '<Misc Report for {}>'.format(self.patient)
 
-
+"""Echocardiography Database Class"""
 class Report_Echo(db.Model):
     """Basic Fields"""
     id = db.Column(db.Integer, primary_key=True)
@@ -234,7 +234,7 @@ class Report_Echo(db.Model):
     def __repr__(self):
         return '<Echocardiographic Report for {}>'.format(self.patient)
 
-
+"""Clinic Database Class"""
 class Clinic(db.Model):
     clinicSerialNum = db.Column(db.String(64), primary_key=True)
     company = db.Column(db.String(64), unique=True)
@@ -251,7 +251,7 @@ class Clinic(db.Model):
     def __repr__(self):
         return '<Clinic {}>'.format(self.company)
 
-
+"""Doctor Database Class"""
 class Doctor(db.Model):
     doctorSerialNum = db.Column(db.String(64), primary_key=True)
     first = db.Column(db.String(24))
@@ -268,6 +268,7 @@ class Doctor(db.Model):
     def __repr__(self):
         return '<Doctor {}>'.format(self.last)
 
+"""Ultrasound Database Class"""
 class MiscService(db.Model):
     serviceID = db.Column(db.String(20), primary_key=True)
     serviceType = db.Column(db.String(20))

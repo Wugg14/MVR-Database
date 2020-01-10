@@ -250,3 +250,9 @@ def miscTable():
 @app.route('/echotable', methods=['GET'])
 def echoTable():
     echoreports = Report_Echo.query.all()
+    return render_template('/tables/echoTable.html', title='All Echocardiography Reports', echoreports=echoreports)
+
+@app.route('/radiotable', methods=['GET'])
+def radioTable():
+    radioreports = Report_Radiographic.query.all()
+    return render_template('/tables/radiographicTable.html', title='All Radiographic Reports', radioreports=radioreports)

@@ -297,4 +297,6 @@ class Invoice_Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # Auto-increment should be default
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     invoiceID = db.Column(db.String(20), db.ForeignKey("Invoice.invoiceID"))
+    serviceType = db.Column(db.String(20))
+    reportID = db.Column(db.Integer)
     price = db.Column(db.Numeric(6, 2))

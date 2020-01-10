@@ -217,6 +217,11 @@ def clinicTable():
     clinics = Clinic.query.all()
     return render_template('/tables/clinicTable.html',  title='All Clinics', clinics=clinics)
 
+@app.route('/servicestable', methods=['GET'])
+def servicesTable():
+    services = MiscService.query.all()
+    return render_template('/tables/servicesTable.html', title='All Misc Services', services=services)
+
 @app.route('/doctortable', methods=['GET', 'POST'])
 def doctorTable():
     doctors = Doctor.query.all()
@@ -242,7 +247,6 @@ def miscTable():
     reports = Report_Misc.query.all()
     return render_template('/tables/miscReportTable.html', title='All Misc Reports', reports=reports)
 
-@app.route('/servicestable', methods=['GET'])
-def servicesTable():
-    services = MiscService.query.all()
-    return render_template('/tables/servicesTable.html', title='All Misc Services', services=services)
+@app.route('/echotable', methods=['GET'])
+def echoTable():
+    echoreports = Report_Echo.query.all()

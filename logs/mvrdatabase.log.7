@@ -1,4 +1,4 @@
-2019-08-28 10:38:11,935 ERROR: Exception on /newservice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2019-09-06 10:59:03,292 ERROR: Exception on /newservice [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,16 +12,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  [Previous line repeated 976 more times]
-RecursionError: maximum recursion depth exceeded
-2019-08-28 10:39:01,707 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-28 10:39:03,320 ERROR: Exception on /newservice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 180, in newMiscService
+    service = MiscService(serviceID=randomStringDigits(8), serviceType=form.serviceType.data, serviceAbbr=form.serviceAbbr.data, reportType=form.ReportType.data, description=form.description.data, price=form.price.data)
+NameError: name 'MiscService' is not defined
+2019-09-06 10:59:29,195 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-06 11:02:02,100 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-06 11:02:41,971 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-06 11:17:09,134 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-06 11:17:21,975 ERROR: Exception on /servicestable [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -35,15 +33,26 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  [Previous line repeated 976 more times]
-RecursionError: maximum recursion depth exceeded
-2019-08-28 10:39:11,033 ERROR: Exception on /newservice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 218, in servicesTable
+    return render_template('/tables/serviceTable.html', title='All Misc Services', services=services)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /tables/serviceTable.html
+2019-09-06 11:17:41,805 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-06 11:38:17,440 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2019-09-06 11:38:52,420 ERROR: Exception on /misc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -57,62 +66,32 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  [Previous line repeated 976 more times]
-RecursionError: maximum recursion depth exceeded
-2019-08-28 10:40:28,127 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-28 10:40:30,163 ERROR: Exception on /newservice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 148, in misc
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  [Previous line repeated 976 more times]
-RecursionError: maximum recursion depth exceeded
-2019-08-28 10:42:32,746 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-28 10:42:34,878 ERROR: Exception on /newservice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 178, in newService
-    form = newService()
-  [Previous line repeated 976 more times]
-RecursionError: maximum recursion depth exceeded
-2019-08-28 11:53:22,154 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-28 12:19:47,685 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-28 12:19:56,616 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-08-28 12:20:06,334 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-09-06 10:57:55,071 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\miscService.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\miscService.html", line 56, in block "content"
+    {{ form.service(size=24) }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
+    for value, label in self.choices:
+ValueError: too many values to unpack (expected 2)
+2019-09-06 11:57:26,391 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]

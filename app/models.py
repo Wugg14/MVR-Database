@@ -15,7 +15,6 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -40,16 +39,6 @@ class User(UserMixin, db.Model):
         except:
             return
         return User.query.get(id)
-
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-    def __repr__(self):
-        return '<Post {}>'.format(self.body)
-
 
 class Report_CT(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -103,9 +92,9 @@ class Report_US (db.Model):
     docSerialNum = db.Column(db.String(20))
     patient = db.Column(db.String(24))
     owner = db.Column(db.String(24))
-    species = db.Column(db.String(6))
+    species = db.Column(db.String(8))
     breed = db.Column(db.String(24))
-    sexPatient = db.Column(db.String(2))
+    sexPatient = db.Column(db.String(8))
     agePatient = db.Column(db.String(24))
     clinicalHistory = db.Column(db.String(360))
     SF_Liver = db.Column(db.String(12))
@@ -286,17 +275,26 @@ class Invoice(db.Model):
     date = db.Column(db.String(12))
     mvr4seasons = db.Column(db.String(24))
     clinic = db.Column(db.String(64))
-    clinicSerialNum = db.Column(db.String(20), db.ForeignKey("Clinic.clinicSerialNum"))
+    clinicSerialNum = db.Column(db.String(20), db.ForeignKey("clinic.clinicSerialNum"))
     doctor = db.Column(db.String(24))
-    docSerialNum = db.Column(db.String(20), db.ForeignKey("Doctor.doctorSerialNum"))
+    docSerialNum = db.Column(db.String(20), db.ForeignKey("doctor.doctorSerialNum"))
     svcTotal = db.Column(db.Numeric(6, 2))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    items = db.relationship('Invoice_Item', backref='Invoice', lazy='dynamic')
+
+    def __repr__(self):
+        return '<Invoice # {}>'.format(self.invoiceID)
+
 
 """Invoice Item Database Class"""
 class Invoice_Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # Auto-increment should be default
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    invoiceID = db.Column(db.String(20), db.ForeignKey("Invoice.invoiceID"))
+    invoiceID = db.Column(db.String(20), db.ForeignKey('invoice.invoiceID'))
     serviceType = db.Column(db.String(20))
     reportID = db.Column(db.Integer)
+    patient = db.Column(db.String(20))
     price = db.Column(db.Numeric(6, 2))
+
+    def __repr__(self):
+        return '<Invoice Item for Invoice # {}>'.format(self.invoiceID)

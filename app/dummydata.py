@@ -1,5 +1,5 @@
 from app import db
-from app.models import Clinic, Doctor, MiscService
+from app.models import Clinic, Doctor, MiscService, Report_US, Report_Radiographic, Report_CT, Report_Misc
 
 def make_data():
     clinic1 = Clinic(clinicSerialNum='123', company='test Clinic 1', nickname='Nickname 1', street='Main St', city='Example City', state='Example State', zip='00000', phone='100-800-9320', email='test1@email.com', note='this is a note')
@@ -16,4 +16,14 @@ def make_data():
     db.session.add(service2)
     db.session.commit()
 
+def make_additional_data():
+    report1 = Report_US(doctor='test doc 1', docSerialNum='789', clinicName='test clinic 2', clinicSerialNum='456', patient='test patient 1', owner='test owner 1', species='Dog', breed='Shiba', sexPatient='Male', agePatient='12', clinicalHistory='this is a clinical history test', SF_Liver='test value', SF_Spleen='test value', SF_Stomach='test value', SF_Pancreas='test value', SF_Intestines='test value', SF_Adrenals='test value', SF_LKidney='test value', SF_RKidney='test value', SF_Bladder='test value', SF_Sublum='test value', SF_Prostate='test value', SF_Uterus='test value', Conclusions_ALL='test conclusion', FINDAS_ALL='test findings', date='010120', mvr4seasons='4seasons')
+    db.session.add(report1)
+    report2 = Report_Radiographic(date='010120', doctor='test doctor 2', docSerialNum='1011', clinic='test clinic 2', clinicSerialNum='456', patient='test patient 2', species='cat', owner='test owner 2', Rad_Image_Date='120119', Rad_NumImages='3', RadView='test view', Rad_Findings='these are the rad findings.', Rad_Conclusions='test rad conclusions', Clinic_Phone='9706919047', mvr4seasons='mvr')
+    db.session.add(report2)
+    report3 = Report_CT(doctor='test doctor 2', docSerialNum='1011', clinic='test Clinic 1', clinicSerialNum='123', patient='test patient', species='dog', owner='test owner', CT_Image_Date='111111', CT_NumImages=12, CTView='view 1', CT_Findings='test CT findings', CT_Conclusions='test ct conclusions', Clinic_Phone='9701287898', date='010120', mvr4seasons='4seasons')
+    db.session.add(report3)
+    report4 = Report_Misc(doctor='test doc 1', docSerialNum='789', clinicName='test clinic 2', clinicSerialNum='456', mvr4seasons='mvr', patient='test patient', owner='test owner', service='Type 1', SvcTotal=100, Misc_Service_Description='this is a misc service description', date='010120')
+    db.session.add(report4)
+    db.session.commit()
 

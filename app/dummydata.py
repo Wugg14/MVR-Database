@@ -1,5 +1,5 @@
 from app import db
-from app.models import Clinic, Doctor, MiscService, Report_US, Report_Radiographic, Report_CT, Report_Misc
+from app.models import Invoice, Invoice_Item, Clinic, Doctor, MiscService, Report_US, Report_Radiographic, Report_CT, Report_Misc
 
 def make_data():
     clinic1 = Clinic(clinicSerialNum='123', company='test Clinic 1', nickname='Nickname 1', street='Main St', city='Example City', state='Example State', zip='00000', phone='100-800-9320', email='test1@email.com', note='this is a note')
@@ -27,3 +27,12 @@ def make_additional_data():
     db.session.add(report4)
     db.session.commit()
 
+def makeInvoice():
+    test = Invoice(invoiceID='111', date='2/21/20', mvr4seasons= 'mvr', clinic= 'test clinic 2', clinicSerialNum='456', doctor='Doctor2', docSerialNum='789', svcTotal= 1200)
+    db.session.add(test)
+    db.session.commit()
+
+def addItem():
+    test1 = Invoice_Item(invoiceID='111', serviceType='Echocardiography', reportID='1', patient='Pickles', price=1200)
+    db.session.add(test1)
+    db.session.commit()

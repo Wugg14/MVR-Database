@@ -9,31 +9,31 @@
     <tbody>
         {% for c in report_ct %}
         <tr>
-            <td>CT</td><td>{{ c.mvr4seasons }}</td><td>{{ c.patient }}</td><td>{{ c.clinic }}</td><td>{{ c.timestamp }}</td><td><button type="button" data-reportID ={{ c.id }} data-price="100">Add</button></td>
+            <td>CT</td><td>{{ c.mvr4seasons }}</td><td>{{ c.patient }}</td><td>{{ c.clinic }}</td><td>{{ c.timestamp }}</td><td><button class="add-to-invoice" type="button" data-reportID ={{ c.id }} data-price="100">Add</button></td>
         </tr>
         {% endfor %}
 
         {% for r in report_radio %}
         <tr>
-            <td>Radiographic</td><td>{{ r.mvr4seasons }}</td><td>{{ r.patient }}</td><td>{{ r.clinic }}</td><td>{{ r.timestamp }}</td><td><button type="button" data-reportID ={{ r.id }} data-price="200">Add</button></td>
+            <td>Radiographic</td><td>{{ r.mvr4seasons }}</td><td>{{ r.patient }}</td><td>{{ r.clinic }}</td><td>{{ r.timestamp }}</td><td><button class="add-to-invoice" type="button" data-reportID ={{ r.id }} data-price="200">Add</button></td>
         </tr>
         {% endfor %}
 
         {% for u in report_us %}
         <tr>
-            <td>Ultrasound</td><td>{{ u.mvr4seasons }}</td><td>{{ u.patient }}</td><td>{{ u.clinic }}</td><td>{{ u.timestamp }}</td><td><button type="button" data-reportID ={{ u.id }} data-price="300">Add</button></td>
+            <td>Ultrasound</td><td>{{ u.mvr4seasons }}</td><td>{{ u.patient }}</td><td>{{ u.clinic }}</td><td>{{ u.timestamp }}</td><td><button onclick="Invoice.test(this)" id="test-ID" class="add-to-invoice" type="button" data-reportID ={{ u.id }} data-price="300">Add</button></td>
         </tr>
         {% endfor %}
 
         {% for m in misc %}
         <tr>
-            <td>{{ m.service }} / Misc</td><td>{{ m.mvr4seasons }}</td><td>{{ m.patient }}</td><td>{{ m.clinic }}</td><td>{{ m.timestamp }}</td><td><button type="button" data-reportID ={{ m.id }} data-price="{{ m.price }}">Add</button></td>
+            <td>{{ m.service }} / Misc</td><td>{{ m.mvr4seasons }}</td><td>{{ m.patient }}</td><td>{{ m.clinic }}</td><td>{{ m.timestamp }}</td><td><button class="add-to-invoice" type="button" data-reportID ={{ m.id }} data-price="{{ m.price }}">Add</button></td>
         </tr>
         {% endfor %}
 
         {% for e in echo %}
         <tr>
-            <td>Echocardiography</td><td>{{ e.mvr4seasons }}</td><td>{{ e.patient }}</td><td>{{ e.clinic }}</td><td>{{ e.timestamp }}</td><td><button type="button" data-reportID ={{ e.id }} data-price="400">Add</button></td>
+            <td>Echocardiography</td><td>{{ e.mvr4seasons }}</td><td>{{ e.patient }}</td><td>{{ e.clinic }}</td><td>{{ e.timestamp }}</td><td><button class="add-to-invoice" type="button" data-reportID ={{ e.id }} data-price="400">Add</button></td>
         </tr>
         {% endfor %}
 
@@ -213,6 +213,8 @@
 </div>
 {% endblock %}
 {% block scripts %}
+<script type="text/javascript" src="../static/js/invoice.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>

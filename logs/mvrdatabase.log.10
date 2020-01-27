@@ -1,21 +1,4 @@
-2020-01-08 15:30:53,733 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:31:04,207 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:31:11,965 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:31:18,773 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:32:44,810 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:37:57,497 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:41:22,963 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:41:30,587 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:56:46,650 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-10 10:46:41,778 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-10 10:58:41,100 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 10:59:45,715 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:04:08,584 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:04:38,796 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:09:28,752 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:13:01,493 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:14:08,773 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:15:03,334 ERROR: Exception on /cardiograph [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-01-27 10:03:08,096 ERROR: Exception on /ct [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,67 +12,100 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 172, in cardiographic
-    return render_template('echocardiograph.html', title='Echocardiography Report', form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 141, in CT
+    return redirect(url_for('ct'))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\werkzeug\routing.py", line 2007, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'ct'. Did you mean 'ctTable' instead?
+2020-01-27 10:08:44,101 ERROR: Exception on /ct [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 141, in CT
+    return redirect(url_for('ct'))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\werkzeug\routing.py", line 2007, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'ct'. Did you mean 'ctTable' instead?
+2020-01-27 10:09:55,654 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 10:15:37,778 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 10:20:19,118 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 10:20:23,810 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 218, in invoice
+    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\echocardiograph.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 35, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\echocardiograph.html", line 27, in block "app_content"
-    {{ form.doctor.label }}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'app.forms.EchocardiographForm object' has no attribute 'doctor'
-2020-01-10 11:17:07,913 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:21:11,059 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:22:36,475 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:23:48,646 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:24:03,794 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:29:50,431 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:36:33,670 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:48:42,743 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:49:14,501 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 11:58:13,525 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:00:18,694 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:02:29,254 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:06:17,115 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:09:53,456 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:11:07,382 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:15:02,787 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:31:50,831 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 12:35:45,718 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-10 14:56:33,254 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-13 16:14:35,881 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-13 17:00:51,791 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 12:58:49,722 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 13:33:53,376 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 13:46:37,152 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 13:46:43,196 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 14:56:47,285 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 14:59:02,235 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-14 14:59:40,813 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 09:59:11,040 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 09:59:39,820 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 10:03:00,854 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 48, in template
+    {% endfor %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2020-01-27 10:20:51,902 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

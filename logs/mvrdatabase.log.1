@@ -1,15 +1,4 @@
-2019-10-11 14:58:44,820 ERROR: Exception on /cardiograph [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\processors.py", line 109, in to_float
-    return float(value)
-ValueError: could not convert string to float: 'Decr'
-
-The above exception was the direct cause of the following exception:
-
+2020-01-27 10:49:49,934 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,60 +12,69 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 169, in cardiographic
-    db.session.commit()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
-    self.transaction.commit()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
-    self._prepare_impl()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 473, in _prepare_impl
-    self.session.flush()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
-    self._flush(objects)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 154, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2557, in _flush
-    flush_context.execute()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
-    uow,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
-    insert,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1138, in _emit_insert_statements
-    statement, params
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    e, util.text_type(statement), parameters, None, None
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 399, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 219, in invoice
+    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\processors.py", line 109, in to_float
-    return float(value)
-sqlalchemy.exc.StatementError: (builtins.ValueError) could not convert string to float: 'Decr'
-[SQL: INSERT INTO report__echo (date, doctor, "docSerialNum", "clinicSerialNum", "clinicName", patient, breed, owner, "sexPatient", "agePatient", "weightPatient", "clinicalHistory", mvr4seasons, "LVFW_Distolic_Thickness", "lower_range_LV_wall_D", "upper_range_LV_wall_D", "LVFW_DT_result", "LVFW_Systolic_Thickness", "lower_range_LV_wall_S", "upper_range_LV_wall_S", "LVFW_ST_result", "Left_Vent_Diastolic", "lower_range_LV_Chamber_D", "upper_range_LV_Chamber_D", "LV_DD_result", "Left_Vent_Systolic", "lower_range_LV_Chamber_S", "upper_range_LV_Chamber_S", "LV_SD_result", "Shortening_Fraction", lower_range_fractional_shortening, upper_range_fractional_shortening, "SF_result", "IVS_Diastolic_Thickness", lower_range_septum_d, upper_range_septum_d, "IVS_DT_result", "IVS_Systolic_Thickness", lower_range_septum_s, upper_range_septum_s, "IVS_ST_result", "Aortic_Root", lower_range_aorta, upper_range_aorta, "AR_result", "Left_Atrium", lower_range_left_atrium, upper_range_left_atrium, "LA_result", "Left_Atrium_over_AO", lower_range_la_over_ao, upper_range_la_over_ao, la_over_ao_result, "EPSS", upper_range_epss, epss_result, "mMode_comments", echo_doppler_findings, "Echo_B_mode_findings", "Echo_Conclusions") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
-[parameters: [{'sexPatient': 'Male', 'upper_range_LV_Chamber_S': '15.868250458564196', 'lower_range_septum_d': '6.8034577823148705', 'Left_Atrium': '5', 'patient': 'Test Patient 1', 'upper_range_LV_wall_S': '10.474033465454163', 'mvr4seasons': '4seasons', 'IVS_Diastolic_Thickness': '20', 'date': '010119', 'LVFW_ST_result': 'Decr', 'owner': 'Mark', 'upper_range_la_over_ao': '1.1', 'clinicName': 'Company 1', 'AR_result': 'Decr', 'LVFW_Systolic_Thickness': '9', 'IVS_DT_result': 'Incr', 'lower_range_LV_wall_S': '9.02196653454584', 'mMode_comments': 'test', 'lower_range_left_atrium': '14.937815929863813', 'Echo_Conclusions': 'this is a test conclusion', 'upper_range_fractional_shortening': '46', 'docSerialNum': '7ZsePqRQ', 'upper_range_septum_s': '11.817140961019245', 'breed': 'poodle', 'upper_range_LV_Chamber_D': '26.005164189408948', 'doctor': 'Mark Steininger', 'lower_range_fractional_shortening': '33', 'agePatient': '2.2 years', 'LV_DD_result': 'Decr', 'lower_range_LV_Chamber_D': '24.00260542482356', 'Aortic_Root': '9', 'lower_range_la_over_ao': '0.8', 'IVS_ST_result': 'Incr', 'EPSS': '5', 'upper_range_aorta': '16.852816198298893', 'SF_result': 'Decr', 'lower_range_LV_wall_D': '5.4438004703714045', 'upper_range_left_atrium': '17.242184070136187', 'epss_result': 'Nor', 'clinicalHistory': 'teastaeasdvadsvsdavsad', 'clinicSerialNum': 'G5dMsohj', 'LVFW_Distolic_Thickness': '8', 'upper_range_epss': '7.7', 'lower_range_aorta': '15.01918380170111', 'LA_result': 'Decr', 'lower_range_LV_Chamber_S': '14.121190570839703', 'Left_Atrium_over_AO': '0.5555555555555556', 'la_over_ao_result': 'Decr', 'weightPatient': '17.2', 'upper_range_LV_wall_D': '6.604199529628596', 'lower_range_septum_s': '10.242859038980757', 'IVS_Systolic_Thickness': '17', 'LVFW_DT_result': 'Incr', 'LV_SD_result': 'Decr', 'Left_Vent_Diastolic': '12', 'upper_range_septum_d': '8.216542217685129', 'echo_doppler_findings': 'test ', 'Echo_B_mode_findings': 'test1', 'Shortening_Fraction': '8.333333333333332', 'Left_Vent_Systolic': '11'}]]
-2019-10-11 15:00:48,518 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-10-11 15:00:59,585 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-10-11 15:01:04,388 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-10-11 15:01:08,297 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2019-10-11 15:01:13,478 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
-2020-01-08 15:30:36,703 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 64, in template
+    {{ form.doctor1.(size=1) }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 672, in parse_postfix
+    node = self.parse_subscript(node)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 705, in parse_subscript
+    self.fail('expected name or number', attr_token.lineno)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected name or number
+2020-01-27 10:55:01,406 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

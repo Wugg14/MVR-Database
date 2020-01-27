@@ -194,7 +194,7 @@ class ctInterpretationForm (FlaskForm):
     CT_Image_Date = StringField('Image Date:', validators=[DataRequired()])
     practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     CT_NumImages = IntegerField('No. of Images:', validators=[DataRequired()])
-    phone = IntegerField('Phone:', validators=[DataRequired()])
+    phone = StringField('Phone:', validators=[DataRequired()])
     views = StringField('Views:', validators=[DataRequired()])
     CT_Findings = TextAreaField('Findings:', validators=[DataRequired()])
     CT_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
@@ -220,7 +220,7 @@ class newService (FlaskForm):
     price = FloatField('Price:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
-class Invoice (FlaskForm):
+class InvoiceForm (FlaskForm):
     date = StringField('Date:', validators=[DataRequired()])
     mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
     doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
@@ -240,3 +240,4 @@ class Invoice (FlaskForm):
     doctor3 = StringField('Doctor:', validators=[DataRequired()])
     service3 = StringField('Service:', validators=[DataRequired()])
     price3 = StringField('Price:', validators=[DataRequired()])
+    submit = SubmitField('Save')

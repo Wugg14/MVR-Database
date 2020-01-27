@@ -4,8 +4,12 @@
 <h2>Recent Reports</h2>
 <table id="table-1">
     <!--Query 10 of the most recent reports of each type. Use data tables to order them by timestamp-->
+    <thead>
+    <tr><td>Report Type</td><td>Patient Name</td><td>Clinic Name</td><td>Date</td></tr>
+    </thead>
+    <tbody>
 
-
+    </tbody>
 </table>
 
 <div class="invoice-form">
@@ -45,5 +49,114 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </div>
+
+            <div id="slot-1">
+                <div class="form-section" id="patient1">
+                {{ form.patient1.label }}
+                {{ form.patient1(size=1) }}
+                {% for error in form.patient1.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="doctor1">
+                {{ form.doctor1.label }}
+                {{ form.doctor1(size=1) }}
+                {% for error in form.doctor1.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="service1">
+                {{ form.service1.label }}
+                {{ form.service1(size=1) }}
+                {% for error in form.service1.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="price1">
+                {{ form.price1.label }}
+                {{ form.price1(size=1) }}
+                {% for error in form.price1.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+            </div>
+
+            <div id="slot-2">
+                <div class="form-section" id="patient2">
+                {{ form.patient2.label }}
+                {{ form.patient2(size=1) }}
+                {% for error in form.patient2.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="doctor2">
+                {{ form.doctor2.label }}
+                {{ form.doctor2(size=1) }}
+                {% for error in form.doctor2.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="service2">
+                {{ form.service2.label }}
+                {{ form.service2(size=1) }}
+                {% for error in form.service2.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="price2">
+                {{ form.price2.label }}
+                {{ form.price2(size=1) }}
+                {% for error in form.price2.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+            </div>
+
+
+            <div id="slot-3">
+                <div class="form-section" id="patient3">
+                {{ form.patient3.label }}
+                {{ form.patient3(size=1) }}
+                {% for error in form.patient3.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="doctor3">
+                {{ form.doctor3.label }}
+                {{ form.doctor3(size=1) }}
+                {% for error in form.doctor3.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="service3">
+                {{ form.service3.label }}
+                {{ form.service3(size=1) }}
+                {% for error in form.service3.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="price3">
+                {{ form.price3.label }}
+                {{ form.price3(size=1) }}
+                {% for error in form.price3.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+            </div>
+        <br />
+        <p>{{ form.submit() }}</p>
     </form>
 </div>
+{% endblock %}

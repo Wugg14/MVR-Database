@@ -1,9 +1,9 @@
 from flask import render_template, request, redirect, url_for, flash
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
+from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, InvoiceForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
+from app.models import User, Invoice, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
 from app.emails import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -139,7 +139,7 @@ def CT():
         db.session.commit()
         flash('Added report to database')
         return redirect(url_for('ct'))
-    return render_template('ct.html', title='CT Report', form=form)
+    return render_template('ctTable.html', title='CT Report', form=form)
 
 @app.route('/misc', methods=['GET', 'POST'])
 def misc():
@@ -210,6 +210,13 @@ def newMiscService():
         return redirect(url_for('newMiscService'))
     return render_template('newService.html', title='New Misc Service', form=form)
 
+
+#Invoice Page
+@app.route('/invoice', methods=['GET', 'POST'])
+def invoice():
+    form = InvoiceForm()
+    report_ct = Report_CT.query.order_by(Report_CT.timestamp.desc())
+    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, form=form)
 
 #Tables for displaying DB entries
 @app.route('/clinictable', methods=['GET', 'POST'])

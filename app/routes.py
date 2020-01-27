@@ -215,8 +215,12 @@ def newMiscService():
 @app.route('/invoice', methods=['GET', 'POST'])
 def invoice():
     form = InvoiceForm()
-    report_ct = Report_CT.query.order_by(Report_CT.timestamp.desc())
-    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, form=form)
+    report_ct = Report_CT.query.order_by(Report_CT.timestamp.desc()).limit(10)
+    report_radio = Report_Radiographic.query.order_by(Report_Radiographic.timestamp.desc()).limit(10)
+    report_us = Report_US.query.order_by(Report_US.timestamp.desc()).limit(10)
+    misc = Report_Misc.query.order_by(Report_Misc.timestamp.desc()).limit(10)
+    echo = Report_Echo.query.order_by(Report_Echo.timestamp.desc()).limit(10)
+    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, report_radio=report_radio, report_us=report_us, misc=misc, echo=echo, form=form)
 
 #Tables for displaying DB entries
 @app.route('/clinictable', methods=['GET', 'POST'])

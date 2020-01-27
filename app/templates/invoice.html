@@ -1,13 +1,41 @@
 {% extends "base.html" %}
 {% block app_content %}
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <h2>Recent Reports</h2>
 <table id="table-1">
-    <!--Query 10 of the most recent reports of each type. Use data tables to order them by timestamp-->
     <thead>
-    <tr><td>Report Type</td><td>Patient Name</td><td>Clinic Name</td><td>Date</td></tr>
+    <tr><td>Report Type</td><td>MVR or 4 Seasons?</td><td>Patient Name</td><td>Clinic Name</td><td>Date</td><td>Add to Invoice?</td></tr>
     </thead>
     <tbody>
+        {% for c in report_ct %}
+        <tr>
+            <td>CT</td><td>{{ c.mvr4seasons }}</td><td>{{ c.patient }}</td><td>{{ c.clinic }}</td><td>{{ c.timestamp }}</td><td><button type="button" data-reportID ={{ c.id }} data-price="100">Add</button></td>
+        </tr>
+        {% endfor %}
+
+        {% for r in report_radio %}
+        <tr>
+            <td>Radiographic</td><td>{{ r.mvr4seasons }}</td><td>{{ r.patient }}</td><td>{{ r.clinic }}</td><td>{{ r.timestamp }}</td><td><button type="button" data-reportID ={{ r.id }} data-price="200">Add</button></td>
+        </tr>
+        {% endfor %}
+
+        {% for u in report_us %}
+        <tr>
+            <td>Ultrasound</td><td>{{ u.mvr4seasons }}</td><td>{{ u.patient }}</td><td>{{ u.clinic }}</td><td>{{ u.timestamp }}</td><td><button type="button" data-reportID ={{ u.id }} data-price="300">Add</button></td>
+        </tr>
+        {% endfor %}
+
+        {% for m in misc %}
+        <tr>
+            <td>{{ m.service }} / Misc</td><td>{{ m.mvr4seasons }}</td><td>{{ m.patient }}</td><td>{{ m.clinic }}</td><td>{{ m.timestamp }}</td><td><button type="button" data-reportID ={{ m.id }} data-price="{{ m.price }}">Add</button></td>
+        </tr>
+        {% endfor %}
+
+        {% for e in echo %}
+        <tr>
+            <td>Echocardiography</td><td>{{ e.mvr4seasons }}</td><td>{{ e.patient }}</td><td>{{ e.clinic }}</td><td>{{ e.timestamp }}</td><td><button type="button" data-reportID ={{ e.id }} data-price="400">Add</button></td>
+        </tr>
+        {% endfor %}
 
     </tbody>
 </table>
@@ -83,6 +111,14 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
+                <div class="form-section" id="reportID1">
+                {{ form.reportID1.label }}
+                {{ form.reportID1(size=1) }}
+                {% for error in form.reportID1.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
             </div>
 
             <div id="slot-2">
@@ -114,6 +150,14 @@
                 {{ form.price2.label }}
                 {{ form.price2(size=1) }}
                 {% for error in form.price2.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="form-section" id="reportID2">
+                {{ form.reportID2.label }}
+                {{ form.reportID2(size=1) }}
+                {% for error in form.reportID2.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
@@ -154,9 +198,26 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
+                <div class="form-section" id="reportID3">
+                {{ form.reportID3.label }}
+                {{ form.reportID3(size=1) }}
+                {% for error in form.reportID3.errors %}
+                <br />
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
             </div>
         <br />
         <p>{{ form.submit() }}</p>
     </form>
 </div>
+{% endblock %}
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#table-1').DataTable();
+    } );
+</script>
 {% endblock %}

@@ -1,89 +1,95 @@
-2019-08-15 15:41:55,349 ERROR: Exception on /ultrasound [POST] [in c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py:1780]
+2020-01-08 15:30:53,733 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:31:04,207 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:31:11,965 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:31:18,773 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:32:44,810 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:37:57,497 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:41:22,963 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:41:30,587 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-08 15:56:46,650 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-10 10:46:41,778 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:47]
+2020-01-10 10:58:41,100 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 10:59:45,715 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:04:08,584 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:04:38,796 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:09:28,752 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:13:01,493 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:14:08,773 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:15:03,334 ERROR: Exception on /cardiograph [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
-    value = _strict_as_bool(value)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
-    raise TypeError("Not a boolean value: %r" % value)
-TypeError: Not a boolean value: '4seasons'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
     raise value
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\routes.py", line 105, in ultrasound
-    db.session.commit()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
-    self.transaction.commit()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
-    self._prepare_impl()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 473, in _prepare_impl
-    self.session.flush()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
-    self._flush(objects)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 154, in reraise
-    raise value
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2557, in _flush
-    flush_context.execute()
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
-    uow,
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
-    insert,
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1138, in _emit_insert_statements
-    statement, params
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    e, util.text_type(statement), parameters, None, None
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 399, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 172, in cardiographic
+    return render_template('echocardiograph.html', title='Echocardiography Report', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
-    value = _strict_as_bool(value)
-  File "c:\users\mark\local sites\mvr database\mvr-database\venv\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
-    raise TypeError("Not a boolean value: %r" % value)
-sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: '4seasons'
-[SQL: INSERT INTO "report_US" ("docSerialNum", patient, owner, species, breed, "sexPatient", "agePatient", "clinicalHistory", "SF_Liver", "SF_Spleen", "SF_Stomach", "SF_Pancreas", "SF_Intestines", "SF_Adrenals", "SF_LKidney", "SF_RKidney", "SF_Bladder", "SF_Sublum", "SF_Prostate", "SF_Uterus", "Conclusions_ALL", "FINDAS_ALL", date, "clinicSerialNum", "clinicName", doctor, mvr4seasons) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
-[parameters: [{'docSerialNum': 'a', 'doctor': 'M', 'SF_Adrenals': 'n', 'owner': 'bbbbbbb', 'species': 'dogggie', 'SF_Pancreas': 'n', 'patient': 'Doobie', 'SF_Stomach': 'n', 'SF_Spleen': 'n', 'mvr4seasons': '4seasons', 'SF_RKidney': 'n', 'SF_Intestines': 'n', 'SF_Uterus': 'n', 'SF_Bladder': 'n', 'clinicName': 'T', 'SF_LKidney': 'n', 'agePatient': 34, 'clinicSerialNum': 'e', 'SF_Sublum': 'n', 'sexPatient': 'F', 'Conclusions_ALL': 'asfaesf', 'breed': 'no', 'FINDAS_ALL': 'asefaeser', 'date': '010219', 'SF_Prostate': 'n', 'clinicalHistory': 34, 'SF_Liver': 'n'}]]
-2019-08-15 15:42:31,435 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-15 15:42:38,036 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-15 15:43:02,038 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-15 15:45:06,360 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-15 15:46:28,202 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-08-15 15:49:14,178 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-09-17 13:30:00,955 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-09-17 13:30:18,139 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
-2019-09-17 14:13:33,315 INFO: MVR Database [in C:\Users\Mark\Local Sites\MVR database\MVR-Database\app\__init__.py:47]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\echocardiograph.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 35, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\echocardiograph.html", line 27, in block "app_content"
+    {{ form.doctor.label }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.EchocardiographForm object' has no attribute 'doctor'
+2020-01-10 11:17:07,913 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:21:11,059 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:22:36,475 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:23:48,646 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:24:03,794 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:29:50,431 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:36:33,670 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:48:42,743 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:49:14,501 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 11:58:13,525 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:00:18,694 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:02:29,254 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:06:17,115 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:09:53,456 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:11:07,382 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:15:02,787 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:31:50,831 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 12:35:45,718 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-10 14:56:33,254 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-13 16:14:35,881 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-13 17:00:51,791 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 12:58:49,722 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 13:33:53,376 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 13:46:37,152 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 13:46:43,196 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 14:56:47,285 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 14:59:02,235 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-14 14:59:40,813 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 09:59:11,040 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 09:59:39,820 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 10:03:00,854 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

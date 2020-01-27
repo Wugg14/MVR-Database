@@ -230,14 +230,17 @@ class InvoiceForm (FlaskForm):
     doctor1 = StringField('Doctor:', validators=[DataRequired()])
     service1 = StringField('Service:', validators=[DataRequired()])
     price1 = StringField('Price:', validators=[DataRequired()])
+    reportID1 = StringField('ID:', validators=[DataRequired()])
     #Invoice Slot 2
     patient2 = StringField('Patient:', validators=[DataRequired()])
     doctor2 = StringField('Doctor:', validators=[DataRequired()])
     service2 = StringField('Service:', validators=[DataRequired()])
     price2 = StringField('Price:', validators=[DataRequired()])
+    reportID2 = StringField('ID:', validators=[DataRequired()])
     # Invoice Slot 3
     patient3 = StringField('Patient:', validators=[DataRequired()])
     doctor3 = StringField('Doctor:', validators=[DataRequired()])
     service3 = StringField('Service:', validators=[DataRequired()])
     price3 = StringField('Price:', validators=[DataRequired()])
+    reportID3 = StringField('ID:', validators=[DataRequired()])
     submit = SubmitField('Save')

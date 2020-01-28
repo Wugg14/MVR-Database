@@ -149,7 +149,9 @@ def misc():
         clinicData = clinicData.split('__')
         doctorData = form.doctor.data
         doctorData = doctorData.split('__')
-        miscReport = Report_Misc(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], mvr4seasons=form.mvr4seasons.data, patient=form.patient.data, owner=form.owner.data, service=form.service.data, SvcTotal=form.charge.data, Misc_Service_Description=form.description.data, date=form.date.data)
+        serviceData = form.service.data
+        serviceData = serviceData.split('__')
+        miscReport = Report_Misc(doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], mvr4seasons=form.mvr4seasons.data, patient=form.patient.data, owner=form.owner.data, service=serviceData[0], SvcTotal=form.charge.data, Misc_Service_Description=form.description.data, date=form.date.data)
         db.session.add(miscReport)
         db.session.commit()
         flash('Added report to database')

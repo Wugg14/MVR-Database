@@ -223,24 +223,24 @@ class newService (FlaskForm):
 class InvoiceForm (FlaskForm):
     date = StringField('Date:', validators=[DataRequired()])
     mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
-    doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
+    doctor = StringField('Doctor:', validators=[DataRequired()])
     practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     #Invoice Slot 1
     patient1 = StringField('Patient:', validators=[DataRequired()])
     doctor1 = StringField('Doctor:', validators=[DataRequired()])
-    service1 = StringField('Service:', validators=[DataRequired()])
+    service1 = SelectField('Service:', validators=[DataRequired()], choices=get_current_services())
     price1 = StringField('Price:', validators=[DataRequired()])
     reportID1 = StringField('ID:', validators=[DataRequired()])
     #Invoice Slot 2
     patient2 = StringField('Patient:', validators=[DataRequired()])
     doctor2 = StringField('Doctor:', validators=[DataRequired()])
-    service2 = StringField('Service:', validators=[DataRequired()])
+    service2 = SelectField('Service:', validators=[DataRequired()], choices=get_current_services())
     price2 = StringField('Price:', validators=[DataRequired()])
     reportID2 = StringField('ID:', validators=[DataRequired()])
     # Invoice Slot 3
     patient3 = StringField('Patient:', validators=[DataRequired()])
     doctor3 = StringField('Doctor:', validators=[DataRequired()])
-    service3 = StringField('Service:', validators=[DataRequired()])
+    service3 = SelectField('Service:', validators=[DataRequired()], choices=get_current_services())
     price3 = StringField('Price:', validators=[DataRequired()])
     reportID3 = StringField('ID:', validators=[DataRequired()])
     submit = SubmitField('Save')

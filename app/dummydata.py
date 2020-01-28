@@ -36,3 +36,8 @@ def addItem():
     test1 = Invoice_Item(invoiceID='111', serviceType='Echocardiography', reportID='1', patient='Pickles', price=1200)
     db.session.add(test1)
     db.session.commit()
+
+def addExistingServices():
+    ct = MiscService(serviceID='1', serviceType='CT Scan', serviceAbbr='ct', reportType='Report_CT', description='CT Scans', servicePrice=800)
+    db.session.add(ct)
+    radio = MiscService(serviceID='2', serviceType='Radiographic Interpretation', serviceAbbr='radio', reportType='Report_Radiographic', description='CT Scans', servicePrice=800)

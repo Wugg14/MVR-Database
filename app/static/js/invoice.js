@@ -5,11 +5,13 @@ class InvoiceForm {
         this.slot1 = document.getElementById('slot-1');
         this.slot2 = document.getElementById('slot-2');
         this.slot3 = document.getElementById('slot-3');
+        this.service1 = document.getElementById('service1')
 
     }
 
      // Events
     events() {
+        this.service1.addEventListener('change', this.updatePrice(this.service1))
     }
 
     //Methods
@@ -47,15 +49,17 @@ class InvoiceForm {
         let doctorField = doctorSlot.querySelector('input');
         doctorField.value = item.dataset.reportdoctor;
 
-        let serviceSlot = slot.querySelector('.reportService');
-        let serviceField = serviceSlot.querySelector('input');
-        serviceField.value = item.dataset.reportservice;
-
-        let priceSlot = slot.querySelector('.reportPrice');
-        let priceField = priceSlot.querySelector('input');
-        priceField.value = item.dataset.reportprice;
+        if(item.dataset.reportprice){
+            let priceSlot = slot.querySelector('.reportPrice');
+            let priceField = priceSlot.querySelector('input');
+            priceField.value = item.dataset.reportprice;
+        }
 
         slot.classList.add("filled");
+    }
+
+    updatePrice(row) {
+        //update the correspoding price
     }
 
 

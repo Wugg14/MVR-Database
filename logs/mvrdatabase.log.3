@@ -1,22 +1,4 @@
-2020-01-27 11:22:04,820 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 219, in invoice
-    report_radio = Report_Radiographicquery.order_by(Report_CT.timestamp.desc()).limit(10)
-NameError: name 'Report_Radiographicquery' is not defined
-2020-01-27 11:22:22,034 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:22:35,447 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-01-27 11:53:48,863 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
     cursor, statement, parameters, context
@@ -93,8 +75,15 @@ Traceback (most recent call last):
     cursor.execute(statement, parameters)
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: report_CT.timestamp
 [SQL: SELECT report__radiographic.id AS report__radiographic_id, report__radiographic.doctor AS report__radiographic_doctor, report__radiographic."docSerialNum" AS "report__radiographic_docSerialNum", report__radiographic.patient AS report__radiographic_patient, report__radiographic.species AS report__radiographic_species, report__radiographic.owner AS report__radiographic_owner, report__radiographic."Rad_Image_Date" AS "report__radiographic_Rad_Image_Date", report__radiographic."Rad_NumImages" AS "report__radiographic_Rad_NumImages", report__radiographic."RadView" AS "report__radiographic_RadView", report__radiographic."Rad_Findings" AS "report__radiographic_Rad_Findings", report__radiographic."Rad_Conclusions" AS "report__radiographic_Rad_Conclusions", report__radiographic."Clinic_Phone" AS "report__radiographic_Clinic_Phone", report__radiographic.date AS report__radiographic_date, report__radiographic."clinicSerialNum" AS "report__radiographic_clinicSerialNum", report__radiographic.clinic AS report__radiographic_clinic, report__radiographic.mvr4seasons AS report__radiographic_mvr4seasons, report__radiographic.timestamp AS report__radiographic_timestamp 
-FROM report__radiographic ORDER BY "report_CT".timestamp DESC
- LIMIT ? OFFSET ?]
-[parameters: (10, 0)]
+FROM report__radiographic ORDER BY "report_CT".timestamp DESC]
 (Background on this error at: http://sqlalche.me/e/e3q8)
-2020-01-27 11:53:46,595 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:54:07,862 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:54:43,183 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:54:50,921 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:55:14,532 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:56:59,762 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:00:17,972 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:03:30,455 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:05:53,614 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:06:05,888 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:28:44,096 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

@@ -9,31 +9,31 @@
     <tbody>
         {% for c in report_ct %}
         <tr>
-            <td>CT</td><td>{{ c.mvr4seasons }}</td><td>{{ c.patient }}</td><td>{{ c.clinic }}</td><td>{{ c.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService ="CT" data-reportDoctor ={{ c.doctor }} data-reportPatient ={{ c.patient }} data-reportID ={{ c.id }} data-price="300">Add</button></td>
+            <td>CT</td><td>{{ c.mvr4seasons }}</td><td>{{ c.patient }}</td><td>{{ c.clinic }}</td><td>{{ c.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService ="CT" data-reportDoctor ={{ c.doctor }} data-reportPatient ={{ c.patient }} data-reportID ={{ c.id }}>Add</button></td>
         </tr>
         {% endfor %}
 
         {% for r in report_radio %}
         <tr>
-            <td>Radiographic</td><td>{{ r.mvr4seasons }}</td><td>{{ r.patient }}</td><td>{{ r.clinic }}</td><td>{{ r.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService ="Radiographic" data-reportDoctor ={{ r.doctor }} data-reportPatient ={{ r.patient }} data-reportID ={{ r.id }} data-price="200">Add</button></td>
+            <td>Radiographic</td><td>{{ r.mvr4seasons }}</td><td>{{ r.patient }}</td><td>{{ r.clinic }}</td><td>{{ r.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService ="Radiographic" data-reportDoctor ={{ r.doctor }} data-reportPatient ={{ r.patient }} data-reportID ={{ r.id }}>Add</button></td>
         </tr>
         {% endfor %}
 
         {% for u in report_us %}
         <tr>
-            <td>Ultrasound</td><td>{{ u.mvr4seasons }}</td><td>{{ u.patient }}</td><td>{{ u.clinic }}</td><td>{{ u.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)"  class="add-to-invoice" type="button" data-reportService ="Ultrasound" data-reportDoctor ={{ u.doctor }} data-reportPatient ={{ u.patient }} data-reportID ={{ u.id }} data-price="300">Add</button></td>
+            <td>Ultrasound</td><td>{{ u.mvr4seasons }}</td><td>{{ u.patient }}</td><td>{{ u.clinic }}</td><td>{{ u.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)"  class="add-to-invoice" type="button" data-reportService ="Ultrasound" data-reportDoctor ={{ u.doctor }} data-reportPatient ={{ u.patient }} data-reportID ={{ u.id }}>Add</button></td>
         </tr>
         {% endfor %}
 
         {% for m in misc %}
         <tr>
-            <td>{{ m.service }} / Misc</td><td>{{ m.mvr4seasons }}</td><td>{{ m.patient }}</td><td>{{ m.clinic }}</td><td>{{ m.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService ={{ m.service }} data-reportDoctor ={{ m.doctor }} data-reportPatient ={{ m.patient }}  data-reportID ={{ m.id }} data-price="{{ m.price }}">Add</button></td>
+            <td>{{ m.service }} / Misc</td><td>{{ m.mvr4seasons }}</td><td>{{ m.patient }}</td><td>{{ m.clinic }}</td><td>{{ m.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService ={{ m.service }} data-reportDoctor ={{ m.doctor }} data-reportPatient ={{ m.patient }}  data-reportID ={{ m.id }} data-price={{ m.price }}>Add</button></td>
         </tr>
         {% endfor %}
 
         {% for e in echo %}
         <tr>
-            <td>Echocardiography</td><td>{{ e.mvr4seasons }}</td><td>{{ e.patient }}</td><td>{{ e.clinic }}</td><td>{{ e.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService = "Echocardiography" data-reportDoctor ={{ e.doctor }} data-reportPatient ={{ e.patient }} data-reportID ={{ e.id }} data-price="400">Add</button></td>
+            <td>Echocardiography</td><td>{{ e.mvr4seasons }}</td><td>{{ e.patient }}</td><td>{{ e.clinic }}</td><td>{{ e.timestamp }}</td><td><button onclick="Invoice.dispatcher(this)" class="add-to-invoice" type="button" data-reportService = "Echocardiography" data-reportDoctor ={{ e.doctor }} data-reportPatient ={{ e.patient }} data-reportID ={{ e.id }}>Add</button></td>
         </tr>
         {% endfor %}
 
@@ -79,7 +79,7 @@
             </div>
 
             <div id="slot-1">
-                <div class="form-section reportPatient" id="patient1">
+                <div class="form-section reportPatient">
                 {{ form.patient1.label }}
                 {{ form.patient1(size=1) }}
                 {% for error in form.patient1.errors %}
@@ -87,7 +87,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportDoctor" id="doctor1">
+                <div class="form-section reportDoctor">
                 {{ form.doctor1.label }}
                 {{ form.doctor1(size=1) }}
                 {% for error in form.doctor1.errors %}
@@ -95,7 +95,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportService" id="service1">
+                <div class="form-section reportService">
                 {{ form.service1.label }}
                 {{ form.service1(size=1) }}
                 {% for error in form.service1.errors %}
@@ -103,7 +103,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportPrice" id="price1">
+                <div class="form-section reportPrice">
                 {{ form.price1.label }}
                 {{ form.price1(size=1) }}
                 {% for error in form.price1.errors %}
@@ -111,7 +111,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportID" id="reportID1">
+                <div class="form-section reportID">
                 {{ form.reportID1.label }}
                 {{ form.reportID1(size=1) }}
                 {% for error in form.reportID1.errors %}
@@ -122,7 +122,7 @@
             </div>
 
             <div id="slot-2">
-                <div class="form-section reportPatient" id="patient2">
+                <div class="form-section reportPatient">
                 {{ form.patient2.label }}
                 {{ form.patient2(size=1) }}
                 {% for error in form.patient2.errors %}
@@ -130,7 +130,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportDoctor" id="doctor2">
+                <div class="form-section reportDoctor">
                 {{ form.doctor2.label }}
                 {{ form.doctor2(size=1) }}
                 {% for error in form.doctor2.errors %}
@@ -138,7 +138,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportService" id="service2">
+                <div class="form-section reportService">
                 {{ form.service2.label }}
                 {{ form.service2(size=1) }}
                 {% for error in form.service2.errors %}
@@ -146,7 +146,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportPrice" id="price2">
+                <div class="form-section reportPrice">
                 {{ form.price2.label }}
                 {{ form.price2(size=1) }}
                 {% for error in form.price2.errors %}
@@ -154,7 +154,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportID" id="reportID2">
+                <div class="form-section reportID">
                 {{ form.reportID2.label }}
                 {{ form.reportID2(size=1) }}
                 {% for error in form.reportID2.errors %}
@@ -166,7 +166,7 @@
 
 
             <div id="slot-3">
-                <div class="form-section reportPatient" id="patient3">
+                <div class="form-section reportPatient">
                 {{ form.patient3.label }}
                 {{ form.patient3(size=1) }}
                 {% for error in form.patient3.errors %}
@@ -174,7 +174,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportDoctor" id="doctor3">
+                <div class="form-section reportDoctor">
                 {{ form.doctor3.label }}
                 {{ form.doctor3(size=1) }}
                 {% for error in form.doctor3.errors %}
@@ -182,7 +182,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportService" id="service3">
+                <div class="form-section reportService">
                 {{ form.service3.label }}
                 {{ form.service3(size=1) }}
                 {% for error in form.service3.errors %}
@@ -190,7 +190,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportPrice" id="price3">
+                <div class="form-section reportPrice">
                 {{ form.price3.label }}
                 {{ form.price3(size=1) }}
                 {% for error in form.price3.errors %}
@@ -198,7 +198,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
                 </div>
-                <div class="form-section reportID" id="reportID3">
+                <div class="form-section reportID">
                 {{ form.reportID3.label }}
                 {{ form.reportID3(size=1) }}
                 {% for error in form.reportID3.errors %}

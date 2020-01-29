@@ -5,13 +5,18 @@ class InvoiceForm {
         this.slot1 = document.getElementById('slot-1');
         this.slot2 = document.getElementById('slot-2');
         this.slot3 = document.getElementById('slot-3');
-        this.service1 = document.getElementById('service1')
+        this.service1 = document.getElementById('service1');
+        this.service2 = document.getElementById('service2');
+        this.service3 = document.getElementById('service3');
 
+        this.events();
     }
 
      // Events
     events() {
-        this.service1.addEventListener('change', this.updatePrice(this.service1))
+        this.service1.addEventListener('change', function(){Invoice.updatePrice(Invoice.service1)})
+        this.service2.addEventListener('change', function(){Invoice.updatePrice(Invoice.service2)})
+        this.service3.addEventListener('change', function(){Invoice.updatePrice(Invoice.service3)})
     }
 
     //Methods
@@ -59,7 +64,15 @@ class InvoiceForm {
     }
 
     updatePrice(row) {
-        //update the correspoding price
+        console.log('updatePrice')
+        //Go find the next input in the parent elements sibling
+        let priceInput = row.parentElement.nextElementSibling.querySelector('input');
+        //Get the price from the stored value and split it from the name
+        let price = row.value;
+        price = price.split("__");
+        price = price[1];
+        //update price input
+        priceInput.value = price;
     }
 
 

@@ -204,7 +204,6 @@ def newDoc():
 def newMiscService():
     form = newService()
     if form.validate_on_submit():
-        print('validated')
         service = MiscService(serviceID=randomStringDigits(8), serviceType=form.serviceType.data, serviceAbbr=form.serviceAbbr.data, reportType=form.ReportType.data, description=form.description.data, servicePrice=form.price.data)
         db.session.add(service)
         db.session.commit()
@@ -222,6 +221,18 @@ def invoice():
     report_us = Report_US.query.order_by(Report_US.timestamp.desc()).limit(10)
     misc = Report_Misc.query.order_by(Report_Misc.timestamp.desc()).limit(10)
     echo = Report_Echo.query.order_by(Report_Echo.timestamp.desc()).limit(10)
+
+    if form.validate_on_submit():
+        clinicData = form.practice.data
+        clinicData = clinicData.split('__')
+        doctorData = form.doctor.data
+        doctorData = doctorData.split('__')
+        newInvoice = Invoice(date=form.date.data, mvr4seasons=form.mvr4seasons.data, clinic=clinicData[0], clinicSerialNum=clinicData[1], doctor=doctorData[0], docSerialNum=doctorData[1], svcTotal=form.priceTotal.data)
+        db.session.add(newInvoice)
+        db.session.flush()
+        print('InvoiceID:', newInvoice.invoiceID)
+        db.session.commit()
+
     return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, report_radio=report_radio, report_us=report_us, misc=misc, echo=echo, form=form)
 
 #Tables for displaying DB entries

@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52f5fe33-c625-4b1c-a985-8ea922275c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/invoice.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/invoice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/mvrdatabase.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mvrdatabase.log.9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,13 +31,13 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.85345995">
+    <splitter split-orientation="horizontal" split-proportion="0.74573225">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
+                <state relative-caret-position="3757">
                   <caret line="228" column="40" selection-start-line="228" selection-start-column="40" selection-end-line="228" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#68#0" expanded="true" />
@@ -61,8 +49,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+                <state relative-caret-position="4828">
+                  <caret line="290" selection-start-line="290" selection-end-line="290" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -73,7 +61,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/invoice.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="443">
+                <state relative-caret-position="1734">
                   <caret line="102" selection-start-line="102" selection-end-line="102" />
                   <folding>
                     <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -100,7 +88,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/dummydata.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
+                <state relative-caret-position="697">
                   <caret line="42" column="136" selection-start-line="42" selection-start-column="136" selection-end-line="42" selection-end-column="136" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
@@ -109,11 +97,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/js/invoice.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="192">
-                  <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+                <state relative-caret-position="224">
+                  <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -121,12 +118,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="140">
-                  <caret line="263" column="42" lean-forward="true" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+                  <caret line="263" column="42" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#73#0" expanded="true" />
                   </folding>
@@ -229,14 +226,15 @@
         <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/forms.py" />
         <option value="$PROJECT_DIR$/app/static/js/invoice.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2035" />
-    <option name="y" value="-21" />
-    <option name="width" value="441" />
-    <option name="height" value="309" />
+    <option name="x" value="160" />
+    <option name="y" value="-15" />
+    <option name="width" value="1440" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectId" id="1PLIXeQlkHV0J8l0s3XsjphHd5I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -245,7 +243,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +278,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,18 +368,19 @@
       <workItem from="1579189960901" duration="263000" />
       <workItem from="1579190258344" duration="2258000" />
       <workItem from="1580134424847" duration="18308000" />
-      <workItem from="1580245528888" duration="24929000" />
+      <workItem from="1580245528888" duration="24960000" />
+      <workItem from="1580398485804" duration="150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99092000" />
+    <option name="totallyTimeSpent" value="99273000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1696" height="1066" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09902201" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28536782" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -395,14 +394,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294702" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3294702" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21757771" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21688741" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3290461" />
       <window_info anchor="bottom" id="Pylint" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3294621" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.32902184" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16168149" />
@@ -762,19 +761,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="263" column="42" lean-forward="true" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="3757">
           <caret line="228" column="40" selection-start-line="228" selection-start-column="40" selection-end-line="228" selection-end-column="40" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
@@ -782,20 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/dummydata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="136" selection-start-line="42" selection-start-column="136" selection-end-line="42" selection-end-column="136" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+        <state relative-caret-position="4828">
+          <caret line="290" selection-start-line="290" selection-end-line="290" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -804,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/invoice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
+        <state relative-caret-position="1734">
           <caret line="102" selection-start-line="102" selection-end-line="102" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -827,10 +806,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/dummydata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="42" column="136" selection-start-line="42" selection-start-column="136" selection-end-line="42" selection-end-column="136" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="263" column="42" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/invoice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+        <state relative-caret-position="224">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>

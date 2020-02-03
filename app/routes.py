@@ -198,7 +198,7 @@ def newDoc():
         flash('Added doctor to database')
         return redirect(url_for('newDoc'))
 
-    return render_template('doctorForm.html', title='New Doctor', form=form)
+    return render_template('doctorForm.html', title='New Doctor', form=form, entry='')
 
 @app.route('/newservice', methods=['GET', 'POST'])
 def newMiscService():
@@ -280,3 +280,13 @@ def echoTable():
 def radioTable():
     radioreports = Report_Radiographic.query.all()
     return render_template('/tables/radiographicTable.html', title='All Radiographic Reports', radioreports=radioreports)
+
+@app.route('/edit', methods=['GET', 'POST'])
+def editEntry():
+    entryType = request.args.get('type')
+    entryID = request.args.get('id')
+
+    if(entryType == 'doctor'):
+        form = newDoctor()
+        doctorEntry = Doctor.query.filter(Doctor.doctorSerialNum == entryID).first()
+        return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)

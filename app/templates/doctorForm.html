@@ -15,7 +15,7 @@
      </div>
         <div class="form-section" id="first">
          {{ form.first.label }}
-         {{ form.first(size=24) }}
+         {{ form.first(size=24, value=entry.first) }}
          {% for error in form.first.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -23,7 +23,7 @@
      </div>
          <div class="form-section" id="middle">
          {{ form.middle.label }}
-         {{ form.middle(size=2) }}
+         {{ form.middle(size=2, value=entry.middle) }}
          {% for error in form.middle.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -31,7 +31,7 @@
      </div>
         <div class="form-section" id="last">
          {{ form.last.label }}
-         {{ form.last(size=24) }}
+         {{ form.last(size=24, value=entry.last) }}
          {% for error in form.last.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -39,7 +39,7 @@
      </div>
          <div class="form-section" id="phone">
          {{ form.phone.label }}
-         {{ form.phone(size=24) }}
+         {{ form.phone(size=24, value=entry.cell) }}
          {% for error in form.phone.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -47,7 +47,7 @@
      </div>
         <div class="form-section" id="email">
          {{ form.email.label }}
-         {{ form.email(size=24) }}
+         {{ form.email(size=24, value=entry.email) }}
          {% for error in form.email.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -55,7 +55,7 @@
      </div>
         <div class="form-section" id="note">
          {{ form.note.label }}
-         {{ form.note(size=240) }}
+         {{ form.note(size=240, value=entry.note) }}
          {% for error in form.note.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>

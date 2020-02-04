@@ -310,10 +310,19 @@ def editEntry():
             clinicData = form.clinic.data
             # split serial from name by underscore seperator
             clinicData = clinicData.split('__')
-            doctorEntry(clinicName=clinicData[0], clinicSerialNum=clinicData[1], first=form.first.data, middle=form.middle.data, last=form.last.data, phone=form.phone.data, email=form.email.data, note=form.note.data,)
+
+            #update from the form
+            doctorEntry.clinicName = clinicData[0]
+            doctorEntry.clinicSerialNum = clinicData[1]
+            doctorEntry.first = form.first.data
+            doctorEntry.middle = form.middle.data
+            doctorEntry.last = form.last.data
+            doctorEntry.phone = form.phone.data
+            doctorEntry.email = form.email.data
+            doctorEntry.note = form.note.data
+
             db.session.commit()
             flash('Updated Doctor')
             return redirect(url_for('doctorTable'))
-
 
         return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)

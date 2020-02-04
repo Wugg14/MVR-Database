@@ -34,8 +34,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/routes.py">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state relative-caret-position="460">
                   <caret line="292" lean-forward="true" selection-start-line="292" selection-end-line="292" />
+=======
+                <state relative-caret-position="259">
+                  <caret line="181" column="1" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="1" />
+>>>>>>> tmp
                   <folding>
                     <element signature="e#0#68#0" expanded="true" />
                   </folding>
@@ -45,6 +50,13 @@
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models.py">
+<<<<<<< HEAD
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-458">
+                  <caret line="244" column="19" selection-start-line="244" selection-start-column="4" selection-end-line="244" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#0#73#0" expanded="true" />
+=======
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-458">
                   <caret line="244" column="19" selection-start-line="244" selection-start-column="4" selection-end-line="244" selection-end-column="19" />
@@ -62,11 +74,40 @@
                   <caret line="58" column="13" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="13" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
+>>>>>>> tmp
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+            <entry file="file://$PROJECT_DIR$/app/forms.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="58" column="13" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+=======
+            <entry file="file://$PROJECT_DIR$/app/templates/doctorForm.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+                  <folding>
+                    <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#5;n#form#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#6;n#form#0;n#div#0;n#!!top" expanded="true" />
+>>>>>>> tmp
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< HEAD
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/doctorForm.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -76,6 +117,8 @@
               </provider>
             </entry>
           </file>
+=======
+>>>>>>> tmp
         </leaf>
       </split-first>
       <split-second>
@@ -107,6 +150,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
+=======
+      <find>time</find>
+>>>>>>> tmp
       <find>misc_servi</find>
       <find>servicePrice</find>
       <find>misc_ser</find>
@@ -135,7 +182,10 @@
       <find>misc</find>
       <find>service.data</find>
       <find>idSlot</find>
+<<<<<<< HEAD
       <find>doct</find>
+=======
+>>>>>>> tmp
       <find>newD</find>
     </findStrings>
     <dirStrings>
@@ -186,8 +236,11 @@
         <option value="$PROJECT_DIR$/app/forms.py" />
         <option value="$PROJECT_DIR$/app/static/js/invoice.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+=======
+>>>>>>> tmp
         <option value="$PROJECT_DIR$/app/templates/doctorForm.html" />
         <option value="$PROJECT_DIR$/app/routes.py" />
       </list>
@@ -313,7 +366,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="107294000" />
+=======
+    <option name="totallyTimeSpent" value="100109000" />
+>>>>>>> tmp
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1696" height="1066" extended-state="6" />
@@ -650,6 +707,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/app/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="58" column="13" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> tmp
     <entry file="file://$PROJECT_DIR$/app/templates/invoice.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1734">
@@ -708,8 +778,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/emails.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="391">
           <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+=======
+        <state relative-caret-position="-458">
+          <caret line="244" column="19" selection-start-line="244" selection-start-column="4" selection-end-line="244" selection-end-column="19" />
+>>>>>>> tmp
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -747,20 +822,40 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-458">
           <caret line="244" column="19" selection-start-line="244" selection-start-column="4" selection-end-line="244" selection-end-column="19" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/templates/doctorForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#6;n#form#0;n#div#0;n#!!top" expanded="true" />
+>>>>>>> tmp
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="460">
           <caret line="292" lean-forward="true" selection-start-line="292" selection-end-line="292" />
+=======
+        <state relative-caret-position="259">
+          <caret line="181" column="1" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="1" />
+>>>>>>> tmp
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>

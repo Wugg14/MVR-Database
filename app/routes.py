@@ -289,4 +289,8 @@ def editEntry():
     if(entryType == 'doctor'):
         form = newDoctor()
         doctorEntry = Doctor.query.filter(Doctor.doctorSerialNum == entryID).first()
+<<<<<<< HEAD
         return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
+=======
+        return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
+>>>>>>> tmp

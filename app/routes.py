@@ -166,7 +166,7 @@ def cardiographic():
         clinicData = clinicData.split('__')
         doctorData = form.doctor.data
         doctorData = doctorData.split('__')
-        echoReport = Report_Echo(date=form.date.data, doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], mvr4seasons=form.mvr4seasons.data, patient=form.patient.data, breed=form.breed.data, owner=form.owner.data, sexPatient=form.sex.data, agePatient=form.age.data, weightPatient=form.weight.data, clinicalHistory=form.clinicalHistory.data, LVFW_Distolic_Thickness=form.LVFW_Distolic_Thickness.data, lower_range_LV_wall_D=form.lower_range_LV_wall_D.data, upper_range_LV_wall_D=form.upper_range_LV_wall_D.data, LVFW_DT_result=form.LVFW_DT_result.data,LVFW_Systolic_Thickness=form.LVFW_Systolic_Thickness.data, lower_range_LV_wall_S=form.lower_range_LV_wall_S.data, upper_range_LV_wall_S=form.upper_range_LV_wall_S.data, LVFW_ST_result=form.LVFW_ST_result.data, Left_Vent_Diastolic=form.Left_Vent_Diastolic.data, lower_range_LV_Chamber_D=form.lower_range_LV_Chamber_D.data, upper_range_LV_Chamber_D=form.upper_range_LV_Chamber_D.data, LV_DD_result=form.LV_DD_result.data, Left_Vent_Systolic=form.Left_Vent_Systolic.data, lower_range_LV_Chamber_S=form.lower_range_LV_Chamber_S.data, upper_range_LV_Chamber_S=form.upper_range_LV_Chamber_S.data, LV_SD_result=form.LV_SD_result.data, Shortening_Fraction=form.Shortening_Fraction.data, lower_range_fractional_shortening=form.lower_range_fractional_shortening.data, upper_range_fractional_shortening=form.upper_range_fractional_shortening.data, SF_result=form.SF_result.data,IVS_Diastolic_Thickness=form.IVS_Diastolic_Thickness.data, lower_range_septum_d=form.lower_range_septum_d.data, upper_range_septum_d=form.upper_range_septum_d.data, IVS_DT_result=form.IVS_DT_result.data, IVS_Systolic_Thickness=form.IVS_Systolic_Thickness.data, lower_range_septum_s=form.lower_range_septum_s.data, upper_range_septum_s=form.upper_range_septum_s.data, IVS_ST_result=form.IVS_ST_result.data, Aortic_Root=form.Aortic_Root.data, lower_range_aorta=form.lower_range_aorta.data, upper_range_aorta=form.upper_range_aorta.data, AR_result=form.AR_result.data, Left_Atrium=form.Left_Atrium.data, lower_range_left_atrium=form.lower_range_left_atrium.data, upper_range_left_atrium=form.upper_range_left_atrium.data, LA_result=form.LA_result.data, Left_Atrium_over_AO=form.Left_Atrium_over_AO.data, lower_range_la_over_ao=form.lower_range_la_over_ao.data, upper_range_la_over_ao=form.upper_range_la_over_ao.data, la_over_ao_result=form.la_over_ao_result.data, EPSS=form.EPSS.data, upper_range_epss=form.upper_range_epss.data, epss_result=form.epss_result.data, mMode_comments=form.m_mode_comments.data, echo_doppler_findings=form.echo_doppler_findings.data, Echo_B_mode_findings=form.Echo_B_mode_findings.data, Echo_Conclusions=form.Echo_Conclusions.data)
+        echoReport = Report_Echo(date=form.date.data, doctor=doctorData[0], docSerialNum=doctorData[1], clinicName=clinicData[0], clinicSerialNum=clinicData[1], mvr4seasons=form.mvr4seasons.data, patient=form.patient.data, species=form.species.data, breed=form.breed.data, owner=form.owner.data, sexPatient=form.sex.data, agePatient=form.age.data, weightPatient=form.weight.data, clinicalHistory=form.clinicalHistory.data, LVFW_Distolic_Thickness=form.LVFW_Distolic_Thickness.data, lower_range_LV_wall_D=form.lower_range_LV_wall_D.data, upper_range_LV_wall_D=form.upper_range_LV_wall_D.data, LVFW_DT_result=form.LVFW_DT_result.data,LVFW_Systolic_Thickness=form.LVFW_Systolic_Thickness.data, lower_range_LV_wall_S=form.lower_range_LV_wall_S.data, upper_range_LV_wall_S=form.upper_range_LV_wall_S.data, LVFW_ST_result=form.LVFW_ST_result.data, Left_Vent_Diastolic=form.Left_Vent_Diastolic.data, lower_range_LV_Chamber_D=form.lower_range_LV_Chamber_D.data, upper_range_LV_Chamber_D=form.upper_range_LV_Chamber_D.data, LV_DD_result=form.LV_DD_result.data, Left_Vent_Systolic=form.Left_Vent_Systolic.data, lower_range_LV_Chamber_S=form.lower_range_LV_Chamber_S.data, upper_range_LV_Chamber_S=form.upper_range_LV_Chamber_S.data, LV_SD_result=form.LV_SD_result.data, Shortening_Fraction=form.Shortening_Fraction.data, lower_range_fractional_shortening=form.lower_range_fractional_shortening.data, upper_range_fractional_shortening=form.upper_range_fractional_shortening.data, SF_result=form.SF_result.data,IVS_Diastolic_Thickness=form.IVS_Diastolic_Thickness.data, lower_range_septum_d=form.lower_range_septum_d.data, upper_range_septum_d=form.upper_range_septum_d.data, IVS_DT_result=form.IVS_DT_result.data, IVS_Systolic_Thickness=form.IVS_Systolic_Thickness.data, lower_range_septum_s=form.lower_range_septum_s.data, upper_range_septum_s=form.upper_range_septum_s.data, IVS_ST_result=form.IVS_ST_result.data, Aortic_Root=form.Aortic_Root.data, lower_range_aorta=form.lower_range_aorta.data, upper_range_aorta=form.upper_range_aorta.data, AR_result=form.AR_result.data, Left_Atrium=form.Left_Atrium.data, lower_range_left_atrium=form.lower_range_left_atrium.data, upper_range_left_atrium=form.upper_range_left_atrium.data, LA_result=form.LA_result.data, Left_Atrium_over_AO=form.Left_Atrium_over_AO.data, lower_range_la_over_ao=form.lower_range_la_over_ao.data, upper_range_la_over_ao=form.upper_range_la_over_ao.data, la_over_ao_result=form.la_over_ao_result.data, EPSS=form.EPSS.data, upper_range_epss=form.upper_range_epss.data, epss_result=form.epss_result.data, mMode_comments=form.m_mode_comments.data, echo_doppler_findings=form.echo_doppler_findings.data, Echo_B_mode_findings=form.Echo_B_mode_findings.data, Echo_Conclusions=form.Echo_Conclusions.data)
         db.session.add(echoReport)
         db.session.commit()
         flash('Added report to database')
@@ -234,15 +234,15 @@ def invoice():
         print('InvoiceID:', newInvoice.invoiceID)
         #start seaching each slot for invoices, and add them to the database
         print('form report1 data: ' + form.reportID1.data)
-        if(form.reportID1.data != ''):
+        if form.reportID1.data != '':
             newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service1.data, reportID=form.reportID1.data, patient=form.patient1.data, price=form.price1.data)
             db.session.add(newinvoiceitem)
 
-        if (form.reportID2.data != ''):
+        if form.reportID2.data != '':
             newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service2.data, reportID=form.reportID2.data, patient=form.patient2.data, price=form.price2.data)
             db.session.add(newinvoiceitem)
 
-        if (form.reportID3.data != ''):
+        if form.reportID3.data != '':
             newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service3.data, reportID=form.reportID3.data, patient=form.patient3.data, price=form.price3.data)
             db.session.add(newinvoiceitem)
 
@@ -303,9 +303,10 @@ def editEntry():
     entryType = request.args.get('type')
     entryID = request.args.get('id')
 
-    if(entryType == 'doctor'):
+    if entryType == 'doctor':
         form = newDoctor()
         doctorEntry = Doctor.query.filter(Doctor.doctorSerialNum == entryID).first()
+
         if form.validate_on_submit():
             clinicData = form.clinic.data
             # split serial from name by underscore seperator
@@ -326,3 +327,9 @@ def editEntry():
             return redirect(url_for('doctorTable'))
 
         return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
+
+    if entryType == 'echocardiograph':
+        form = EchocardiographForm()
+        formEntry = Doctor.query.filter(Report_Echo.id == entryID).first()
+
+        #if form.validate_on_submit():

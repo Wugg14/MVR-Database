@@ -157,6 +157,7 @@ class Report_Echo(db.Model):
     weightPatient = db.Column(db.Float)
     clinicalHistory = db.Column(db.String(360))
     mvr4seasons = db.Column(db.String(24))
+    species = db.Column(db.String(8))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     """M-Mode Special Fields"""
     #LV Wall D

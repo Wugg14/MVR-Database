@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, InvoiceForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Invoice, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
+from app.models import User, Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
 from app.emails import send_password_reset_email
 from app.randomStrings import randomStringDigits
 
@@ -229,9 +229,25 @@ def invoice():
         doctorData = doctorData.split('__')
         newInvoice = Invoice(date=form.date.data, mvr4seasons=form.mvr4seasons.data, clinic=clinicData[0], clinicSerialNum=clinicData[1], doctor=doctorData[0], docSerialNum=doctorData[1], svcTotal=form.priceTotal.data)
         db.session.add(newInvoice)
+        #flush to get the invoice's new ID for reference in invoice items
         db.session.flush()
         print('InvoiceID:', newInvoice.invoiceID)
+        #start seaching each slot for invoices, and add them to the database
+        if(form.reportID1.data != ''):
+            newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service1.data, reportID=form.reportID1.data, patient=form.patient1.data, price=form.price1.data)
+            db.session.add(newinvoiceitem)
+
+        if (form.reportID2.data != ''):
+            newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service2.data, reportID=form.reportID2.data, patient=form.patient2.data, price=form.price2.data)
+            db.session.add(newinvoiceitem)
+
+        if (form.reportID3.data != ''):
+            newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service3.data, reportID=form.reportID3.data, patient=form.patient3.data, price=form.price3.data)
+            db.session.add(newinvoiceitem)
+
         db.session.commit()
+        flash('Added Invoice to Database')
+        return redirect(url_for('invoice'))
 
     return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, report_radio=report_radio, report_us=report_us, misc=misc, echo=echo, form=form)
 

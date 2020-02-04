@@ -223,7 +223,7 @@ class newService (FlaskForm):
 class InvoiceForm (FlaskForm):
     date = StringField('Date:', validators=[DataRequired()])
     mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
-    doctor = StringField('Doctor:', validators=[DataRequired()])
+    doctor = SelectField('Doctor:', validators=[DataRequired()], choices=get_current_doctors())
     practice = SelectField('Practice:', validators=[DataRequired()], choices=get_current_clinics())
     #Invoice Slot 1
     patient1 = StringField('Patient:')
@@ -243,48 +243,6 @@ class InvoiceForm (FlaskForm):
     service3 = SelectField('Service:', choices=get_current_services())
     price3 = StringField('Price:')
     reportID3 = StringField('ID:')
-    # Invoice Slot 4
-    patient4 = StringField('Patient:')
-    doctor4 = StringField('Doctor:')
-    service4 = SelectField('Service:', choices=get_current_services())
-    price4 = StringField('Price:')
-    reportID4 = StringField('ID:')
-    # Invoice Slot 5
-    patient5 = StringField('Patient:')
-    doctor5 = StringField('Doctor:')
-    service5 = SelectField('Service:', choices=get_current_services())
-    price5 = StringField('Price:')
-    reportID5 = StringField('ID:')
-    # Invoice Slot 6
-    patient6 = StringField('Patient:')
-    doctor6 = StringField('Doctor:')
-    service6 = SelectField('Service:', choices=get_current_services())
-    price6 = StringField('Price:')
-    reportID6 = StringField('ID:')
-    # Invoice Slot 7
-    patient7 = StringField('Patient:')
-    doctor7 = StringField('Doctor:')
-    service7 = SelectField('Service:', choices=get_current_services())
-    price7 = StringField('Price:')
-    reportID7 = StringField('ID:')
-    # Invoice Slot 8
-    patient8 = StringField('Patient:')
-    doctor8 = StringField('Doctor:')
-    service8 = SelectField('Service:', choices=get_current_services())
-    price8 = StringField('Price:')
-    reportID8 = StringField('ID:')
-    # Invoice Slot 9
-    patient9 = StringField('Patient:')
-    doctor9 = StringField('Doctor:')
-    service9 = SelectField('Service:', choices=get_current_services())
-    price9 = StringField('Price:')
-    reportID9 = StringField('ID:')
-    # Invoice Slot 10
-    patient10 = StringField('Patient:')
-    doctor10 = StringField('Doctor:')
-    service10 = SelectField('Service:', choices=get_current_services())
-    price10 = StringField('Price:')
-    reportID10 = StringField('ID:')
     #price total
     priceTotal = FloatField('Total:', validators=[DataRequired()])
     submit = SubmitField('Save')

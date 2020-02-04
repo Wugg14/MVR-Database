@@ -1,4 +1,13 @@
-2020-01-27 10:55:05,052 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-01-27 11:53:48,863 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: report_CT.timestamp
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +21,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 219, in invoice
-    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, form=form)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 220, in invoice
+    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, report_radio=report_radio, form=form)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -40,64 +49,41 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 19, in block "app_content"
-    {{ form.hidden_tag() }}
-jinja2.exceptions.UndefinedError: 'app.models.Invoice object' has no attribute 'hidden_tag'
-2020-01-27 10:57:01,298 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 10:58:04,101 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 219, in invoice
-    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 16, in block "app_content"
+    {% for r in report_radio %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3324, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3349, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 399, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 159, in block "app_content"
-    <p>{{ form.submit() }}</p>
-jinja2.exceptions.UndefinedError: 'app.forms.InvoiceForm object' has no attribute 'submit'
-2020-01-27 10:58:21,550 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:08:21,165 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:10:50,545 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:12:01,531 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:12:10,736 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:14:59,343 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:15:11,812 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:16:39,173 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:17:22,604 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:17:57,202 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:18:34,467 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-27 11:22:01,370 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: report_CT.timestamp
+[SQL: SELECT report__radiographic.id AS report__radiographic_id, report__radiographic.doctor AS report__radiographic_doctor, report__radiographic."docSerialNum" AS "report__radiographic_docSerialNum", report__radiographic.patient AS report__radiographic_patient, report__radiographic.species AS report__radiographic_species, report__radiographic.owner AS report__radiographic_owner, report__radiographic."Rad_Image_Date" AS "report__radiographic_Rad_Image_Date", report__radiographic."Rad_NumImages" AS "report__radiographic_Rad_NumImages", report__radiographic."RadView" AS "report__radiographic_RadView", report__radiographic."Rad_Findings" AS "report__radiographic_Rad_Findings", report__radiographic."Rad_Conclusions" AS "report__radiographic_Rad_Conclusions", report__radiographic."Clinic_Phone" AS "report__radiographic_Clinic_Phone", report__radiographic.date AS report__radiographic_date, report__radiographic."clinicSerialNum" AS "report__radiographic_clinicSerialNum", report__radiographic.clinic AS report__radiographic_clinic, report__radiographic.mvr4seasons AS report__radiographic_mvr4seasons, report__radiographic.timestamp AS report__radiographic_timestamp 
+FROM report__radiographic ORDER BY "report_CT".timestamp DESC]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-01-27 11:54:07,862 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:54:43,183 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:54:50,921 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:55:14,532 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 11:56:59,762 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:00:17,972 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:03:30,455 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:05:53,614 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:06:05,888 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-01-27 12:28:44,096 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

@@ -212,7 +212,6 @@ def newMiscService():
     return render_template('newService.html', title='New Misc Service', form=form)
 
 
-#Invoice Page
 @app.route('/invoice', methods=['GET', 'POST'])
 def invoice():
     form = InvoiceForm()
@@ -223,16 +222,18 @@ def invoice():
     echo = Report_Echo.query.order_by(Report_Echo.timestamp.desc()).limit(10)
 
     if form.validate_on_submit():
+        print('validated!!!')
         clinicData = form.practice.data
         clinicData = clinicData.split('__')
         doctorData = form.doctor.data
         doctorData = doctorData.split('__')
-        newInvoice = Invoice(date=form.date.data, mvr4seasons=form.mvr4seasons.data, clinic=clinicData[0], clinicSerialNum=clinicData[1], doctor=doctorData[0], docSerialNum=doctorData[1], svcTotal=form.priceTotal.data)
+        newInvoice = Invoice(invoiceID=randomStringDigits(8), date=form.date.data, mvr4seasons=form.mvr4seasons.data, clinic=clinicData[0], clinicSerialNum=clinicData[1], doctor=doctorData[0], docSerialNum=doctorData[1], svcTotal=form.priceTotal.data)
         db.session.add(newInvoice)
         #flush to get the invoice's new ID for reference in invoice items
         db.session.flush()
         print('InvoiceID:', newInvoice.invoiceID)
         #start seaching each slot for invoices, and add them to the database
+        print('form report1 data: ' + form.reportID1.data)
         if(form.reportID1.data != ''):
             newinvoiceitem = Invoice_Item(invoiceID=newInvoice.invoiceID, serviceType=form.service1.data, reportID=form.reportID1.data, patient=form.patient1.data, price=form.price1.data)
             db.session.add(newinvoiceitem)
@@ -247,7 +248,7 @@ def invoice():
 
         db.session.commit()
         flash('Added Invoice to Database')
-        return redirect(url_for('invoice'))
+        return redirect(url_for('index'))
 
     return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, report_radio=report_radio, report_us=report_us, misc=misc, echo=echo, form=form)
 
@@ -305,4 +306,14 @@ def editEntry():
     if(entryType == 'doctor'):
         form = newDoctor()
         doctorEntry = Doctor.query.filter(Doctor.doctorSerialNum == entryID).first()
+        if form.validate_on_submit():
+            clinicData = form.clinic.data
+            # split serial from name by underscore seperator
+            clinicData = clinicData.split('__')
+            doctorEntry(clinicName=clinicData[0], clinicSerialNum=clinicData[1], first=form.first.data, middle=form.middle.data, last=form.last.data, phone=form.phone.data, email=form.email.data, note=form.note.data,)
+            db.session.commit()
+            flash('Updated Doctor')
+            return redirect(url_for('doctorTable'))
+
+
         return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)

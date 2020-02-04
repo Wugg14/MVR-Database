@@ -1,4 +1,4 @@
-2020-01-28 17:44:25,489 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-03 16:40:38,855 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,38 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 217, in invoice
-    form = InvoiceForm()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_wtf\form.py", line 88, in __init__
-    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\form.py", line 272, in __init__
-    super(Form, self).__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\form.py", line 52, in __init__
-    field = meta.bind_field(self, unbound_field, options)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 27, in bind_field
-    return unbound_field.bind(form=form, **options)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 353, in bind
-    return self.field_class(*self.args, **kw)
-TypeError: __init__() got an unexpected keyword argument 'choices'
-2020-01-28 17:45:18,758 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-28 17:45:20,728 ERROR: Exception on /invoice [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 223, in invoice
-    return render_template('/invoice.html',  title='New Invoice', report_ct=report_ct, report_radio=report_radio, report_us=report_us, misc=misc, echo=echo, form=form)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 292, in editEntry
+    return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -56,7 +26,7 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 1, in top-level template code
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 1, in top-level template code
     {% extends "base.html" %}
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -70,39 +40,54 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\invoice.html", line 66, in block "app_content"
-    {{ form.doctor(size=1) }}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
-    return self.meta.render_field(self, kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
-    return field.widget(field, **render_kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
-    for val, label, selected in field.iter_choices():
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
-    for value, label in self.choices:
-TypeError: 'NoneType' object is not iterable
-2020-01-28 17:46:57,229 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-28 17:59:30,822 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-28 18:00:09,453 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:18:22,933 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:21:54,541 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:22:44,858 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:32:21,258 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:33:04,308 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:35:50,336 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:36:57,468 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:37:39,920 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:44:39,769 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:45:06,031 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:45:27,391 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:49:30,727 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:50:22,762 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:54:52,936 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 10:56:22,522 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 11:11:52,689 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 11:17:02,102 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 11:19:38,576 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 11:20:41,069 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 11:21:12,289 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 11:24:04,402 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-01-29 15:04:58,422 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 7, in block "app_content"
+    {{ form.hidden_tag() }}
+jinja2.exceptions.UndefinedError: 'app.models.Doctor object' has no attribute 'hidden_tag'
+2020-02-03 16:41:43,823 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-03 16:41:57,439 ERROR: Exception on /newdoc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 201, in newDoc
+    return render_template('doctorForm.html', title='New Doctor', form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 18, in block "app_content"
+    {{ form.first(size=24, value=entry.first) }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'entry' is undefined

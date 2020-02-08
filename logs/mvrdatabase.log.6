@@ -1,4 +1,4 @@
-2020-02-03 16:57:10,207 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-04 12:57:45,133 ERROR: Exception on /invoice [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,39 +12,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 292, in editEntry
-    return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 10, in block "app_content"
-    {{ form.clinic(size=1) }}
-TypeError: 'NoneType' object is not callable
-2020-02-03 17:01:38,071 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-03 17:01:54,302 ERROR: Exception on /newdoc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 230, in invoice
+    newInvoice = Invoice(date=form.date.data, mvr4seasons=form.mvr4seasons.data, clinic=clinicData[0], clinicSerialNum=clinicData[1], doctor=doctorData[0], docSerialNum=doctorData[1], svcTotal=form.priceTotal.data)
+IndexError: list index out of range
+2020-02-04 13:01:11,650 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-04 13:01:46,134 ERROR: Exception on /invoice [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: invoice.invoiceID
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,53 +39,48 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 201, in newDoc
-    return render_template('doctorForm.html', title='New Doctor', form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 233, in invoice
+    db.session.flush()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
+    self._flush(objects)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 154, in reraise
+    raise value
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2557, in _flush
+    flush_context.execute()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1138, in _emit_insert_statements
+    statement, params
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 399, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 18, in block "app_content"
-    {{ form.first(size=24, value=entry.first) }}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'entry' is undefined
-2020-02-03 17:03:09,041 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:05:58,053 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:06:05,700 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:06:33,611 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:09:23,886 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:13:25,714 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:33:13,851 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:34:13,510 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:36:25,049 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:26,862 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:39,733 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:54,505 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:59,115 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:39:36,549 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:44:01,428 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:49:35,502 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:57:12,645 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: invoice.invoiceID
+[SQL: INSERT INTO invoice (date, mvr4seasons, clinic, "clinicSerialNum", doctor, "docSerialNum", "svcTotal", timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('01012020', 'mvr', 'test Clinic 2', '456', 'Test2 Doctor2', '1011', 500.0, '2020-02-04 18:01:46.133593')]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-02-04 13:04:50,467 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

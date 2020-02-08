@@ -9,7 +9,7 @@
          <div class="top-column">
             <div class="form-section" id="date">
                 {{ form.date.label }}
-                {{ form.date(size=10, value=input.date) }}
+                {{ form.date(size=10, value=entry.date) }}
                 {% for error in form.date.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -17,7 +17,7 @@
             </div>
              <div class="form-section" id="doctor">
                 {{ form.doctor.label }}
-                {{ form.doctor(size=1, value=input.doctor) }}
+                {{ form.doctor(size=1, value=entry.doctor) }}
                 {% for error in form.doctor.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -25,7 +25,7 @@
             </div>
              <div class="form-section" id="practice">
                 {{ form.practice.label }}
-                {{ form.practice(size=1, value=input.clinicName) }}
+                {{ form.practice(size=1, value=entry.clinicName) }}
                 {% for error in form.practice.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -33,7 +33,7 @@
             </div>
              <div class="form-section" id="mvr4seasons">
                  {{ form.mvr4seasons.label }}
-                 {{ form.mvr4seasons(size=1, value=input.mvr4seasons) }}
+                 {{ form.mvr4seasons(size=1, value=entry.mvr4seasons) }}
                  {% for error in form.mvr4seasons.errors %}
                  <br />
                  <span style="color: red;">[{{ error }}]</span>
@@ -43,7 +43,7 @@
          <div class="top-column">
              <div class="form-section" id="patient">
                 {{ form.patient.label }}
-                {{ form.patient(size=12, value=input.patient) }}
+                {{ form.patient(size=12, value=entry.patient) }}
                 {% for error in form.patient.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -51,7 +51,7 @@
             </div>
              <div class="form-section" id="owner">
                 {{ form.owner.label }}
-                {{ form.owner(size=24, value=input.owner) }}
+                {{ form.owner(size=24, value=entry.owner) }}
                 {% for error in form.owner.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>

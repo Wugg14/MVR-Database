@@ -1,4 +1,4 @@
-2020-02-08 13:26:21,094 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-08 13:35:44,944 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
     cursor, statement, parameters, context
@@ -71,17 +71,6 @@ Traceback (most recent call last):
     cursor.execute(statement, parameters)
 sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
 [SQL: UPDATE clinic SET company=?, nickname=?, street=?, city=?, state=?, zip=?, phone=?, email=? WHERE clinic."clinicSerialNum" = ?]
-[parameters: (('Test Name Change',), ('Nickname 1',), ('Main St',), ('Example City',), ('Example State',), ('0',), ('100-800-9320',), ('test1@email.com',), ('1', '2', '3'))]
+[parameters: (('New Name!',), ('Nickname 1',), ('Main St',), ('Example City',), ('Example State',), ('0',), ('100-800-9320',), ('test1@email.com',), ('1', '2', '3'))]
 (Background on this error at: http://sqlalche.me/e/rvf5)
-2020-02-08 13:31:20,870 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1850, in finalize_request
-    response = self.make_response(rv)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1976, in make_response
-    'The view function did not return a valid response. The'
-TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
-2020-02-08 13:32:24,731 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-08 13:50:31,689 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

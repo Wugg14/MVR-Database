@@ -1,4 +1,4 @@
-2020-02-03 16:40:38,855 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-03 16:43:15,272 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -40,11 +40,10 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 7, in block "app_content"
-    {{ form.hidden_tag() }}
-jinja2.exceptions.UndefinedError: 'app.models.Doctor object' has no attribute 'hidden_tag'
-2020-02-03 16:41:43,823 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-03 16:41:57,439 ERROR: Exception on /newdoc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 10, in block "app_content"
+    {{ form.clinic(size=1) }}
+TypeError: 'NoneType' object is not callable
+2020-02-03 16:44:21,519 ERROR: Exception on /newdoc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()

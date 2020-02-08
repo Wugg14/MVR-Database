@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash
 from app import db
-from app.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm, InvoiceForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
-from app.models import User, Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
+from app.forms import InvoiceForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
+from app.models import Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
 
 def doctorEdit(entryID):
     form = newDoctor()
@@ -48,8 +48,6 @@ def clinicEdit(entryID):
         return redirect(url_for('clinicTable'))
 
     return render_template('clinicForm.html', title='Edit Clinic', entry=clinicEntry, form=form)
-
-
 
 def echocardiographEdit(entryID):
     form = EchocardiographForm()
@@ -128,3 +126,34 @@ def echocardiographEdit(entryID):
         return redirect(url_for('echoTable'))
 
     return render_template('echocardiograph.html', title='Edit Cardiographic Report', entry=formEntry, form=form)
+
+def miscServiceEdit(entryID):
+    form = miscService()
+    formEntry = Report_Misc.query.filter(Report_Misc.id == entryID).first()
+
+    if form.validate_on_submit():
+        clinicData = form.practice.data
+        clinicData = clinicData.split('__')
+        doctorData = form.doctor.data
+        doctorData = doctorData.split('__')
+        serviceData = form.service.data
+        serviceData = serviceData.split('__')
+
+        formEntry.doctor = doctorData[0]
+        formEntry.docSerialNum = doctorData[1]
+        formEntry.clinicName = clinicData[0]
+        formEntry.clinicSerialNum = clinicData[1]
+        formEntry.mvr4seasons = form.mvr4seasons.data
+        formEntry.patient = form.patient.data
+        formEntry.owner = form.owner.data
+        formEntry.service = serviceData[0]
+        formEntry.SvcTotal = form.charge.data
+        formEntry.Misc_Service_Description = form.description.data
+        formEntry.date = form.date.data
+
+        db.session.commit()
+        flash('Updated Misc Report')
+
+        return redirect(url_for('miscReportTable'))
+
+    return render_template('miscService.html', title='Edit Misc Report', entry=formEntry, form=form)

@@ -6,7 +6,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
 from app.emails import send_password_reset_email
 from app.randomStrings import randomStringDigits
-from app.editRoute import doctorEdit, clinicEdit, echocardiographEdit
+from app.editRoute import doctorEdit, clinicEdit, echocardiographEdit, miscServiceEdit
 
 @app.route('/')
 @app.route('/index')
@@ -298,9 +298,11 @@ def editEntry():
     if entryType == 'doctor':
         return doctorEdit(entryID)
 
-    if entryType == 'clinic':
+    elif entryType == 'clinic':
         return clinicEdit(entryID)
 
-    if entryType == 'echocardiograph':
+    elif entryType == 'echocardiograph':
         return echocardiographEdit(entryID)
 
+    elif entryType == 'misc':
+        return miscServiceEdit(entryID)

@@ -7,7 +7,7 @@
         {{ form.hidden_tag() }}
         <div class="form-section" id="company">
          {{ form.company.label }}
-         {{ form.company(size=10) }}
+         {{ form.company(size=10, value=entry.company) }}
          {% for error in form.company.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -15,7 +15,7 @@
         </div>
         <div class="form-section" id="nickname">
          {{ form.nickname.label }}
-         {{ form.nickname(size=10) }}
+         {{ form.nickname(size=10, value=entry.nickname) }}
          {% for error in form.nickname.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-section" id="street">
          {{ form.street.label }}
-         {{ form.street(size=24) }}
+         {{ form.street(size=24, value=entry.street) }}
          {% for error in form.street.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -31,7 +31,7 @@
         </div>
         <div class="form-section" id="city">
          {{ form.city.label }}
-         {{ form.city(size=12) }}
+         {{ form.city(size=12, value=entry.city) }}
          {% for error in form.city.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -39,7 +39,7 @@
         </div>
         <div class="form-section" id="state">
          {{ form.state.label }}
-         {{ form.state(size=12) }}
+         {{ form.state(size=12, value=entry.state) }}
          {% for error in form.state.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -47,7 +47,7 @@
         </div>
         <div class="form-section" id="zip">
          {{ form.zip.label }}
-         {{ form.zip(size=6) }}
+         {{ form.zip(size=6, value=entry.zip) }}
          {% for error in form.zip.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -55,7 +55,7 @@
         </div>
         <div class="form-section" id="phone">
          {{ form.phone.label }}
-         {{ form.phone(size=10) }}
+         {{ form.phone(size=10, value=entry.phone) }}
          {% for error in form.phone.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -63,7 +63,7 @@
         </div>
         <div class="form-section" id="email">
          {{ form.email.label }}
-         {{ form.email(size=12) }}
+         {{ form.email(size=12, value=entry.email) }}
          {% for error in form.email.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>
@@ -71,7 +71,7 @@
         </div>
         <div class="form-section" id="notes">
          {{ form.notes.label }}
-         {{ form.notes(size=12) }}
+         {{ form.notes(size=12, value=entry.note) }}
          {% for error in form.notes.errors %}
          <br />
          <span style="color: red;">[{{ error }}]</span>

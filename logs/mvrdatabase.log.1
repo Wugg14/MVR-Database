@@ -1,28 +1,10 @@
-2020-02-04 12:57:45,133 ERROR: Exception on /invoice [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 230, in invoice
-    newInvoice = Invoice(date=form.date.data, mvr4seasons=form.mvr4seasons.data, clinic=clinicData[0], clinicSerialNum=clinicData[1], doctor=doctorData[0], docSerialNum=doctorData[1], svcTotal=form.priceTotal.data)
-IndexError: list index out of range
-2020-02-04 13:01:11,650 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:01:46,134 ERROR: Exception on /invoice [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-08 13:35:44,944 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
     cursor, statement, parameters, context
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.IntegrityError: NOT NULL constraint failed: invoice.invoiceID
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
 
 The above exception was the direct cause of the following exception:
 
@@ -39,10 +21,18 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 233, in invoice
-    db.session.flush()
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 302, in editEntry
+    return clinicEdit(entryID)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\editRoute.py", line 46, in clinicEdit
+    db.session.commit()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
     return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
+    self.transaction.commit()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
+    self._prepare_impl()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 473, in _prepare_impl
+    self.session.flush()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
     self._flush(objects)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
@@ -57,10 +47,10 @@ Traceback (most recent call last):
     rec.execute(self)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
     uow,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
-    insert,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1138, in _emit_insert_statements
-    statement, params
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
     return meth(self, multiparams, params)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
@@ -79,8 +69,8 @@ Traceback (most recent call last):
     cursor, statement, parameters, context
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: invoice.invoiceID
-[SQL: INSERT INTO invoice (date, mvr4seasons, clinic, "clinicSerialNum", doctor, "docSerialNum", "svcTotal", timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)]
-[parameters: ('01012020', 'mvr', 'test Clinic 2', '456', 'Test2 Doctor2', '1011', 500.0, '2020-02-04 18:01:46.133593')]
-(Background on this error at: http://sqlalche.me/e/gkpj)
-2020-02-04 13:04:50,467 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: UPDATE clinic SET company=?, nickname=?, street=?, city=?, state=?, zip=?, phone=?, email=? WHERE clinic."clinicSerialNum" = ?]
+[parameters: (('New Name!',), ('Nickname 1',), ('Main St',), ('Example City',), ('Example State',), ('0',), ('100-800-9320',), ('test1@email.com',), ('1', '2', '3'))]
+(Background on this error at: http://sqlalche.me/e/rvf5)
+2020-02-08 13:50:31,689 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

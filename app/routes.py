@@ -6,22 +6,14 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
 from app.emails import send_password_reset_email
 from app.randomStrings import randomStringDigits
+from app.editRoute import doctorEdit, clinicEdit, echocardiographEdit
 
 @app.route('/')
 @app.route('/index')
 @login_required
 def index():
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+
+    return render_template('index.html', title='Home')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -105,7 +97,7 @@ def ultrasound():
         db.session.commit()
         flash('Added Ultrasound Report to database')
         return redirect(url_for('ultrasound'))
-    return render_template('ultrasound.html', title='Ultrasound Report', form=form)
+    return render_template('ultrasound.html', title='Ultrasound Report', form=form, entry='')
 
 @app.route('/radiograph', methods=['GET', 'POST'])
 def radiograph():
@@ -122,7 +114,7 @@ def radiograph():
         db.session.commit()
         flash('Added report to database')
         return redirect(url_for('radiograph'))
-    return render_template('radiograph.html', title='Ultrasound Report', form=form)
+    return render_template('radiograph.html', title='Ultrasound Report', form=form, entry='')
 
 @app.route('/ct', methods=['GET', 'POST'])
 def CT():
@@ -139,7 +131,7 @@ def CT():
         db.session.commit()
         flash('Added report to database')
         return redirect(url_for('ct'))
-    return render_template('ctTable.html', title='CT Report', form=form)
+    return render_template('ctTable.html', title='CT Report', form=form, entry='')
 
 @app.route('/misc', methods=['GET', 'POST'])
 def misc():
@@ -156,7 +148,7 @@ def misc():
         db.session.commit()
         flash('Added report to database')
         return redirect(url_for('misc'))
-    return render_template('miscService.html', title='Misc Service Report', form=form,)
+    return render_template('miscService.html', title='Misc Service Report', form=form, entry='')
 
 @app.route('/cardiograph', methods=['GET', 'POST'])
 def cardiographic():
@@ -171,7 +163,7 @@ def cardiographic():
         db.session.commit()
         flash('Added report to database')
         return redirect(url_for('misc'))
-    return render_template('echocardiograph.html', title='Echocardiography Report', form=form)
+    return render_template('echocardiograph.html', title='Echocardiography Report', form=form, entry='')
 
 
 @app.route('/newclinic', methods=['GET', 'POST'])
@@ -209,7 +201,7 @@ def newMiscService():
         db.session.commit()
         flash('Added Service to database')
         return redirect(url_for('newMiscService'))
-    return render_template('newService.html', title='New Misc Service', form=form)
+    return render_template('newService.html', title='New Misc Service', form=form, entry='')
 
 
 @app.route('/invoice', methods=['GET', 'POST'])
@@ -304,32 +296,11 @@ def editEntry():
     entryID = request.args.get('id')
 
     if entryType == 'doctor':
-        form = newDoctor()
-        doctorEntry = Doctor.query.filter(Doctor.doctorSerialNum == entryID).first()
+        return doctorEdit(entryID)
 
-        if form.validate_on_submit():
-            clinicData = form.clinic.data
-            # split serial from name by underscore seperator
-            clinicData = clinicData.split('__')
-
-            #update from the form
-            doctorEntry.clinicName = clinicData[0]
-            doctorEntry.clinicSerialNum = clinicData[1]
-            doctorEntry.first = form.first.data
-            doctorEntry.middle = form.middle.data
-            doctorEntry.last = form.last.data
-            doctorEntry.phone = form.phone.data
-            doctorEntry.email = form.email.data
-            doctorEntry.note = form.note.data
-
-            db.session.commit()
-            flash('Updated Doctor')
-            return redirect(url_for('doctorTable'))
-
-        return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
+    if entryType == 'clinic':
+        return clinicEdit(entryID)
 
     if entryType == 'echocardiograph':
-        form = EchocardiographForm()
-        formEntry = Doctor.query.filter(Report_Echo.id == entryID).first()
+        return echocardiographEdit(entryID)
 
-        #if form.validate_on_submit():

@@ -7,7 +7,7 @@
         <div>
             <div class="form-section" id="serviceType">
                 {{ form.serviceType.label }}
-                {{ form.serviceType(size=10) }}
+                {{ form.serviceType(size=10, value=entry.serviceType) }}
                 {% for error in form.serviceType.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -15,7 +15,7 @@
             </div>
             <div class="form-section" id="serviceAbbr">
                 {{ form.serviceAbbr.label }}
-                {{ form.serviceAbbr(size=5) }}
+                {{ form.serviceAbbr(size=5, value=entry.serviceAbbr) }}
                 {% for error in form.serviceAbbr.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -23,7 +23,7 @@
             </div>
             <div class="form-section" id="ReportType">
                 {{ form.ReportType.label }}
-                {{ form.ReportType(size=1) }}
+                {{ form.ReportType(size=1, value=entry.ReportType) }}
                 {% for error in form.ReportType.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-section" id="description">
                 {{ form.description.label }}
-                {{ form.description(size=144) }}
+                {{ form.description(size=144, value=entry.description) }}
                 {% for error in form.description.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -39,7 +39,7 @@
             </div>
             <div class="form-section" id="price">
                 {{ form.price.label }}
-                {{ form.price(size=5) }}
+                {{ form.price(size=5, value=entry.servicePrice) }}
                 {% for error in form.price.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>

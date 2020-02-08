@@ -9,7 +9,7 @@
         <div class="top-column">
             <div class="form-section" id="date">
                 {{ form.date.label }}
-                {{ form.date(size=10) }}
+                {{ form.date(size=10, value=entry.date) }}
                 {% for error in form.date.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -17,7 +17,7 @@
             </div>
             <div class="form-section" id="mvr4seasons">
                 {{ form.mvr4seasons.label }}
-                {{ form.mvr4seasons(size=1) }}
+                {{ form.mvr4seasons(size=1, value=entry.mvr4seasons) }}
                 {% for error in form.mvr4seasons.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -25,7 +25,7 @@
             </div>
             <div class="form-section" id="doctor">
                 {{ form.doctor.label }}
-                {{ form.doctor(size=1) }}
+                {{ form.doctor(size=1, value=entry.doctor) }}
                 {% for error in form.doctor.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -33,7 +33,7 @@
             </div>
             <div class="form-section" id="practice">
                 {{ form.practice.label }}
-                {{ form.practice(size=1) }}
+                {{ form.practice(size=1, value=entry.clinic) }}
                 {% for error in form.practice.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -41,7 +41,7 @@
             </div>
             <div class="form-section" id="phone">
                 {{ form.phone.label }}
-                {{ form.phone(size=24) }}
+                {{ form.phone(size=24, value=entry.Clinic_Phone) }}
                 {% for error in form.phone.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -51,7 +51,7 @@
         <div class="top-column">
             <div class="form-section" id="patient">
                 {{ form.patient.label }}
-                {{ form.patient(size=12) }}
+                {{ form.patient(size=12, value=entry.patient) }}
                 {% for error in form.patient.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -59,7 +59,7 @@
             </div>
             <div class="form-section" id="species">
                 {{ form.species.label }}
-                {{ form.species(size=6) }}
+                {{ form.species(size=6, value=entry.species) }}
                 {% for error in form.species.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -67,7 +67,7 @@
             </div>
             <div class="form-section" id="owner">
                 {{ form.owner.label }}
-                {{ form.owner(size=24) }}
+                {{ form.owner(size=24, value=entry.owner) }}
                 {% for error in form.owner.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -77,7 +77,7 @@
         <div class="top-column">
             <div class="form-section" id="Rad_Image_Date">
                 {{ form.Rad_Image_Date.label }}
-                {{ form.Rad_Image_Date(size=10) }}
+                {{ form.Rad_Image_Date(size=10, value=entry.Rad_Image_Date) }}
                 {% for error in form.Rad_Image_Date.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -85,7 +85,7 @@
             </div>
             <div class="form-section" id="Rad_NumImages">
                 {{ form.Rad_NumImages.label }}
-                {{ form.Rad_NumImages(size=10) }}
+                {{ form.Rad_NumImages(size=10, value=entry.Rad_NumImages) }}
                 {% for error in form.Rad_NumImages.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -93,7 +93,7 @@
             </div>
             <div class="form-section" id="views">
                 {{ form.views.label }}
-                {{ form.views(size=10) }}
+                {{ form.views(size=10, value=entry.RadView) }}
                 {% for error in form.views.errors %}
                 <br />
                 <span style="color: red;">[{{ error }}]</span>
@@ -104,7 +104,7 @@
         <hr />
         <div class="form-section" id="Rad_Findings">
             {{ form.Rad_Findings.label }}
-            {{ form.Rad_Findings(size=360) }}
+            {{ form.Rad_Findings(size=360, value=entry.Rad_Findings) }}
             {% for error in form.Rad_Findings.errors %}
             <br />
             <span style="color: red;">[{{ error }}]</span>
@@ -114,7 +114,7 @@
         <hr />
         <div class="form-section" id="Rad_Conclusions">
             {{ form.Rad_Conclusions.label }}
-            {{ form.Rad_Conclusions(size=360) }}
+            {{ form.Rad_Conclusions(size=360, value=entry.Rad_Conclusions) }}
             {% for error in form.Rad_Conclusions.errors %}
             <br />
             <span style="color: red;">[{{ error }}]</span>

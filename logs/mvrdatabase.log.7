@@ -1,4 +1,5 @@
-2020-02-03 16:57:10,207 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-08 13:12:05,496 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-08 13:13:00,046 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,39 +13,26 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 292, in editEntry
-    return render_template('doctorForm.html', title='Edit Doctor', entry=doctorEntry, form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 10, in block "app_content"
-    {{ form.clinic(size=1) }}
-TypeError: 'NoneType' object is not callable
-2020-02-03 17:01:38,071 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-03 17:01:54,302 ERROR: Exception on /newdoc [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 302, in editEntry
+    clinicEdit(entryID)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\editRoute.py", line 48, in clinicEdit
+    return render_template('clinicForm.html', title='Edit Clinic', entry=clinicEntry, form=form)
+NameError: name 'render_template' is not defined
+2020-02-08 13:13:47,611 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-08 13:13:51,134 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-02-08 13:14:32,662 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-08 13:25:02,176 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-02-08 13:25:23,139 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,53 +46,9 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 201, in newDoc
-    return render_template('doctorForm.html', title='New Doctor', form=form)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\doctorForm.html", line 18, in block "app_content"
-    {{ form.first(size=24, value=entry.first) }}
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'entry' is undefined
-2020-02-03 17:03:09,041 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:05:58,053 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:06:05,700 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:06:33,611 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:09:23,886 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:13:25,714 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:33:13,851 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:34:13,510 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:36:25,049 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:26,862 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:39,733 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:54,505 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:37:59,115 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:39:36,549 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:44:01,428 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:49:35,502 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 12:57:12,645 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 302, in editEntry
+    return clinicEdit(entryID)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\editRoute.py", line 45, in clinicEdit
+    db.session.commit()
+NameError: name 'db' is not defined
+2020-02-08 13:26:06,890 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

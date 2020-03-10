@@ -6,7 +6,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
 from app.emails import send_password_reset_email
 from app.randomStrings import randomStringDigits
-from app.editRoute import doctorEdit, clinicEdit, echocardiographEdit, miscServiceEdit
+from app.editRoute import doctorEdit, clinicEdit, echocardiographEdit, miscServiceEdit, editService, editRadiograph, editUltrasound, editCT
 
 @app.route('/')
 @app.route('/index')
@@ -265,11 +265,6 @@ def ultrasoundTable():
     ultrasounds = Report_US.query.all()
     return render_template('/tables/ultrasoundTable.html', title='All Ultrasounds', ultrasounds=ultrasounds)
 
-@app.route('/radiographtable', methods=['GET'])
-def radiographTable():
-    radiographs = Report_Radiographic.query.all()
-    return render_template('/tables/radiographTable.html', title='All Radiographic Reports', radiographs=radiographs)
-
 @app.route('/cttable', methods=['GET'])
 def ctTable():
     ct = Report_CT.query.all()
@@ -301,8 +296,20 @@ def editEntry():
     elif entryType == 'clinic':
         return clinicEdit(entryID)
 
-    elif entryType == 'echocardiograph':
+    elif entryType == 'echo':
         return echocardiographEdit(entryID)
 
     elif entryType == 'misc':
         return miscServiceEdit(entryID)
+
+    elif entryType == 'service':
+        return editService(entryID)
+
+    elif entryType == 'ultrasound':
+        return editUltrasound(entryID)
+
+    elif entryType == 'radio':
+        return editRadiograph(entryID)
+
+    elif entryType == 'ct':
+        return editCT(entryID)

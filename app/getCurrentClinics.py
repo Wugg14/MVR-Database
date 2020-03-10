@@ -1,4 +1,5 @@
 from app.models import Clinic
+from app.structureSelectFields import structure_options
 """Queries all the clinics in the database and return the serial number and company name
 in a format that can be used as form options"""
 def get_current_clinics():
@@ -9,9 +10,7 @@ def get_current_clinics():
     for c in allClinics:
         name = c.company
         serial = c.clinicSerialNum
-        #create single string for the data processing in the route
-        nameSerial = name + '__' + serial
-        formattedChoice = (nameSerial, name)
+        formattedChoice = structure_options(name, serial)
         choices.append(formattedChoice)
 
     return choices

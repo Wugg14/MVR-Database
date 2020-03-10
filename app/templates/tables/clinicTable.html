@@ -12,7 +12,7 @@
         <tbody>
         {% for c in clinics %}
         <tr>
-            <td>{{ c.clinicSerialNum }}</td><td>{{ c.company }}</td><td>{{ c.nickname }}</td><td>{{ c.street }}</td><td>{{ c.city }}</td><td>{{ c.state }}</td><td>{{ c.zip }}</td><td>{{ c.phone }}</td><td>{{ c.email }}</td><td>{{ c.note }}</td><td>Delete?</td>
+            <td>{{ c.clinicSerialNum }}</td><td>{{ c.company }}</td><td>{{ c.nickname }}</td><td>{{ c.street }}</td><td>{{ c.city }}</td><td>{{ c.state }}</td><td>{{ c.zip }}</td><td>{{ c.phone }}</td><td>{{ c.email }}</td><td>{{ c.note }}</td><td><a href="/edit?type=clinic&id={{ c.clinicSerialNum }}">Edit</a></td>
         </tr>
         {% endfor %}
         </tbody>

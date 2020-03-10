@@ -6,13 +6,13 @@
     <table id="table-1">
         <thead>
             <tr>
-                <td>Service ID</td><td>Service Type</td><td>Service Abbreviation</td><td>Report Type</td><td>Description</td><td>Price</td><td>Delete?</td>
+                <td>Service ID</td><td>Service Type</td><td>Service Abbreviation</td><td>Report Type</td><td>Description</td><td>Price</td><td>Edit</td>
             </tr>
         </thead>
         <tbody>
         {% for s in services %}
         <tr>
-            <td>{{ s.serviceID }}</td><td>{{ s.serviceType }}</td><td>{{ s.serviceAbbr }}</td><td>{{ s.reportType }}</td><td>{{ s.description }}</td><td>{{ s.servicePrice }}</td><td>Delete?</td>
+            <td>{{ s.serviceID }}</td><td>{{ s.serviceType }}</td><td>{{ s.serviceAbbr }}</td><td>{{ s.reportType }}</td><td>{{ s.description }}</td><td>{{ s.servicePrice }}</td><td><a href="/edit?type=service&id={{ s.serviceID }}">Edit</a></td>
         </tr>
         {% endfor %}
         </tbody>

@@ -8,13 +8,13 @@
     <table id="table-1">
         <thead>
             <tr>
-                <td>id</td><td>4 Seasons or MVR?</td><td>Doctor</td><td>Clinic</td><td>Patient</td><td>Owner</td><td>Service</td><td>Total</td><td>See Full Report</td><td>Delete?</td>
+                <td>id</td><td>4 Seasons or MVR?</td><td>Doctor</td><td>Clinic</td><td>Patient</td><td>Owner</td><td>Service</td><td>Total</td><td>Full Report</td>
             </tr>
         </thead>
         <tbody>
         {% for r in reports %}
         <tr>
-            <td>{{ r.id }}</td><td>{{ r.mvr4seasons }}</td><td>{{ r.doctor }}</td><td>{{ r.clinicName }}</td><td>{{ r.patient }}</td><td>{{ r.owner }}</td><td>{{ r.service }}</td><td>{{ r.SvcTotal }}</td><td> See Full Report </td><td>Delete?</td>
+            <td>{{ r.id }}</td><td>{{ r.mvr4seasons }}</td><td>{{ r.doctor }}</td><td>{{ r.clinicName }}</td><td>{{ r.patient }}</td><td>{{ r.owner }}</td><td>{{ r.service }}</td><td>{{ r.SvcTotal }}</td><td><a href="/edit?type=misc&id={{ r.id }}">Edit Full Report</a></td>
         </tr>
         {% endfor %}
         </tbody>

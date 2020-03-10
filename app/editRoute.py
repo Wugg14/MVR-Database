@@ -2,6 +2,7 @@ from flask import render_template, redirect, url_for, flash
 from app import db
 from app.forms import InvoiceForm, UltrasoundForm, radiographicInterpretationForm, ctInterpretationForm, newClinicForm, newDoctor, miscService, newService, EchocardiographForm
 from app.models import Invoice, Invoice_Item, Clinic, Doctor, Report_US, Report_Radiographic, Report_CT, MiscService, Report_Misc, Report_Echo
+from app.structureSelectFields import structure_options
 
 def doctorEdit(entryID):
     form = newDoctor()
@@ -50,8 +51,9 @@ def clinicEdit(entryID):
     return render_template('clinicForm.html', title='Edit Clinic', entry=clinicEntry, form=form)
 
 def echocardiographEdit(entryID):
-    form = EchocardiographForm()
     formEntry = Report_Echo.query.filter(Report_Echo.id == entryID)
+    structuredDoc = structure_options(formEntry.doctor, formEntry.docSerialNum)
+    form = EchocardiographForm(doctor=structuredDoc)
 
     if form.validate_on_submit():
         clinicData = form.practice.data
@@ -128,8 +130,10 @@ def echocardiographEdit(entryID):
     return render_template('echocardiograph.html', title='Edit Cardiographic Report', entry=formEntry, form=form)
 
 def miscServiceEdit(entryID):
-    form = miscService()
     formEntry = Report_Misc.query.filter(Report_Misc.id == entryID).first()
+    structuredDoc = structure_options(formEntry.doctor, formEntry.docSerialNum)
+    form = miscService(doctor=structuredDoc)
+
 
     if form.validate_on_submit():
         clinicData = form.practice.data
@@ -157,3 +161,123 @@ def miscServiceEdit(entryID):
         return redirect(url_for('miscReportTable'))
 
     return render_template('miscService.html', title='Edit Misc Report', entry=formEntry, form=form)
+
+def editService(entryID):
+    formEntry = MiscService.query.filter(MiscService.serviceID == entryID).first()
+    form = newService()
+
+    if form.validate_on_submit():
+        formEntry.serviceType = form.serviceType.data
+        formEntry.serviceAbbr = form.serviceAbbr.data
+        formEntry.reportType = form.ReportType.data
+        formEntry.description = form.description.data
+        formEntry.servicePrice = form.price.data
+
+        db.session.commit()
+        flash('Updated Service')
+
+        return redirect(url_for('serviceTable'))
+
+    return render_template('newService.html', title='Edit Service', entry=formEntry, form=form)
+
+#radiograph
+def editRadiograph(entryID):
+    formEntry = Report_Radiographic.query.filter(Report_Radiographic.id == entryID).first()
+    form = radiographicInterpretationForm()
+
+    if form.validate_on_submit():
+        formEntry.date = form.date.data
+        formEntry.doctor = doctorData[0]
+        formEntry.docSerialNum = doctorData[1]
+        formEntry.clinic = clinicData[0]
+        formEntry.clinicSerialNum = clinicData[1]
+        formEntry.patient = form.patient.data
+        formEntry.species = form.species.data
+        formEntry.owner = form.owner.data
+        formEntry.Rad_Image_Date = form.Rad_Image_Date.data
+        formEntry.Rad_NumImages = form.Rad_NumImages.data
+        formEntry.RadView = form.views.data
+        formEntry.Rad_Findings = form.Rad_Findings.data
+        formEntry.Rad_Conclusions = form.Rad_Conclusions.data
+        formEntry.Clinic_Phone = form.phone.data
+        formEntry.mvr4seasons = form.mvr4seasons.data
+
+        db.session.commit()
+        flash('Updated Radiographic Interpretation')
+        return redirect(url_for('radiographTable'))
+
+    return render_template('radiograph.html', title='Edit Radiographic Interpretation', entry=formEntry, form=form)
+
+def editUltrasound(entryID):
+    formEntry = Report_US.query.filter(Report_US.id == entryID).first()
+    form = UltrasoundForm()
+
+    if form.validate_on_submit():
+        formEntry.doctor = doctorData[0]
+        formEntry.docSerialNum = doctorData[1]
+        formEntry.clinicName = clinicData[0]
+        formEntry.clinicSerialNum = clinicData[1]
+        formEntry.patient = form.patient.data
+        formEntry.owner = form.owner.data
+        formEntry.species = form.species.data
+        formEntry.breed = form.breed.data
+        formEntry.sexPatient = form.sex.data
+        formEntry.agePatient = form.age.data
+        formEntry.clinicalHistory = form.age.data
+        formEntry.SF_Liver = form.liver.data
+        formEntry.SF_Spleen = form.spleen.data
+        formEntry.SF_Stomach = form.stomach.data
+        formEntry.SF_Pancreas = form.pancreas.data
+        formEntry.SF_Intestines = form.intestines.data
+        formEntry.SF_Adrenals = form.adrenals.data
+        formEntry.SF_LKidney = form.lKidney.data
+        formEntry.SF_RKidney = form.rKidney.data
+        formEntry.SF_Bladder = form.bladder.data
+        formEntry.SF_Sublum = form.sublum.data
+        formEntry.SF_Prostate = form.prostate.data
+        formEntry.SF_Uterus = form.uterus.data
+        formEntry.Conclusions_ALL = form.conclusions.data
+        formEntry.FINDAS_ALL = form.findings.data
+        formEntry.date = form.date.data
+        formEntry.mvr4seasons = form.mvr4seasons.data
+
+        db.session.commit()
+        flash('Updated Ultrasound Report')
+
+        return redirect(url_for('ultrasoundTable'))
+
+    return render_template('ultrasound.html', title='Edit Ultrasound Report', entry=formEntry, form=form)
+
+def editCT(entryID):
+    formEntry = Report_CT.query.filter(Report_CT.id == entryID).first()
+    form = ctInterpretationForm()
+
+    if form.validate_on_submit():
+        formEntry.doctor = doctorData[0]
+        formEntry.docSerialNum = doctorData[1]
+        formEntry.clinic = clinicData[0]
+        formEntry.clinicSerialNum = clinicData[1]
+        formEntry.patient = form.patient.data
+        formEntry.species = form.species.data
+        formEntry.owner = form.owner.data
+        formEntry.CT_Image_Date = form.CT_Image_Date.data
+        formEntry.CT_NumImages = form.CT_NumImages.data
+        formEntry.CTView = form.views.data
+        formEntry.CT_Findings = form.CT_Findings.data
+        formEntry.CT_Conclusions = form.CT_Conclusions.data
+        formEntry.Clinic_Phone = form.phone.data
+        formEntry.date = form.date.data
+        formEntry.mvr4seasons = form.mvr4seasons.data
+
+        db.session.commit()
+        flash('Updated CT Report')
+        return redirect(url_for('ctTable'))
+
+    return render_template('ct.html', title='Edit CT Report', entry=formEntry, form=form)
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@
     <tbody>
     {% for c in ct %}
     <tr>
-        <td>{{ c.date }}</td><td>{{ c.mvr4seasons }}</td><td>{{ c.doctor }}</td><td>{{ c.clinic }}</td><td>{{ c.patient }}</td><td>{{ c.owner }}</td><td>{{ c.species }}</td><td>{{ c.CT_NumImages }}</td><td>{{ c.CTView }}</td><td>See Full Report</td>
+        <td>{{ c.date }}</td><td>{{ c.mvr4seasons }}</td><td>{{ c.doctor }}</td><td>{{ c.clinic }}</td><td>{{ c.patient }}</td><td>{{ c.owner }}</td><td>{{ c.species }}</td><td>{{ c.CT_NumImages }}</td><td>{{ c.CTView }}</td><td><a href="/edit?type=ct&id={{ c.id }}">Edit Full Report</a></td>
     </tr>
     {% endfor %}
     </tbody>

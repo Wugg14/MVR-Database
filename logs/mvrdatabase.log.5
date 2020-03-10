@@ -1,4 +1,13 @@
-2020-02-04 13:05:38,855 ERROR: Exception on /invoice [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+2020-02-08 13:35:44,944 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +21,18 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 233, in invoice
-    db.session.flush()
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 302, in editEntry
+    return clinicEdit(entryID)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\editRoute.py", line 46, in clinicEdit
+    db.session.commit()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
     return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
+    self.transaction.commit()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
+    self._prepare_impl()
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 473, in _prepare_impl
+    self.session.flush()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
     self._flush(objects)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
@@ -30,87 +47,30 @@ Traceback (most recent call last):
     rec.execute(self)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
     uow,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
-    insert,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1138, in _emit_insert_statements
-    statement, params
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
     return meth(self, multiparams, params)
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
     return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1088, in _execute_clauseelement
-    else None,
-  File "<string>", line 1, in <lambda>
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 462, in compile
-    return self._compiler(dialect, bind=bind, **kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 468, in _compiler
-    return dialect.statement_compiler(dialect, self, **kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 562, in __init__
-    Compiled.__init__(self, dialect, statement, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 319, in __init__
-    self.string = self.process(self.statement, **compile_kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 350, in process
-    return obj._compiler_dispatch(self, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\visitors.py", line 91, in _compiler_dispatch
-    return meth(self, **kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 2383, in visit_insert
-    self, insert_stmt, crud.ISINSERT, **kw
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\crud.py", line 62, in _setup_crud_params
-    return _get_crud_params(compiler, stmt, **kw)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\crud.py", line 165, in _get_crud_params
-    kw,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\crud.py", line 339, in _scan_cols
-    or c is not stmt.table._autoincrement_column
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 715, in _autoincrement_column
-    return self.primary_key._autoincrement_column
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 855, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 3480, in _autoincrement_column
-    _validate_autoinc(col, True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 3458, in _validate_autoinc
-    "compatible with autoincrement=True" % (col.type, col)
-sqlalchemy.exc.ArgumentError: Column type VARCHAR(20) on column 'invoice.invoiceID' is not compatible with autoincrement=True
-2020-02-04 13:07:02,718 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:07:47,768 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:12:00,654 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:12:37,533 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:14:43,878 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:14:56,801 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 313, in editEntry
-    doctorEntry(clinicName=clinicData[0], clinicSerialNum=clinicData[1], first=form.first.data, middle=form.middle.data, last=form.last.data, phone=form.phone.data, email=form.email.data, note=form.note.data,)
-TypeError: 'Doctor' object is not callable
-2020-02-04 13:28:28,962 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 13:28:48,224 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 315, in editEntry
-    doctorEntry.update(payload)
-AttributeError: 'Doctor' object has no attribute 'update'
-2020-02-04 13:37:58,063 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 16:48:40,013 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 16:48:45,616 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
-2020-02-04 16:52:29,167 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 399, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: UPDATE clinic SET company=?, nickname=?, street=?, city=?, state=?, zip=?, phone=?, email=? WHERE clinic."clinicSerialNum" = ?]
+[parameters: (('New Name!',), ('Nickname 1',), ('Main St',), ('Example City',), ('Example State',), ('0',), ('100-800-9320',), ('test1@email.com',), ('1', '2', '3'))]
+(Background on this error at: http://sqlalche.me/e/rvf5)
+2020-02-08 13:50:31,689 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

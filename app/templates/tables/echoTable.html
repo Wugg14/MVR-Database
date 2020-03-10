@@ -10,7 +10,7 @@
     <tbody>
     {% for u in echoreports %}
     <tr>
-        <td>{{ u.date }}</td><td>{{ u.mvr4seasons }}</td><td>{{ u.doctor }}</td><td>{{ u.clinicName }}</td><td>{{ u.patient }}</td><td>{{ u.owner }}</td><td>{{ u.species }}</td><td>{{ u.breed }}</td><td>{{ u.sexPatient }}</td><td>{{ u.agePatient }}</td><td>See Full Report</td>
+        <td>{{ u.date }}</td><td>{{ u.mvr4seasons }}</td><td>{{ u.doctor }}</td><td>{{ u.clinicName }}</td><td>{{ u.patient }}</td><td>{{ u.owner }}</td><td>{{ u.species }}</td><td>{{ u.breed }}</td><td>{{ u.sexPatient }}</td><td>{{ u.agePatient }}</td><td><a href="/edit?type=echo&id={{ u.id }}">Edit Full Report</a></td>
     </tr>
     {% endfor %}
     </tbody>

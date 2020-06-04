@@ -130,8 +130,8 @@ def CT():
         db.session.add(ctReport)
         db.session.commit()
         flash('Added report to database')
-        return redirect(url_for('ct'))
-    return render_template('ctTable.html', title='CT Report', form=form, entry='')
+        return redirect(url_for('ctTable'))
+    return render_template('ct.html', title='CT Report', form=form, entry='')
 
 @app.route('/misc', methods=['GET', 'POST'])
 def misc():
@@ -175,7 +175,7 @@ def newClinic():
         db.session.commit()
         flash('Added clinic to database')
         return redirect(url_for('newClinic'))
-    return render_template('clinicForm.html', title='New Clinic', form=form)
+    return render_template('clinicForm.html', title='New Clinic', form=form, entry='')
 
 @app.route('/newdoc', methods=['GET', 'POST'])
 def newDoc():

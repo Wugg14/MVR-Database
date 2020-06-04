@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField, FloatField
+from wtforms import StringField, IntegerField, PasswordField, BooleanField, SubmitField, SelectField, FloatField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 from app.getCurrentClinics import get_current_clinics
@@ -78,7 +78,7 @@ class EchocardiographForm (FlaskForm):
     breed = StringField('Breed:', validators=[DataRequired()])
     sex = StringField('Sex:', validators=[DataRequired()])
     weight = StringField('Weight (lbs):', validators=[DataRequired()])
-    clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
+    clinicalHistory = StringField('Clinical History:', validators=[DataRequired()])
     # LV Wall-d
     LVFW_Distolic_Thickness = StringField('LVFW_Distolic_Thickness:', validators=[DataRequired()])
     lower_range_LV_wall_D = StringField('lower_range_LV_wall_D:')
@@ -135,9 +135,9 @@ class EchocardiographForm (FlaskForm):
     epss_result = StringField('epss_result:')
     # Comments
     m_mode_comments = StringField('M-Mode Comments:')
-    echo_doppler_findings = TextAreaField('Doppler:', validators=[DataRequired()])
-    Echo_B_mode_findings = TextAreaField('B-Mode:', validators=[DataRequired()])
-    Echo_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
+    echo_doppler_findings = StringField('Doppler:', validators=[DataRequired()])
+    Echo_B_mode_findings = StringField('B-Mode:', validators=[DataRequired()])
+    Echo_Conclusions = StringField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
 class UltrasoundForm (FlaskForm):
@@ -151,7 +151,7 @@ class UltrasoundForm (FlaskForm):
     species = StringField('Species:', validators=[DataRequired()])
     mvr4seasons = SelectField('MVR or 4 Seasons:', validators=[DataRequired()], choices=[('4seasons', '4 Seasons'), ('mvr', 'MVR')])
     age = IntegerField('Age:', validators=[DataRequired()])
-    clinicalHistory = TextAreaField('Clinical History:', validators=[DataRequired()])
+    clinicalHistory = StringField('Clinical History:', validators=[DataRequired()])
     liver = SelectField('Liver/Gall bl:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below')])
     spleen = SelectField('Spleen:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below')])
     stomach = SelectField('Stomach:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below')])
@@ -164,8 +164,8 @@ class UltrasoundForm (FlaskForm):
     sublum = SelectField('Sublum. area:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below'), ('na', 'N.A.')])
     prostate = SelectField('Prostate:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below'), ('na', 'N.A.')])
     uterus = SelectField('Uterus/Ov:', validators=[DataRequired()], choices=[('n', 'Normal'),('a', 'Abnormal'),('sb', 'See Below'), ('na', 'N.A.')])
-    conclusions = TextAreaField('Conclusions:', validators=[DataRequired()])
-    findings = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
+    conclusions = StringField('Conclusions:', validators=[DataRequired()])
+    findings = StringField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
 class radiographicInterpretationForm (FlaskForm):
@@ -180,8 +180,8 @@ class radiographicInterpretationForm (FlaskForm):
     Rad_NumImages = IntegerField('No. of Images:', validators=[DataRequired()])
     phone = StringField('Phone:', validators=[DataRequired()])
     views = StringField('Views:', validators=[DataRequired()])
-    Rad_Findings = TextAreaField('Findings:', validators=[DataRequired()])
-    Rad_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
+    Rad_Findings = StringField('Findings:', validators=[DataRequired()])
+    Rad_Conclusions = StringField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
 class ctInterpretationForm (FlaskForm):
@@ -196,8 +196,8 @@ class ctInterpretationForm (FlaskForm):
     CT_NumImages = IntegerField('No. of Images:', validators=[DataRequired()])
     phone = StringField('Phone:', validators=[DataRequired()])
     views = StringField('Views:', validators=[DataRequired()])
-    CT_Findings = TextAreaField('Findings:', validators=[DataRequired()])
-    CT_Conclusions = TextAreaField('Impressions and Conclusions:', validators=[DataRequired()])
+    CT_Findings = StringField('Findings:', validators=[DataRequired()])
+    CT_Conclusions = StringField('Impressions and Conclusions:', validators=[DataRequired()])
     submit = SubmitField('Save')
 
 class miscService (FlaskForm):

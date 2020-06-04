@@ -1,13 +1,4 @@
-2020-02-08 13:35:44,944 ERROR: Exception on /edit [POST] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
-
-The above exception was the direct cause of the following exception:
-
+2020-03-10 12:28:52,567 ERROR: Exception on /edit [GET] [in c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -21,56 +12,71 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 302, in editEntry
-    return clinicEdit(entryID)
-  File "C:\Users\marks\Local Sites\MVR Flask Database\app\editRoute.py", line 46, in clinicEdit
-    db.session.commit()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
-    self.transaction.commit()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
-    self._prepare_impl()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 473, in _prepare_impl
-    self.session.flush()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
-    self._flush(objects)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 154, in reraise
-    raise value
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2557, in _flush
-    flush_context.execute()
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
-    uow,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
-    update,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
-    statement, multiparams
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 399, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\routes.py", line 309, in editEntry
+    return editUltrasound(entryID)
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\editRoute.py", line 249, in editUltrasound
+    return render_template('ultrasound.html', title='Edit Ultrasound Report', entry=formEntry, form=form)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
-[SQL: UPDATE clinic SET company=?, nickname=?, street=?, city=?, state=?, zip=?, phone=?, email=? WHERE clinic."clinicSerialNum" = ?]
-[parameters: (('New Name!',), ('Nickname 1',), ('Main St',), ('Example City',), ('Example State',), ('0',), ('100-800-9320',), ('test1@email.com',), ('1', '2', '3'))]
-(Background on this error at: http://sqlalche.me/e/rvf5)
-2020-02-08 13:50:31,689 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\ultrasound.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\base.html", line 37, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\marks\Local Sites\MVR Flask Database\app\templates\ultrasound.html", line 39, in block "app_content"
+    {{ form.patient(size=12, value=input.patient) }}
+  File "c:\users\marks\local sites\mvr flask database\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'input' is undefined
+2020-03-10 12:35:27,286 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:28:37,201 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:29:15,167 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:33:04,544 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:34:33,140 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:35:40,532 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:36:48,834 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 19:40:32,351 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 20:00:27,865 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 20:30:34,425 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 23:11:35,771 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 23:30:05,370 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 23:39:47,355 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 23:51:34,195 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-05 23:54:06,987 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-10 16:36:30,712 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-10 16:41:23,892 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-10 16:46:47,901 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-10 16:49:02,307 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-10 16:50:21,235 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-10 16:51:40,789 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:28:47,223 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:39:24,743 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:43:52,373 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:48:40,591 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:49:09,919 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:50:16,540 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:50:52,180 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:52:21,291 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:52:33,680 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:53:19,267 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:54:33,006 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]
+2020-05-14 22:55:47,206 INFO: MVR Database [in C:\Users\marks\Local Sites\MVR Flask Database\app\__init__.py:49]

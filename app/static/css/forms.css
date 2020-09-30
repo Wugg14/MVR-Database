@@ -36,3 +36,7 @@
 .last-box {
     margin-bottom: 25px;
 }
+
+.M-Mode_Row *{
+    padding: 10px;
+}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block app_content %}
+<link rel="stylesheet" href="{{ url_for('static',    filename='css/forms.css') }}">
 <div class="radiograph-form">
     <h1>Echocardiographic Interpretation</h1>
     <hr />
@@ -112,39 +113,39 @@
         <br />
         <div id="M-Mode_Box">
             <div id="M-Mode__Header">
-                <span>M-Mode</span><span>Value</span><span>Normal</span><span>Range</span><span>Result</span>
+                <span style="margin: 5px;margin-left:70px;">M-Mode</span><span style="margin: 5px;">Value</span><span style="margin: 5px;">Normal</span><span style="margin: 5px;">Range</span><span style="margin: 5px;">Result</span>
             </div>
-            <div id="LV_Wall-d">
+            <div id="LV_Wall-d" class="M-Mode_Row">
                 <span>LV Wall-d mm:</span> {{ form.LVFW_Distolic_Thickness(size=6, value=entry.LVFW_Distolic_Thickness) }} {{ form.lower_range_LV_wall_D(size=3, value=entry.lower_range_LV_wall_D) }} {{ form.upper_range_LV_wall_D(size=3, value=entry.upper_range_LV_wall_D) }} {{ form.LVFW_DT_result (size=4, value=entry.LVFW_DT_result) }}
             </div>
-            <div id="LV_Wall-s">
+            <div id="LV_Wall-s" class="M-Mode_Row">
                 <span>LV Wall-s mm:</span> {{ form.LVFW_Systolic_Thickness(size=6, value=entry.LVFW_Systolic_Thickness) }} {{ form.lower_range_LV_wall_S(size=3, value=entry.lower_range_LV_wall_S)}} {{ form.upper_range_LV_wall_S(size=3, value=entry.upper_range_LV_wall_S) }} {{ form.LVFW_ST_result (size=4, value=entry.LVFW_ST_result) }}
             </div>
-            <div id="LV_Chamber-d">
+            <div id="LV_Chamber-d" class="M-Mode_Row">
                 <span>LV Chamber-d mm:</span> {{ form.Left_Vent_Diastolic(size=6, value=entry.Left_Vent_Diastolic) }} {{ form.lower_range_LV_Chamber_D(size=3, value=entry.lower_range_LV_Chamber_D) }} {{ form.upper_range_LV_Chamber_D(size=3, value=entry.upper_range_LV_Chamber_D) }} {{ form.LV_DD_result (size=4, value=entry.LV_DD_result) }}
             </div>
-            <div id="LV_Chamber-s">
+            <div id="LV_Chamber-s" class="M-Mode_Row">
                 <span>LV Chamber-s mm:</span> {{ form.Left_Vent_Systolic(size=6, value=entry.Left_Vent_Systolic) }} {{ form.lower_range_LV_Chamber_S(size=3, value=entry.lower_range_LV_Chamber_S) }} {{ form.upper_range_LV_Chamber_S(size=3, value=entry.upper_range_LV_Chamber_S) }} {{ form.LV_SD_result (size=3, value=entry.LV_SD_result) }}
             </div>
-            <div id="Fractional_Shortening">
+            <div id="Fractional_Shortening" class="M-Mode_Row">
                 <span>Fractional Shortening (%):</span> {{ form.Shortening_Fraction (size=6, value=entry.Shortening_Fraction) }} {{ form.lower_range_fractional_shortening (size=3, value=entry.lower_range_fractional_shortening) }} {{ form.upper_range_fractional_shortening (size=3, value=entry.upper_range_fractional_shortening) }} {{ form.SF_result (size=4, value=entry.SF_result) }}
             </div>
-            <div id="septum-d">
+            <div id="septum-d" class="M-Mode_Row">
                 <span>Septum-d mm:</span> {{ form.IVS_Diastolic_Thickness (size=6, value=entry.IVS_Diastolic_Thickness) }} {{ form.lower_range_septum_d(size=3, value=entry.lower_range_septum_d) }} {{ form.upper_range_septum_d(size=3, value=entry.upper_range_septum_d) }} {{ form.IVS_DT_result (size=4, value=entry.IVS_DT_result) }}
             </div>
-            <div id="septum-s">
+            <div id="septum-s" class="M-Mode_Row">
                 <span>Septum-s mm:</span> {{ form.IVS_Systolic_Thickness (size=6, value=entry.IVS_Systolic_Thickness) }} {{ form.lower_range_septum_s(size=3, value=entry.lower_range_septum_s) }} {{ form.upper_range_septum_s(size=3, value=entry.upper_range_septum_s) }} {{ form.IVS_ST_result (size=4, value=entry.IVS_ST_result) }}
             </div>
-            <div id="aorta">
+            <div id="aorta" class="M-Mode_Row">
                 <span>Aorta, mm:</span> {{ form.Aortic_Root(size=6, value=entry.Aortic_Root) }} {{ form.lower_range_aorta(size=3, value=entry.lower_range_aorta) }} {{ form.upper_range_aorta(size=3, value=entry.upper_range_aorta) }} {{ form.AR_result (size=4, value=entry.AR_result) }}
             </div>
-            <div id="left-atrium">
+            <div id="left-atrium" class="M-Mode_Row">
                 <span>Left Atrium, mm:</span> {{ form.Left_Atrium(size=6, value=entry.Left_Atrium) }} {{ form.lower_range_left_atrium(size=3, value=entry.lower_range_left_atrium) }} {{ form.upper_range_left_atrium(size=3, value=entry.upper_range_left_atrium) }} {{ form.LA_result (size=4, value=entry.LA_result) }}
             </div>
-            <div id="la/ao">
+            <div id="la/ao" class="M-Mode_Row">
                 <span>LA/AO:</span> {{ form.Left_Atrium_over_AO(size=6, value=entry.Left_Atrium_over_AO) }} {{ form.lower_range_la_over_ao(size=3, value=entry.lower_range_la_over_ao) }} {{ form.upper_range_la_over_ao(size=3, value=entry.upper_range_la_over_ao) }} {{ form.la_over_ao_result (size=4, value=entry.la_over_ao_result) }}
             </div>
-            <div id="EPSS">
+            <div id="EPSS" class="M-Mode_Row">
                 <span>EPSS, mm:</span> {{ form.EPSS(size=6, value=entry.EPSS) }} <span><</span> {{ form.upper_range_epss(size=3, value=entry.upper_range_epss) }} {{ form.epss_result (size=4, value=entry.epss_result) }}
             </div>
         </div>
